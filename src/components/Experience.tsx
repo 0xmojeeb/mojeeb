@@ -73,7 +73,7 @@ const Experience = () => {
     },
     {
       company: "Taiku NFT",
-      role: "Business Developer & Growth Strategist",
+      role: "Business Developer & KOL Manager",
       period: "Jan 2023",
       type: "NFT",
       achievements: [
