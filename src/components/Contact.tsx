@@ -35,7 +35,7 @@ const Contact = () => {
       description: "Mojeeb's LinkedIn",
       action: "Connect",
       color: "bg-blue-600",
-      href: "https://linkedin.com/in/mojeeb"
+      href: "https://www.linkedin.com/in/mojeebeth/"
     },
     {
       icon: Twitter,
