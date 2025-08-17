@@ -5,10 +5,8 @@ import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navigation />
       
       <main>
@@ -26,13 +24,10 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border/50">
         <div className="container mx-auto text-center">
-          <p className="text-muted-foreground">
-            © 2024 Mojeeb. Building the future of Web3 collaboration.
-          </p>
+          <p className="text-muted-foreground">© 2024 Mojeeb. Building the future of Web3 collaboration.
+Made with LOve ❤️</p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
