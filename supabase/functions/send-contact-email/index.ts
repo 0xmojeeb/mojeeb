@@ -33,6 +33,20 @@ serve(async (req) => {
       )
     }
 
+    // Get Resend API key from environment
+    const resendApiKey = Deno.env.get('RESEND_API_KEY')
+    
+    if (!resendApiKey) {
+      console.error('RESEND_API_KEY not found in environment variables')
+      return new Response(
+        JSON.stringify({ error: 'Email service not configured' }),
+        { 
+          status: 500, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        }
+      )
+    }
+
     // Prepare email content
     const emailSubject = `New Contact Form Submission from ${name}`
     const emailBody = `
@@ -49,27 +63,34 @@ serve(async (req) => {
       <p><small>This message was sent from your portfolio contact form.</small></p>
     `
 
-    // Here you would integrate with an email service like Resend
-    // For now, we'll log the email and return success
-    console.log('Email to send:', {
-      to: 'mojeeb.eth@gmail.com',
-      subject: emailSubject,
-      html: emailBody
+    // Send email using Resend
+    const emailResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Portfolio Contact <noreply@resend.dev>',
+        to: ['mojeeb.eth@gmail.com'],
+        reply_to: email,
+        subject: emailSubject,
+        html: emailBody,
+      }),
     })
 
-    // You can integrate with email services like:
-    // - Resend
-    // - SendGrid
-    // - Mailgun
-    // - AWS SES
-    
-    // For demonstration, we'll return success
-    // In production, you'd actually send the email here
+    if (!emailResponse.ok) {
+      const errorText = await emailResponse.text()
+      console.error('Failed to send email:', errorText)
+      throw new Error('Failed to send email')
+    }
+    const emailResult = await emailResponse.json()
+    console.log('Email sent successfully:', emailResult)
     
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: 'Contact form submitted successfully' 
+        message: 'Contact form submitted and email sent successfully' 
       }),
       { 
         status: 200,
