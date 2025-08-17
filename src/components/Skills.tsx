@@ -183,7 +183,7 @@ const Skills = () => {
               <Megaphone className="w-6 h-6 text-primary" />
               <h3 className="text-xl font-bold">Key Achievements</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="achievement-number mb-2">100+</div>
                 <p className="text-muted-foreground">Ecosystem Projects</p>
@@ -195,6 +195,10 @@ const Skills = () => {
               <div className="text-center">
                 <div className="achievement-number mb-2">8.5/10</div>
                 <p className="text-muted-foreground">Partnership Success</p>
+              </div>
+              <div className="text-center">
+                <div className="achievement-number mb-2">8.5k</div>
+                <p className="text-muted-foreground">Taiku NFT followers in 3.5 days</p>
               </div>
             </div>
           </CardContent>
