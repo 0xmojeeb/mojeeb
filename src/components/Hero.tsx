@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -29,10 +36,10 @@ const Hero = () => {
             <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">I help brands grow loud with strategy, storytelling, and community-building, creating frameworks that spark engagement and scale growth across Ethereum, Base, Solana, and Polygon.</p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
-              <Button size="lg" className="px-8 py-6 text-lg glow-effect">
+              <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>
                 Work With Me
               </Button>
-              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg">
+              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('experience')}>
                 View My Work
               </Button>
             </div>
