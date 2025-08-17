@@ -185,7 +185,7 @@ const Skills = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="achievement-number mb-2">15+</div>
+                <div className="achievement-number mb-2">100+</div>
                 <p className="text-muted-foreground">Ecosystem Projects</p>
               </div>
               <div className="text-center">

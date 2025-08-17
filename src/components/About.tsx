@@ -5,7 +5,7 @@ import { Users, TrendingUp, Zap, Target } from "lucide-react";
 const About = () => {
   const achievements = [
     { icon: TrendingUp, label: "Community Growth", value: "90%", description: "Engagement increase at Onchain HQ" },
-    { icon: Users, label: "Ecosystem Projects", value: "15+", description: "Successful collaborations managed" },
+    { icon: Users, label: "Ecosystem Projects", value: "100+", description: "Successful collaborations managed" },
     { icon: Zap, label: "Growth Rate", value: "85%", description: "Community boost in 2 weeks (Skylos)" },
     { icon: Target, label: "Success Rate", value: "8.5/10", description: "Partnership success (DegenPirates)" },
   ];
