@@ -55,7 +55,8 @@ const Contact = () => {
     { icon: Users, title: "Community Building", description: "Growing engaged Web3 communities" },
     { icon: Handshake, title: "Strategic Partnerships", description: "Cross-ecosystem collaborations" },
     { icon: Globe, title: "Business Development", description: "Growth strategies and market expansion" },
-    { icon: MessageSquare, title: "Content Strategy", description: "Alpha content and brand messaging" }
+    { icon: MessageSquare, title: "Content Strategy", description: "Alpha content and brand messaging" },
+    { icon: Send, title: "Marketing", description: "Web3 marketing campaigns and brand positioning" }
   ];
 
   return (
@@ -73,7 +74,7 @@ const Contact = () => {
 
         <div className="max-w-6xl mx-auto">
           {/* Collaboration Types */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
             {collaborationTypes.map((type, index) => (
               <Card key={index} className="glass-card text-center group hover:scale-105 transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
                 <CardContent className="p-6">
@@ -116,6 +117,7 @@ const Contact = () => {
                       <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Partnerships</Badge>
                       <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Business Dev</Badge>
                       <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Content Strategy</Badge>
+                      <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Marketing</Badge>
                     </div>
                   </div>
                   
