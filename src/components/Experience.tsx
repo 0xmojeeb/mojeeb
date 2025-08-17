@@ -62,7 +62,7 @@ const Experience = () => {
     },
     {
       company: "DegenPirates",
-      role: "Business Developer",
+      role: "Business Developer & Growth Strategist",
       period: "Jun 2023 – Jul 2023",
       type: "Business",
       achievements: [
