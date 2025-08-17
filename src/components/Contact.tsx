@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 import { 
   Mail, 
   MessageSquare, 
@@ -12,10 +14,21 @@ import {
   Github,
   Globe,
   Users,
-  Handshake
+  Handshake,
+  Loader2
 } from "lucide-react";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    project: "",
+    message: "",
+    collaborationType: ""
+  });
+  const [selectedCollabTypes, setSelectedCollabTypes] = useState<string[]>([]);
   const contactMethods = [
     {
       icon: Mail,
@@ -59,6 +72,75 @@ const Contact = () => {
     { icon: Send, title: "Marketing", description: "Web3 marketing campaigns and brand positioning" }
   ];
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleCollabTypeClick = (type: string) => {
+    setSelectedCollabTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields (Name, Email, and Message).",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/functions/v1/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          collaborationTypes: selectedCollabTypes,
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          project: "",
+          message: "",
+          collaborationType: ""
+        });
+        setSelectedCollabTypes([]);
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 px-6">
       <div className="container mx-auto">
@@ -93,45 +175,88 @@ const Contact = () => {
             <Card className="glass-card animate-slide-in-left">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Name</label>
-                      <Input placeholder="Your name" className="bg-background/50" />
+                      <label className="text-sm font-medium mb-2 block">Name *</label>
+                      <Input 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your name" 
+                        className="bg-background/50" 
+                        required
+                      />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Email</label>
-                      <Input type="email" placeholder="your@email.com" className="bg-background/50" />
+                      <label className="text-sm font-medium mb-2 block">Email *</label>
+                      <Input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder="your@email.com" 
+                        className="bg-background/50" 
+                        required
+                      />
                     </div>
                   </div>
                   
                   <div>
                     <label className="text-sm font-medium mb-2 block">Project/Company</label>
-                    <Input placeholder="Your project or company name" className="bg-background/50" />
+                    <Input 
+                      name="project"
+                      value={formData.project}
+                      onChange={handleInputChange}
+                      placeholder="Your project or company name" 
+                      className="bg-background/50" 
+                    />
                   </div>
                   
                   <div>
                     <label className="text-sm font-medium mb-2 block">Collaboration Type</label>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Community Building</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Partnerships</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Business Dev</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Content Strategy</Badge>
-                      <Badge variant="outline" className="cursor-pointer hover:bg-primary/20">Marketing</Badge>
+                      {["Community Building", "Partnerships", "Business Dev", "Content Strategy", "Marketing"].map((type) => (
+                        <Badge 
+                          key={type}
+                          variant={selectedCollabTypes.includes(type) ? "default" : "outline"} 
+                          className="cursor-pointer hover:bg-primary/20"
+                          onClick={() => handleCollabTypeClick(type)}
+                        >
+                          {type}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
                   
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Message</label>
+                    <label className="text-sm font-medium mb-2 block">Message *</label>
                     <Textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Tell me about your project and how we can collaborate..." 
                       className="bg-background/50 min-h-[120px]"
+                      required
                     />
                   </div>
                   
-                  <Button className="w-full glow-effect group">
-                    <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                    Send Message
+                  <Button 
+                    type="submit" 
+                    className="w-full glow-effect group" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>
