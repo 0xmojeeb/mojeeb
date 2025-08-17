@@ -62,7 +62,7 @@ const Experience = () => {
     },
     {
       company: "DegenPirates",
-      role: "Business Developer & Growth Strategist",
+      role: "Business Developer & KOL Manager",
       period: "Jun 2023 – Jul 2023",
       type: "Business",
       achievements: [
@@ -73,7 +73,7 @@ const Experience = () => {
     },
     {
       company: "Taiku NFT",
-      role: "Business Developer & KOL Manager",
+      role: "Business Developer & Growth Strategist",
       period: "Jan 2023",
       type: "NFT",
       achievements: [
