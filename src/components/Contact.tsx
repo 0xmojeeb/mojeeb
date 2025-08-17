@@ -20,30 +20,34 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      description: "Drop me a line for collaborations",
+      description: "mojeeb.eth@gmail.com",
       action: "Send Email",
-      color: "bg-blue-500"
+      color: "bg-blue-500",
+      href: "mailto:mojeeb.eth@gmail.com"
     },
     {
       icon: MessageSquare,
-      title: "Discord",
-      description: "Let's connect in Web3 communities",
-      action: "Join Discord",
-      color: "bg-indigo-500"
+      title: "Telegram",
+      description: "@mojeebeth",
+      action: "Message",
+      color: "bg-sky-400",
+      href: "https://t.me/mojeebeth"
     },
     {
       icon: Linkedin,
       title: "LinkedIn",
-      description: "Professional networking",
+      description: "Mojeeb's LinkedIn",
       action: "Connect",
-      color: "bg-blue-600"
+      color: "bg-blue-600",
+      href: "https://linkedin.com/in/mojeeb"
     },
     {
       icon: Twitter,
-      title: "Twitter",
-      description: "Follow for Web3 insights",
+      title: "Twitter (X)",
+      description: "@moj33b_",
       action: "Follow",
-      color: "bg-sky-500"
+      color: "bg-black",
+      href: "https://twitter.com/moj33b_"
     }
   ];
 
@@ -137,20 +141,20 @@ const Contact = () => {
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
                   <div className="space-y-4">
-                    {contactMethods.map((method, index) => (
-                      <div key={index} className="flex items-center gap-4 p-4 bg-background/30 rounded-lg hover:bg-background/50 transition-colors cursor-pointer group">
-                        <div className={`w-12 h-12 ${method.color} rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform`}>
-                          <method.icon className="w-6 h-6" />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-semibold">{method.title}</h4>
-                          <p className="text-sm text-muted-foreground">{method.description}</p>
-                        </div>
-                        <Button variant="ghost" size="sm">
-                          {method.action}
-                        </Button>
-                      </div>
-                    ))}
+                     {contactMethods.map((method, index) => (
+                       <a key={index} href={method.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-background/30 rounded-lg hover:bg-background/50 transition-colors cursor-pointer group">
+                         <div className={`w-12 h-12 ${method.color} rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform`}>
+                           <method.icon className="w-6 h-6" />
+                         </div>
+                         <div className="flex-1 min-w-0">
+                           <h4 className="font-semibold">{method.title}</h4>
+                           <p className="text-sm text-muted-foreground truncate">{method.description}</p>
+                         </div>
+                         <Button variant="ghost" size="sm" className="shrink-0">
+                           {method.action}
+                         </Button>
+                       </a>
+                     ))}
                   </div>
                 </CardContent>
               </Card>
