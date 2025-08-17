@@ -24,7 +24,7 @@ const Skills = () => {
         { name: "Growth Frameworks", level: 85 },
         { name: "Moderation Systems", level: 92 }
       ],
-      highlight: "Took SkylosChain from 5% to 95% engagement"
+      highlight: "took SkylosChain engagement from 5% to 95%"
     },
     {
       icon: Handshake,
@@ -36,7 +36,7 @@ const Skills = () => {
         { name: "Ecosystem Outreach", level: 85 },
         { name: "Cross-chain Relations", level: 80 }
       ],
-      highlight: "15+ successful ecosystem collaborations"
+      highlight: "GX DAO, Playground, Solfiends, Racerclublabs"
     },
     {
       icon: TrendingUp,
@@ -52,15 +52,15 @@ const Skills = () => {
     },
     {
       icon: MessageSquare,
-      title: "Content Creation & Strategy",
-      description: "Creating compelling content and alpha calls across multiple chains",
+      title: "Content Creation & Alpha Calls",
+      description: "Multichain content creation and alpha calls with proven results",
       skills: [
         { name: "Content Strategy", level: 85 },
         { name: "Alpha Research", level: 90 },
         { name: "Social Media", level: 88 },
         { name: "Brand Messaging", level: 82 }
       ],
-      highlight: "Viral #LFParti campaign success"
+      highlight: "recent call hit +19,465%"
     }
   ];
 

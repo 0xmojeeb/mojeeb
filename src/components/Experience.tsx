@@ -19,7 +19,7 @@ const Experience = () => {
     {
       company: "Onchain HQ",
       role: "Moderator & Growth Strategist",
-      period: "Current",
+      period: "April 2025 – June 2025",
       type: "Growth",
       achievements: [
         "Increased audience engagement to 90% by leading conversations",
@@ -30,7 +30,7 @@ const Experience = () => {
     {
       company: "Skylos Chain",
       role: "Lead Moderator & Strategist",
-      period: "Recent",
+      period: "July 2023",
       type: "Strategy",
       achievements: [
         "Boosted community engagement by 85% in just 2 weeks",
