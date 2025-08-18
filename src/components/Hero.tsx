@@ -30,7 +30,7 @@ const Hero = () => {
             </h1>
             
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl lg:max-w-none">
-              Web3 Strategist & Community Builder | Marketing & Growth for DAOs, NFT Projects, and Web3 Brands
+              Web3 Strategist & Community Builder
             </h2>
             
             <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">I help brands grow loud with strategy, storytelling, and community-building, creating frameworks that spark engagement and scale growth across Ethereum, Base, Solana, and Polygon.</p>
