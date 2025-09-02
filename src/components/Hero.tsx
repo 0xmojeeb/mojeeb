@@ -30,10 +30,10 @@ const Hero = () => {
             </h1>
             
             <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl lg:max-w-none">
-              Web3 Strategist & Community Builder | Marketing & Growth for DAOs, NFT Projects, and Web3 Brands
+              Web3 Business Developer & Blockchain Marketing Expert | DeFi Growth Specialist, DAO Marketing Consultant, and NFT Project Strategist
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">I help brands grow loud with strategy, storytelling, and community-building, creating frameworks that spark engagement and scale growth across Ethereum, Base, Solana, and Polygon.</p>
+            <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">I help Web3 companies and blockchain startups scale through proven growth marketing strategies, decentralized marketing frameworks, and crypto community management across major DeFi protocols on Ethereum, Base, Solana, and Polygon ecosystems.</p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
               <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>

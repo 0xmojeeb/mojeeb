@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, BookOpen, Briefcase, Award, Mail } from "lucide-react";
+import { Menu, X, Home, User, BookOpen, Briefcase, Award, Mail, PenTool } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +12,7 @@ const Navigation = () => {
     { id: "education", label: "Education", icon: BookOpen },
     { id: "experience", label: "Experience", icon: Briefcase },
     { id: "skills", label: "Skills", icon: Award },
+    { id: "blog", label: "Blog", icon: PenTool },
     { id: "contact", label: "Contact", icon: Mail },
   ];
 

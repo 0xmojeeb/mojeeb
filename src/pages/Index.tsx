@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 const Index = () => {
   return <div className="min-h-screen">
@@ -18,6 +19,7 @@ const Index = () => {
         <Education />
         <Experience />
         <Skills />
+        <Blog />
         <Contact />
       </main>
       
