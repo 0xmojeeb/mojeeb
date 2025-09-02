@@ -65,14 +65,14 @@ const Skills = () => {
   ];
 
   const ecosystems = [
-    { name: "Ethereum", color: "bg-blue-500" },
-    { name: "Base", color: "bg-blue-600" },
-    { name: "Solana", color: "bg-purple-500" },
-    { name: "Polygon", color: "bg-purple-600" },
-    { name: "DAOs", color: "bg-green-500" },
-    { name: "NFTs", color: "bg-pink-500" },
-    { name: "DeFi", color: "bg-yellow-500" },
-    { name: "Gaming", color: "bg-red-500" }
+    { name: "Ethereum", color: "bg-blue-700" },
+    { name: "Base", color: "bg-blue-800" },
+    { name: "Solana", color: "bg-purple-700" },
+    { name: "Polygon", color: "bg-purple-800" },
+    { name: "DAOs", color: "bg-green-700" },
+    { name: "NFTs", color: "bg-pink-700" },
+    { name: "DeFi", color: "bg-yellow-700" },
+    { name: "Gaming", color: "bg-red-700" }
   ];
 
   const tools = [
