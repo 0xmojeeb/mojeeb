@@ -1,3 +1,7 @@
+User-agent: *
+Allow: /
+
+# Allow major search engines
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +14,11 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
+
+# Sitemap location
+Sitemap: https://mojeeb.lovable.app/sitemap.xml
+
+# Crawl delay (optional - uncomment if needed)
+# Crawl-delay: 1
