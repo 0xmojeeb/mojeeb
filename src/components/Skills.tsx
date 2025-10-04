@@ -24,7 +24,7 @@ const Skills = () => {
         { name: "Growth Frameworks", level: 88 },
         { name: "Retention Systems", level: 92 }
       ],
-      highlight: "4+ years Web3 experience"
+      highlight: "3+ year Web3 Experience"
     },
     {
       icon: Megaphone,
