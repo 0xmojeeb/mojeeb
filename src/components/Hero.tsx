@@ -21,25 +21,21 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           <div className="animate-fade-in text-center lg:text-left">
-            <Badge variant="secondary" className="mb-6 px-6 py-2 text-sm font-medium">
-              Available for Collaborations
-            </Badge>
-            
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="gradient-text">Mojeeb</span>
             </h1>
             
-            <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl lg:max-w-none">
-              Web3 Business Developer & Blockchain Marketing Expert | DeFi Growth Specialist, DAO Marketing Consultant, and NFT Project Strategist
+            <h2 className="text-xl md:text-2xl text-foreground mb-8 max-w-4xl lg:max-w-none font-semibold">
+              Community Builder | Marketing & Growth Strategist | Web3 Ecosystem Operator
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">I help Web3 companies and blockchain startups scale through proven growth marketing strategies, decentralized marketing frameworks, and crypto community management across major DeFi protocols on Ethereum, Base, Solana, and Polygon ecosystems.</p>
+            <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">Helping Web3 companies and blockchain startups scale through growth marketing, decentralized collaboration, and community execution across Base, Ethereum, Solana, and Polygon ecosystems.</p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
               <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>
                 Work With Me
               </Button>
-              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('experience')}>
+              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('blog')}>
                 View My Work
               </Button>
             </div>
@@ -48,7 +44,7 @@ const Hero = () => {
           <div className="animate-fade-in flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl glow-effect">
-                <img src="/lovable-uploads/e54e241e-c953-48e6-839b-5b50acf50e70.png" alt="Mojeeb – Web3 Strategist, Community Builder, and Marketing Specialist helping brands grow across Ethereum, Base, Solana, and Polygon." className="w-full h-full object-cover" />
+                <img src="/mojeeb-pfp.png" alt="Mojeeb – Web3 Strategist, Community Builder, and Marketing Specialist helping brands grow across Ethereum, Base, Solana, and Polygon." className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -61,7 +57,7 @@ const Hero = () => {
             </a>
           </Button>
           <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full glow-effect" asChild>
-            <a href="https://x.com/moj33b_" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/0xMojeeb" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-5 h-5" />
             </a>
           </Button>

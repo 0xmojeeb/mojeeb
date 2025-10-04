@@ -18,10 +18,16 @@ const About = () => {
             About <span className="gradient-text">Mojeeb</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a Web3-native strategist passionate about building communities, forging meaningful 
-            collaborations, and creating growth frameworks for projects and DAOs. Over the past years, 
-            I've worked across multiple ecosystems applying a mix of business development, strategy, 
-            and content creation to accelerate impact.
+            Seasoned Community Builder and Marketing & Growth Strategist with over 4 years of Web3 experience driving user growth, ecosystem partnerships, and high-performing community activations.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
+            Expert in scaling NFT projects, DAOs, and protocols from inception to thousands of engaged members through data-backed frameworks, storytelling, and sustainable retention systems.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
+            With 12+ years of Marketing and Sales expertise from Web2, I blend traditional growth fundamentals with Web3-native innovation — developing systems that boost engagement, visibility, and adoption.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
+            Renowned for sharp execution, creative partnerships, and a results-first mindset that transforms communities into ecosystems built for long-term success.
           </p>
         </div>
 

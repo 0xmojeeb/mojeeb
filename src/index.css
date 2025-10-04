@@ -8,41 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Web3 Portfolio Dark Theme */
-    --background: 220 26% 5%;
-    --foreground: 210 40% 98%;
+    /* Web3 Portfolio Orange/Black Theme */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 20% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 20% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 15 100% 40%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 17 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 17 30% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 220 15% 12%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 15 100% 50%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 17 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 15%;
-    --input: 220 15% 12%;
-    --ring: 15 100% 50%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 17 100% 50%;
 
     /* Web3 Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(15 100% 50%), hsl(25 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(220 20% 8%), hsl(220 15% 12%));
-    --gradient-accent: linear-gradient(135deg, hsl(200 100% 60%), hsl(15 100% 50%));
-    --glow-primary: 0 0 30px hsl(15 100% 50% / 0.3);
-    --glow-accent: 0 0 20px hsl(15 100% 50% / 0.2);
+    --gradient-primary: linear-gradient(135deg, hsl(17 100% 50%), hsl(17 100% 40%));
+    --gradient-secondary: linear-gradient(135deg, hsl(17 30% 15%), hsl(0 0% 5%));
+    --gradient-accent: linear-gradient(135deg, hsl(17 100% 50%), hsl(17 100% 60%));
+    --glow-primary: 0 0 30px hsl(17 100% 50% / 0.5);
+    --glow-accent: 0 0 40px hsl(17 100% 50% / 0.3);
     
     --radius: 0.75rem;
 
@@ -102,7 +102,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(135deg, hsl(var(--background)), hsl(220 20% 8%));
+    background: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 5%));
     min-height: 100vh;
   }
 

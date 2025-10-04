@@ -5,48 +5,33 @@ import { Building, Calendar, TrendingUp, Target, Star } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      company: "EchelonHQ",
+      company: "EchelonHQ (formerly Anblabs)",
       role: "Founder",
-      period: "2024 – Present",
+      period: "Aug 2024 – Present",
       type: "Founder",
       achievements: [
-        "Building a Web3-native agency + alpha community",
-        "Designing the EchelonPass NFT to gate access and drive ecosystem growth",
-        "Leading collaboration strategy and community frameworks"
+        "Building a Web3 growth collective merging strategy, collaboration, and design",
+        "Leading EchelonPass NFT, a gated community anchoring EchelonHQ's ecosystem",
+        "Created the DAETO Framework (Discovery, Approach, Execution, Tracking, Optimization)"
       ],
       highlight: true
     },
     {
-      company: "Onchain HQ",
-      role: "Moderator & Growth Strategist",
-      period: "April 2025 – June 2025",
-      type: "Growth",
-      achievements: [
-        "Increased audience engagement to 90% by leading conversations",
-        "Strengthened brand-to-community trust through strategic moderation",
-        "Developed engagement frameworks for sustained growth"
-      ]
-    },
-    {
-      company: "Skylos Chain",
-      role: "Lead Moderator & Strategist",
-      period: "July 2023",
-      type: "Strategy",
-      achievements: [
-        "Boosted community engagement by 85% in just 2 weeks",
-        "Implemented structured moderation and communication systems",
-        "Established best practices for community management"
-      ]
-    },
-    {
       company: "GX DAO",
-      role: "Collaboration Manager & Strategist",
-      period: "Sep 2023 – Mar 2024",
+      role: "Strategist",
+      period: "Sept 2023 – Mar 2024",
       type: "DAO",
       achievements: [
-        "Executed DAO collaboration strategies",
-        "Boosted ecosystem alignment through strategic partnerships",
-        "Facilitated cross-DAO collaboration initiatives"
+        "Designed scalable partnership and marketing strategies for DAO ecosystem growth"
+      ]
+    },
+    {
+      company: "Playground",
+      role: "Collaboration & Community Manager",
+      period: "Aug 2022 – Mar 2023",
+      type: "Community",
+      achievements: [
+        "Boosted project engagement and secured high-value ecosystem collaborations"
       ]
     },
     {
@@ -55,49 +40,41 @@ const Experience = () => {
       period: "Jul 2023 – Oct 2023",
       type: "Partnerships",
       achievements: [
-        "Drove community alignment through strategic partnerships",
-        "Established collaboration frameworks",
-        "Enhanced ecosystem connectivity"
+        "Managed cross-ecosystem partnerships and strengthened project visibility"
       ]
     },
     {
       company: "DegenPirates",
-      role: "Business Developer & KOL Manager",
-      period: "Jun 2023 – Jul 2023",
+      role: "Business Developer",
+      period: "Jun – Jul 2023",
       type: "Business",
       achievements: [
-        "Achieved 8.5/10 success rate in partnership closure",
-        "Secured valuable partnerships that raised project visibility",
-        "Developed business development strategies"
+        "Achieved an 8.5/10 success rate in strategic partnerships"
+      ]
+    },
+    {
+      company: "SkylosChain",
+      role: "Community Manager",
+      period: "Jul 2023",
+      type: "Strategy",
+      achievements: [
+        "Drove engagement from 5% → 95% within two weeks through active initiatives"
       ]
     },
     {
       company: "Taiku NFT",
-      role: "Business Developer & Growth Strategist",
+      role: "Business Developer",
       period: "Jan 2023",
       type: "NFT",
       achievements: [
-        "Forged strategic partnerships and growth opportunities",
-        "Elevated project awareness through ecosystem outreach",
-        "Developed NFT project business strategies"
-      ]
-    },
-    {
-      company: "Playground",
-      role: "Collaboration Manager & Community Manager",
-      period: "Aug 2022 – Mar 2023",
-      type: "Community",
-      achievements: [
-        "Managed collaborations and engagement strategies",
-        "Expanded community reach through strategic partnerships",
-        "Implemented community growth frameworks"
+        "Structured partnership playbooks and marketing strategies for NFT ecosystem growth"
       ]
     }
   ];
 
   const ambassadorships = [
-    { name: "JoinParti", achievement: "Created viral #LFParti campaign driving adoption" },
-    { name: "Credbull", achievement: "Supported community building and Web3 awareness" }
+    { name: "JoinParti", achievement: "Created the viral #LFParti campaign that amplified onboarding and engagement" },
+    { name: "Credbull", achievement: "Advocated for brand visibility through community activations and marketing synergy" }
   ];
 
   const getTypeColor = (type: string) => {

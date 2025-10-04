@@ -16,51 +16,75 @@ const Skills = () => {
   const skillCategories = [
     {
       icon: Users,
-      title: "Community Growth & Engagement",
+      title: "Community Growth & Strategy",
       description: "Building and scaling Web3 communities with proven engagement strategies",
       skills: [
         { name: "Community Management", level: 95 },
         { name: "Engagement Strategy", level: 90 },
-        { name: "Growth Frameworks", level: 85 },
-        { name: "Moderation Systems", level: 92 }
+        { name: "Growth Frameworks", level: 88 },
+        { name: "Retention Systems", level: 92 }
       ],
-      highlight: "took SkylosChain engagement from 5% to 95%"
+      highlight: "4+ years Web3 experience"
+    },
+    {
+      icon: Megaphone,
+      title: "Marketing Campaign Execution",
+      description: "Driving growth through strategic marketing and brand positioning",
+      skills: [
+        { name: "Growth Marketing", level: 90 },
+        { name: "Brand Positioning", level: 88 },
+        { name: "Content Strategy", level: 85 },
+        { name: "Campaign Management", level: 87 }
+      ],
+      highlight: "12+ years Web2 marketing expertise"
+    },
+    {
+      icon: Building,
+      title: "DAO & NFT Ecosystem Management",
+      description: "Expertise in decentralized organizations and NFT projects",
+      skills: [
+        { name: "DAO Strategy", level: 85 },
+        { name: "NFT Project Growth", level: 88 },
+        { name: "Protocol Scaling", level: 82 },
+        { name: "Governance", level: 80 }
+      ],
+      highlight: "Scaled projects to thousands of members"
     },
     {
       icon: Handshake,
-      title: "Strategic Collaboration & Partnerships",
-      description: "Forging meaningful partnerships across Web3 ecosystems",
+      title: "Partnership & Business Development",
+      description: "Forging strategic partnerships and ecosystem collaborations",
       skills: [
         { name: "Partnership Development", level: 90 },
-        { name: "Collaboration Strategy", level: 88 },
-        { name: "Ecosystem Outreach", level: 85 },
-        { name: "Cross-chain Relations", level: 80 }
-      ],
-      highlight: "GX DAO, Playground, Solfiends, Racerclublabs"
-    },
-    {
-      icon: TrendingUp,
-      title: "Business Development & Strategy",
-      description: "Driving growth and creating value propositions for Web3 projects",
-      skills: [
         { name: "Business Strategy", level: 85 },
-        { name: "Growth Planning", level: 88 },
-        { name: "Market Analysis", level: 82 },
-        { name: "Revenue Strategy", level: 80 }
+        { name: "Ecosystem Outreach", level: 88 },
+        { name: "Deal Closure", level: 85 }
       ],
       highlight: "8.5/10 partnership success rate"
     },
     {
       icon: MessageSquare,
-      title: "Content Creation & Alpha Calls",
-      description: "Multichain content creation and alpha calls with proven results",
+      title: "Storytelling & Brand Positioning",
+      description: "Crafting compelling narratives and brand strategies",
       skills: [
-        { name: "Content Strategy", level: 85 },
-        { name: "Alpha Research", level: 90 },
-        { name: "Social Media", level: 88 },
-        { name: "Brand Messaging", level: 82 }
+        { name: "Storytelling", level: 90 },
+        { name: "Brand Strategy", level: 87 },
+        { name: "Content Creation", level: 85 },
+        { name: "Messaging", level: 88 }
       ],
-      highlight: "recent call hit +19,465%"
+      highlight: "Data-backed frameworks"
+    },
+    {
+      icon: TrendingUp,
+      title: "Team Leadership & Strategy",
+      description: "Leading teams and developing strategic frameworks",
+      skills: [
+        { name: "Team Leadership", level: 85 },
+        { name: "Strategic Planning", level: 88 },
+        { name: "Framework Development", level: 90 },
+        { name: "Execution", level: 92 }
+      ],
+      highlight: "Created DAETO Framework"
     }
   ];
 

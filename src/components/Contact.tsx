@@ -25,11 +25,11 @@ const Contact = () => {
     href: "https://www.linkedin.com/in/mojeebeth/"
   }, {
     icon: Twitter,
-    title: "Twitter (X)",
-    description: "@moj33b_",
+    title: "X (Twitter)",
+    description: "@mojeebeth",
     action: "Follow",
     color: "bg-black",
-    href: "https://twitter.com/moj33b_"
+    href: "https://x.com/0xMojeeb"
   }];
   const collaborationTypes = [{
     icon: Users,
