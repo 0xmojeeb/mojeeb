@@ -26,9 +26,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-border/50">
         <div className="container mx-auto text-center">
-          <p className="text-muted-foreground text-sm">
-            Building communities that don't just grow, they evolve. LFG 🚀🔥
-          </p>
+          <p className="text-muted-foreground text-sm">Building communities that don't just grow, they evolve. LFG!</p>
           <p className="text-muted-foreground text-xs mt-2">© 2025 Mojeeb. All rights reserved.</p>
         </div>
       </footer>
