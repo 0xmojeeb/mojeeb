@@ -35,7 +35,7 @@ const Hero = () => {
               <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>
                 Work With Me
               </Button>
-              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('blog')}>
+              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('experience')}>
                 View My Work
               </Button>
             </div>
