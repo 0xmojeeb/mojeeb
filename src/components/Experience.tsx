@@ -5,69 +5,115 @@ import { Building, Calendar, TrendingUp, Target, Star } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      company: "EchelonHQ (formerly Anblabs)",
-      role: "Founder",
+      company: "EchelonHQ (fka Anblabs)",
+      role: "Founder & Strategist",
       period: "Aug 2024 – Present",
       type: "Founder",
       achievements: [
-        "Building a Web3 growth collective merging strategy, collaboration, and design",
-        "Leading EchelonPass NFT, a gated community anchoring EchelonHQ's ecosystem",
-        "Created the DAETO Framework (Discovery, Approach, Execution, Tracking, Optimization)"
+        "Built and led a Web3-native community hub",
+        "Designed and implemented the DAETO collaboration framework (Discovery, Approach, Execution, Tracking, Optimization)"
       ],
       highlight: true
     },
     {
-      company: "GX DAO",
-      role: "Strategist",
-      period: "Sept 2023 – Mar 2024",
-      type: "DAO",
+      company: "Onchain HQ",
+      role: "Community Moderator",
+      period: "Apr 2025 – Jun 2025",
+      type: "Community",
       achievements: [
-        "Designed scalable partnership and marketing strategies for DAO ecosystem growth"
+        "Supported community engagement and moderation across Discord and Telegram",
+        "Ensured smooth community operations and effective feedback loops"
       ]
     },
     {
-      company: "Playground",
-      role: "Collaboration & Community Manager",
-      period: "Aug 2022 – Mar 2023",
-      type: "Community",
+      company: "The Crypto Family",
+      role: "Collaboration Lead & Co-Founder",
+      period: "Nov 2023 – Jul 2023",
+      type: "Partnerships",
       achievements: [
-        "Boosted project engagement and secured high-value ecosystem collaborations"
+        "Led brand optimization efforts, enhancing visibility and positioning within the Web3 ecosystem",
+        "Secured strategic collaborations and partnerships to expand ecosystem reach",
+        "Drove community growth through targeted initiatives and relationship building",
+        "Onboarded Luckygo during its early stage, strengthening community operations and positioning the brand as an early adopter of innovative tools"
+      ]
+    },
+    {
+      company: "GX DAO",
+      role: "Collaboration Manager & Strategist",
+      period: "Sep 2023 – Mar 2024",
+      type: "DAO",
+      achievements: [
+        "Structured high-value collaborations within the Ethereum ecosystem",
+        "Optimized DAO community growth, engagement, and retention"
       ]
     },
     {
       company: "Racerclublabs",
-      role: "Collaboration Manager",
+      role: "Collaboration & Partnership Manager",
       period: "Jul 2023 – Oct 2023",
       type: "Partnerships",
       achievements: [
-        "Managed cross-ecosystem partnerships and strengthened project visibility"
-      ]
-    },
-    {
-      company: "DegenPirates",
-      role: "Business Developer",
-      period: "Jun – Jul 2023",
-      type: "Business",
-      achievements: [
-        "Achieved an 8.5/10 success rate in strategic partnerships"
+        "Negotiated cross-ecosystem collaborations to increase brand reach",
+        "Strengthened project visibility through strategic partnership alignment"
       ]
     },
     {
       company: "SkylosChain",
-      role: "Community Manager",
-      period: "Jul 2023",
+      role: "Community Manager & Marketer",
+      period: "Jun 2023 – Jul 2023",
       type: "Strategy",
       achievements: [
-        "Drove engagement from 5% → 95% within two weeks through active initiatives"
+        "Boosted community engagement from 5% to 95% in just two weeks",
+        "Implemented scalable engagement strategies to maintain retention"
+      ]
+    },
+    {
+      company: "Playgr0und (fka Readers DAO)",
+      role: "Collaboration & Community Manager",
+      period: "Aug 2022 – Mar 2023",
+      type: "Community",
+      achievements: [
+        "Built partnerships with NFT projects and DAOs to expand the ecosystem",
+        "Scaled community operations efficiently through automation tools",
+        "Onboarded Alphabot to Playgr0und at launch, streamlining collaboration and positioning the community as an early adopter"
+      ]
+    },
+    {
+      company: "BlueValley DAO (fka Solchasers DAO)",
+      role: "Collaboration Manager",
+      period: "Oct 2022 – Dec 2023",
+      type: "DAO",
+      achievements: [
+        "Secured partnerships and collaborations to expand community reach",
+        "Contributed to strategic planning and execution of the DAO's rebrand"
       ]
     },
     {
       company: "Taiku NFT",
-      role: "Business Developer",
-      period: "Jan 2023",
+      role: "Business Developer & Growth Strategist",
+      period: "Jan 2023 – Jan 2023",
       type: "NFT",
       achievements: [
-        "Structured partnership playbooks and marketing strategies for NFT ecosystem growth"
+        "Expanded NFT partnerships and delivered high-quality collaborations",
+        "Grew Taiku NFT's Twitter (X) from 3 to 9,000 organic followers in 3.5 days, boosting brand visibility and engagement"
+      ]
+    },
+    {
+      company: "Pups Cub",
+      role: "Collaboration Manager",
+      period: "Oct 2022 – Oct 2022",
+      type: "Partnerships",
+      achievements: [
+        "Strengthened NFT collaboration outreach and improved brand positioning"
+      ]
+    },
+    {
+      company: "Solfiends",
+      role: "Collaboration Manager",
+      period: "Sep 2022 – Sep 2022",
+      type: "Partnerships",
+      achievements: [
+        "Drove community onboarding and partnership strategies for early growth"
       ]
     }
   ];
