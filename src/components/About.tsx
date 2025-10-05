@@ -1,17 +1,29 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Zap, Target } from "lucide-react";
-
 const About = () => {
-  const achievements = [
-    { icon: TrendingUp, label: "Community Growth", value: "90%", description: "Engagement increase at Onchain HQ" },
-    { icon: Users, label: "Ecosystem Projects", value: "100+", description: "Successful collaborations managed" },
-    { icon: Zap, label: "Growth Rate", value: "85%", description: "Community boost in 2 weeks (Skylos)" },
-    { icon: Target, label: "Success Rate", value: "8.5/10", description: "Partnership success (DegenPirates)" },
-  ];
-
-  return (
-    <section id="about" className="py-20 px-6">
+  const achievements = [{
+    icon: TrendingUp,
+    label: "Community Growth",
+    value: "90%",
+    description: "Engagement increase at Onchain HQ"
+  }, {
+    icon: Users,
+    label: "Ecosystem Projects",
+    value: "100+",
+    description: "Successful collaborations managed"
+  }, {
+    icon: Zap,
+    label: "Growth Rate",
+    value: "85%",
+    description: "Community boost in 2 weeks (Skylos)"
+  }, {
+    icon: Target,
+    label: "Success Rate",
+    value: "8.5/10",
+    description: "Partnership success (DegenPirates)"
+  }];
+  return <section id="about" className="py-20 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -23,17 +35,16 @@ const About = () => {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
             Expert in scaling NFT projects, DAOs, and protocols from inception to thousands of engaged members through data-backed frameworks, storytelling, and sustainable retention systems.
           </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            With 12+ years of Marketing and Sales expertise from Web2, I blend traditional growth fundamentals with Web3-native innovation — developing systems that boost engagement, visibility, and adoption.
-          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">With 12+ years of Marketing and Sales expertise from Web2, I blend traditional growth fundamentals with Web3-native innovation, developing systems that boost engagement, visibility, and adoption.</p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
             Renowned for sharp execution, creative partnerships, and a results-first mindset that transforms communities into ecosystems built for long-term success.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {achievements.map((achievement, index) => (
-            <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 animate-slide-in-left" style={{animationDelay: `${index * 0.1}s`}}>
+          {achievements.map((achievement, index) => <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 animate-slide-in-left" style={{
+          animationDelay: `${index * 0.1}s`
+        }}>
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <achievement.icon className="w-8 h-8 text-primary" />
@@ -42,8 +53,7 @@ const About = () => {
                 <h3 className="font-semibold mb-2">{achievement.label}</h3>
                 <p className="text-sm text-muted-foreground">{achievement.description}</p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         <Card className="glass-card animate-fade-in">
@@ -78,8 +88,6 @@ const About = () => {
           </CardContent>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
