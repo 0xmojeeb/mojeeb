@@ -26,7 +26,7 @@ const Contact = () => {
   }, {
     icon: Twitter,
     title: "X (Twitter)",
-    description: "@mojeebeth",
+    description: "0xmojeeb",
     action: "Follow",
     color: "bg-black",
     href: "https://x.com/0xMojeeb"
