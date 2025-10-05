@@ -29,9 +29,7 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             About <span className="gradient-text">Mojeeb</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Seasoned Community Builder and Marketing & Growth Strategist with over 4 years of Web3 experience driving user growth, ecosystem partnerships, and high-performing community activations.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Seasoned Community Builder and Marketing & Growth Strategist with nearly 4 years of Web3 experience driving user growth, ecosystem partnerships, and high-performing community activations.</p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
             Expert in scaling NFT projects, DAOs, and protocols from inception to thousands of engaged members through data-backed frameworks, storytelling, and sustainable retention systems.
           </p>
