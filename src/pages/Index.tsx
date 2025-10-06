@@ -11,11 +11,12 @@ const Index = () => {
       <Navigation />
       
       <main>
-        <About />
-        <Experience />
         <section id="hero">
           <Hero />
         </section>
+        
+        <About />
+        <Experience />
         <Education />
         <Skills />
         <Blog />
