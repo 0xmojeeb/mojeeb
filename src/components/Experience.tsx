@@ -10,8 +10,9 @@ const Experience = () => {
       period: "Aug 2024 – Present",
       type: "Founder",
       achievements: [
-        "Built and led a Web3-native community hub",
-        "Designed and implemented the DAETO collaboration framework (Discovery, Approach, Execution, Tracking, Optimization)"
+        "Conceptualized and deployed the proprietary DAETO growth framework, streamlining collaboration deal-flow and execution for key partners",
+        "Defined and executed the Go-To-Market (GTM) Strategy for the EchelonPass NFT, successfully aligning the asset with long-term ecosystem growth",
+        "Built and led a Web3-native community hub, establishing a foundational structure for high-impact alpha research and strategic partnerships"
       ],
       highlight: true
     },

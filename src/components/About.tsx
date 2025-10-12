@@ -4,14 +4,14 @@ import { Users, TrendingUp, Zap, Target } from "lucide-react";
 const About = () => {
   const achievements = [{
     icon: TrendingUp,
-    label: "Community Growth",
+    label: "90% MoM Engagement Increase",
     value: "90%",
-    description: "Engagement increase at Onchain HQ"
+    description: "Peak community engagement rate at Onchain HQ"
   }, {
     icon: Users,
     label: "Ecosystem Projects",
     value: "100+",
-    description: "Successful collaborations managed"
+    description: "Successful cross-chain collaborations managed"
   }, {
     icon: Zap,
     label: "Growth Rate",
@@ -21,7 +21,7 @@ const About = () => {
     icon: Target,
     label: "Success Rate",
     value: "8.5/10",
-    description: "Partnership success (DegenPirates)"
+    description: "Proven partnership deal-closure and success rate"
   }];
   return <section id="about" className="py-20 px-6">
       <div className="container mx-auto">
