@@ -34,7 +34,7 @@ const Hero = () => {
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
               <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>
-                Work With Me
+                Let's Discuss Growth Strategy
               </Button>
               <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('experience')}>
                 View My Work
