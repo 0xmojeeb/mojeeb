@@ -45,7 +45,7 @@ const Hero = () => {
           <div className="animate-fade-in flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl glow-effect">
-                <img src="/mojeeb-pfp.png" alt="Mojeeb – Web3 Strategist, Community Builder, and Marketing Specialist helping brands grow across Ethereum, Base, Solana, and Polygon." className="w-full h-full object-cover" />
+                <img src="/Lil_Pudgys_10068.png" alt="Mojeeb – Web3 Strategist, Community Builder, and Marketing Specialist helping brands grow across Ethereum, Base, Solana, and Polygon." className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
