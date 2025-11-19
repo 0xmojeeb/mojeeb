@@ -33,9 +33,7 @@ const Hero = () => {
             <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">Helping Web3 companies and blockchain startups achieve growth through growth marketing, decentralized collaboration, and community execution across Base, Ethereum, Solana, and Polygon ecosystems.</p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
-              <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>
-                Let's Discuss Growth Strategy
-              </Button>
+              <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>Let's Discuss </Button>
               <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('experience')}>
                 View My Work
               </Button>
