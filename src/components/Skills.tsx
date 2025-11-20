@@ -17,72 +17,65 @@ const Skills = () => {
     {
       icon: Users,
       title: "Community Growth & Strategy",
-      description: "Building and scaling Web3 communities with proven engagement strategies",
+      description: "Building and scaling engaged Web3 communities",
       skills: [
         { name: "Community Management", level: 95 },
-        { name: "Engagement Strategy", level: 90 },
-        { name: "Growth Frameworks", level: 88 },
-        { name: "Retention Systems", level: 92 }
+        { name: "Engagement Systems", level: 92 },
+        { name: "Growth Frameworks", level: 90 },
+        { name: "Retention Architecture", level: 88 },
+        { name: "Onboarding Systems", level: 90 }
       ],
-      highlight: "3+ year Web3 Experience"
+      highlight: "16 years combined experience"
     },
     {
       icon: Megaphone,
-      title: "Marketing Campaign Execution",
-      description: "Driving growth through strategic marketing and brand positioning",
+      title: "Marketing & Brand Positioning",
+      description: "Driving adoption through strategic narratives",
       skills: [
-        { name: "Growth Marketing", level: 90 },
-        { name: "Brand Positioning", level: 88 },
-        { name: "Content Strategy", level: 85 },
-        { name: "Campaign Management", level: 87 }
+        { name: "Growth Marketing", level: 92 },
+        { name: "Brand Storytelling", level: 90 },
+        { name: "Narrative Systems", level: 88 },
+        { name: "Content Strategy", level: 87 },
+        { name: "Campaign Execution", level: 90 }
       ],
       highlight: "12+ years Web2 marketing expertise"
     },
     {
       icon: Building,
-      title: "DAO & NFT Ecosystem Management",
-      description: "Expertise in decentralized organizations and NFT projects",
+      title: "DAO & NFT Ecosystem Operations",
+      description: "Expertise in decentralized organizations and NFT growth",
       skills: [
-        { name: "DAO Strategy", level: 85 },
-        { name: "NFT Project Growth", level: 88 },
-        { name: "Protocol Scaling", level: 82 },
-        { name: "Governance", level: 80 }
+        { name: "DAO Strategy", level: 88 },
+        { name: "NFT Collaborations", level: 90 },
+        { name: "Governance Alignment", level: 85 },
+        { name: "Protocol Scaling", level: 87 },
+        { name: "Ecosystem Partnerships", level: 92 }
       ],
-      highlight: "Scaled projects to thousands of members"
+      highlight: "200+ projects engaged"
     },
     {
       icon: Handshake,
-      title: "Partnership & Business Development",
-      description: "Forging strategic partnerships and ecosystem collaborations",
+      title: "Partnerships & Business Development",
+      description: "High-velocity partnership execution",
       skills: [
-        { name: "Partnership Development", level: 90 },
-        { name: "Business Strategy", level: 85 },
-        { name: "Ecosystem Outreach", level: 88 },
-        { name: "Deal Closure", level: 85 }
+        { name: "Deal Negotiation", level: 90 },
+        { name: "BD Pipelines", level: 88 },
+        { name: "Cross-Chain Outreach", level: 92 },
+        { name: "Partner Activation", level: 87 },
+        { name: "Co-Marketing Systems", level: 89 }
       ],
       highlight: "8.5/10 partnership success rate"
     },
     {
-      icon: MessageSquare,
-      title: "Storytelling & Brand Positioning",
-      description: "Crafting compelling narratives and brand strategies",
-      skills: [
-        { name: "Storytelling", level: 90 },
-        { name: "Brand Strategy", level: 87 },
-        { name: "Content Creation", level: 85 },
-        { name: "Messaging", level: 88 }
-      ],
-      highlight: "Data-backed frameworks"
-    },
-    {
       icon: TrendingUp,
-      title: "Team Leadership & Strategy",
-      description: "Leading teams and developing strategic frameworks",
+      title: "Leadership & Strategy",
+      description: "Framework development and execution leadership",
       skills: [
-        { name: "Team Leadership", level: 85 },
-        { name: "Strategic Planning", level: 88 },
-        { name: "Framework Development", level: 90 },
-        { name: "Execution", level: 92 }
+        { name: "Strategic Planning", level: 90 },
+        { name: "Framework Development", level: 92 },
+        { name: "Team Alignment", level: 88 },
+        { name: "Execution Leadership", level: 91 },
+        { name: "Cross-functional Growth", level: 87 }
       ],
       highlight: "Created DAETO Framework"
     }
@@ -93,10 +86,10 @@ const Skills = () => {
     { name: "Base", color: "bg-blue-800" },
     { name: "Solana", color: "bg-purple-700" },
     { name: "Polygon", color: "bg-purple-800" },
+    { name: "Avalanche", color: "bg-red-600" },
     { name: "DAOs", color: "bg-green-700" },
     { name: "NFTs", color: "bg-pink-700" },
-    { name: "DeFi", color: "bg-yellow-700" },
-    { name: "Gaming", color: "bg-red-700" }
+    { name: "DeFi", color: "bg-yellow-700" }
   ];
 
   const tools = [
@@ -209,11 +202,11 @@ const Skills = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="achievement-number mb-2">100+</div>
-                <p className="text-muted-foreground">Ecosystem Projects</p>
+                <div className="achievement-number mb-2">200+</div>
+                <p className="text-muted-foreground">Projects Engaged</p>
               </div>
               <div className="text-center">
-                <div className="achievement-number mb-2">90%</div>
+                <div className="achievement-number mb-2">95%</div>
                 <p className="text-muted-foreground">Peak Engagement Rate</p>
               </div>
               <div className="text-center">
@@ -222,7 +215,7 @@ const Skills = () => {
               </div>
               <div className="text-center">
                 <div className="achievement-number mb-2">8.5k</div>
-                <p className="text-muted-foreground">Taiku NFT followers in 3.5 days</p>
+                <p className="text-muted-foreground">Followers in 3.5 Days</p>
               </div>
             </div>
           </CardContent>

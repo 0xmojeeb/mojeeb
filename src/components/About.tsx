@@ -6,22 +6,22 @@ const About = () => {
     icon: TrendingUp,
     label: "90% MoM Engagement Increase",
     value: "90%",
-    description: "Peak community engagement rate at Onchain HQ"
+    description: "OnchainHQ"
   }, {
     icon: Users,
-    label: "Ecosystem Projects",
-    value: "100+",
-    description: "Successful cross-chain collaborations managed"
+    label: "Ecosystem Collaborations",
+    value: "200+",
+    description: "Delivered across multiple chains"
   }, {
     icon: Zap,
-    label: "Growth Rate",
-    value: "85%",
-    description: "Community boost in 2 weeks (Skylos)"
+    label: "Community Engagement Peak",
+    value: "95%",
+    description: "SkylosChain"
   }, {
     icon: Target,
-    label: "Success Rate",
+    label: "Partnership Success Rate",
     value: "8.5/10",
-    description: "Proven partnership deal-closure and success rate"
+    description: "DegenPirates"
   }];
   return <section id="about" className="py-20 px-6">
       <div className="container mx-auto">
@@ -29,13 +29,23 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             About <span className="gradient-text">Mojeeb</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">Seasoned Community Builder and Marketing & Growth Strategist with nearly 4 years of Web3 experience driving user growth, ecosystem partnerships, and high-performing community activations.</p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            Expert in scaling NFT projects, DAOs, and protocols from inception to thousands of engaged members through data-backed frameworks, storytelling, and sustainable retention systems.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            I'm a Web3 Growth Lead & Ecosystem Strategist with 16 years combined experience across Marketing, Sales, Community, Partnerships, and Web3 Ecosystem Development.
           </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">With 12+ years of Marketing and Sales expertise from Web2, I blend traditional growth fundamentals with Web3-native innovation, developing systems that boost engagement, visibility, and adoption.</p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            Renowned for sharp execution, creative partnerships, and a results-first mindset that transforms communities into ecosystems built for long-term success.
+            I specialize in multi-chain ecosystem growth, high-velocity partnership execution, narrative-driven adoption, and community systems that scale across chains.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
+            My background includes <span className="font-semibold text-foreground">200+ ecosystem collaborations</span> across ETH, Base, Solana & more, an <span className="font-semibold text-foreground">8.5/10 partnership negotiation success rate</span>, explosive traction like <span className="font-semibold text-foreground">3 → 9,000 users in 3.5 days for Taiku NFT</span>, and community revival achievements such as <span className="font-semibold text-foreground">5% → 95% engagement in 2 weeks for SkylosChain</span>.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
+            Creator of the <span className="gradient-text font-semibold">DAETO Framework</span>, a BD + growth system for Web3 teams, and Founder of <span className="gradient-text font-semibold">EchelonHQ</span>, focused on collaboration strategy, alpha research, and multi-chain growth.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
+            With 12 years of Web2 marketing & sales leadership, I bring execution discipline and a structured approach — combined with Web3-native storytelling, culture, and cross-community intuition.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4 font-semibold">
+            I don't just grow communities — I build ecosystems.
           </p>
         </div>
 
@@ -60,26 +70,28 @@ const About = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Web3 Ecosystems</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  I've worked across multiple blockchain ecosystems, understanding the unique dynamics 
-                  of each while building bridges between communities and fostering meaningful collaborations 
-                  that drive mutual growth.
+                  I work across multiple chains and understand the culture, speed, and growth dynamics of each.
+                  I build growth systems that adapt to chain culture, community expectations, and ecosystem strategy.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary">Ethereum</Badge>
                   <Badge variant="secondary">Base</Badge>
                   <Badge variant="secondary">Solana</Badge>
                   <Badge variant="secondary">Polygon</Badge>
+                  <Badge variant="secondary">Avalanche</Badge>
                   <Badge variant="secondary">DAOs</Badge>
                   <Badge variant="secondary">NFTs</Badge>
+                  <Badge variant="secondary">DeFi</Badge>
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">Current Focus</h3>
+                <h3 className="text-2xl font-bold mb-4">Current Focus — EchelonHQ</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  As the founder of <span className="gradient-text font-semibold">EchelonHQ</span>, 
-                  I'm building a Web3-native agency and alpha community. The vision includes designing 
-                  the EchelonPass NFT to gate access and drive ecosystem growth while leading 
-                  collaboration strategy and community frameworks for the next generation of Web3 projects.
+                  Founder of <span className="gradient-text font-semibold">EchelonHQ</span>, 
+                  a Web3-native growth and collaboration collective. Current work includes building EchelonPass NFT, 
+                  designing ecosystem-aligned collaboration systems, executing multi-chain BD workflows, 
+                  growing communities with strategic storytelling, creating frameworks for DAO expansion & partner alignment, 
+                  and building SHOB, a culture-layer for identity & ecosystem synergy.
                 </p>
               </div>
             </div>

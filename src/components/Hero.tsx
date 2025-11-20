@@ -27,13 +27,17 @@ const Hero = () => {
             </h1>
             
             <h2 className="text-xl md:text-2xl text-foreground mb-8 max-w-4xl lg:max-w-none font-semibold">
-              Community Builder | Marketing & Growth Strategist | Web3 Ecosystem Operator
+              Web3 Growth Lead | Partnerships & Ecosystem Strategist | Community & BD Operator
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">Helping Web3 companies and blockchain startups achieve growth through growth marketing, decentralized collaboration, and community execution across Base, Ethereum, Solana, and Polygon ecosystems.</p>
+            <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">
+              Helping Web3 companies, protocols, NFT projects, and DAOs scale through
+              ecosystem growth, partnerships, and community-driven execution across
+              Ethereum, Base, Solana, Polygon & Avalanche.
+            </p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
-              <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>Let's Discuss </Button>
+              <Button size="lg" className="px-8 py-6 text-lg glow-effect" onClick={() => scrollToSection('contact')}>Let's Discuss Strategy</Button>
               <Button variant="secondary" size="lg" className="px-8 py-6 text-lg" onClick={() => scrollToSection('experience')}>
                 View My Work
               </Button>

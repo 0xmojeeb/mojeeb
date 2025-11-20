@@ -58,7 +58,9 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Start a <span className="gradient-text">Partnership</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">I’m always open to new opportunities that push Web3 forward. Whether it’s strategy, growth, or partnerships, let’s explore how we can build together.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Let's build together. I'm open to collaborations, growth strategy, BD opportunities, and community partnerships.
+          </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
