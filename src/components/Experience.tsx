@@ -10,32 +10,32 @@ const Experience = () => {
       period: "Aug 2024 – Present",
       type: "Founder",
       achievements: [
-        "Conceptualized and deployed the proprietary DAETO growth framework, streamlining collaboration deal-flow and execution for key partners",
-        "Defined and executed the Go-To-Market (GTM) Strategy for the EchelonPass NFT, successfully aligning the asset with long-term ecosystem growth",
-        "Built and led a Web3-native community hub, establishing a foundational structure for high-impact alpha research and strategic partnerships"
+        "Built a Web3-native ecosystem growth & collaboration studio",
+        "Created the DAETO Framework for scalable partnerships and BD ops",
+        "Led multi-chain ecosystem growth across ETH, Base, Solana, and Polygon",
+        "Designed GTM and narrative for EchelonPass & SHOB"
       ],
       highlight: true
     },
     {
-      company: "Onchain HQ",
+      company: "OnchainHQ",
       role: "Community Moderator",
       period: "Apr 2025 – Jun 2025",
       type: "Community",
       achievements: [
-        "Supported community engagement and moderation across Discord and Telegram",
-        "Ensured smooth community operations and effective feedback loops"
+        "Managed community operations on Telegram & Discord",
+        "Ensured smooth moderation, engagement, and feedback loops"
       ]
     },
     {
       company: "The Crypto Family",
       role: "Collaboration Lead & Co-Founder",
-      period: "Nov 2023 – Jul 2023",
+      period: "Nov 2023 – Nov 2024",
       type: "Partnerships",
       achievements: [
-        "Led brand optimization efforts, enhancing visibility and positioning within the Web3 ecosystem",
-        "Secured strategic collaborations and partnerships to expand ecosystem reach",
-        "Drove community growth through targeted initiatives and relationship building",
-        "Onboarded Luckygo during its early stage, strengthening community operations and positioning the brand as an early adopter of innovative tools"
+        "Secured multi-chain partnerships and narrative alignment",
+        "Drove brand optimization and early adoption",
+        "Onboarded Luckygo and aligned ecosystem messaging"
       ]
     },
     {
@@ -44,28 +44,29 @@ const Experience = () => {
       period: "Sep 2023 – Mar 2024",
       type: "DAO",
       achievements: [
-        "Structured high-value collaborations within the Ethereum ecosystem",
-        "Optimized DAO community growth, engagement, and retention"
+        "Structured DAO collaborations across Ethereum",
+        "Improved retention and community activation",
+        "Led narrative and DAO integration workflows"
       ]
     },
     {
       company: "Racerclublabs",
-      role: "Collaboration & Partnership Manager",
-      period: "Jul 2023 – Oct 2023",
+      role: "Partnerships & Collaboration Manager",
+      period: "Jul 2023 – Nov 2024",
       type: "Partnerships",
       achievements: [
-        "Negotiated cross-ecosystem collaborations to increase brand reach",
-        "Strengthened project visibility through strategic partnership alignment"
+        "Negotiated cross-ecosystem collaborations",
+        "Strengthened visibility via co-marketing strategies"
       ]
     },
     {
       company: "SkylosChain",
       role: "Community Manager & Marketer",
       period: "Jun 2023 – Jul 2023",
-      type: "Strategy",
+      type: "Community",
       achievements: [
-        "Boosted community engagement from 5% to 95% in just two weeks",
-        "Implemented scalable engagement strategies to maintain retention"
+        "Boosted community engagement 5% → 95% in 2 weeks",
+        "Implemented scalable community & content systems"
       ]
     },
     {
@@ -74,54 +75,53 @@ const Experience = () => {
       period: "Aug 2022 – Mar 2023",
       type: "Community",
       achievements: [
-        "Built partnerships with NFT projects and DAOs to expand the ecosystem",
-        "Scaled community operations efficiently through automation tools",
-        "Onboarded Alphabot to Playgr0und at launch, streamlining collaboration and positioning the community as an early adopter"
+        "Built partnerships with NFT projects & DAOs",
+        "Integrated Alphabot to automate collab ops"
       ]
     },
     {
-      company: "BlueValley DAO (fka Solchasers DAO)",
+      company: "BlueValley DAO (SolChasers)",
       role: "Collaboration Manager",
       period: "Oct 2022 – Dec 2023",
       type: "DAO",
       achievements: [
-        "Secured partnerships and collaborations to expand community reach",
-        "Contributed to strategic planning and execution of the DAO's rebrand"
+        "Secured ecosystem collaborations to expand reach",
+        "Contributed to DAO rebrand & strategic planning"
       ]
     },
     {
       company: "Taiku NFT",
-      role: "Business Developer & Growth Strategist",
-      period: "Jan 2023 – Jan 2023",
+      role: "BD & Growth Strategist",
+      period: "Jan 2023",
       type: "NFT",
       achievements: [
-        "Expanded NFT partnerships and delivered high-quality collaborations",
-        "Grew Taiku NFT's Twitter (X) from 3 to 9,000 organic followers in 3.5 days, boosting brand visibility and engagement"
+        "Engineered viral growth 3 → 9,000 followers in 3.5 days",
+        "Activated cross-chain partnerships & GTM alignment"
       ]
     },
     {
       company: "Pups Cub",
       role: "Collaboration Manager",
-      period: "Oct 2022 – Oct 2022",
+      period: "Oct 2022",
       type: "Partnerships",
       achievements: [
-        "Strengthened NFT collaboration outreach and improved brand positioning"
+        "Strengthened NFT collaboration outreach and brand positioning"
       ]
     },
     {
       company: "Solfiends",
       role: "Collaboration Manager",
-      period: "Sep 2022 – Sep 2022",
+      period: "Sep 2022",
       type: "Partnerships",
       achievements: [
-        "Drove community onboarding and partnership strategies for early growth"
+        "Expanded community reach by ~20%"
       ]
     }
   ];
 
   const ambassadorships = [
-    { name: "JoinParti", achievement: "Created the viral #LFParti campaign that amplified onboarding and engagement" },
-    { name: "Credbull", achievement: "Advocated for brand visibility through community activations and marketing synergy" }
+    { name: "JoinParti", achievement: "Created the viral #LFParti" },
+    { name: "Credbull", achievement: "Community engagement & visibility" }
   ];
 
   const getTypeColor = (type: string) => {
