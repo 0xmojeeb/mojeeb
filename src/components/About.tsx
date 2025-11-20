@@ -42,7 +42,7 @@ const About = () => {
             Creator of the <span className="gradient-text font-semibold">DAETO Framework</span>, a BD + growth system for Web3 teams, and Founder of <span className="gradient-text font-semibold">EchelonHQ</span>, focused on collaboration strategy, alpha research, and multi-chain growth.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            With 12 years of Web2 marketing & sales leadership, I bring execution discipline and a structured approach — combined with Web3-native storytelling, culture, and cross-community intuition.
+            With 12 years of Web2 marketing & sales leadership, I bring execution discipline and a structured approach combined with Web3-native storytelling, culture, and cross-community intuition.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4 font-semibold">
             I don't just grow communities — I build ecosystems.
