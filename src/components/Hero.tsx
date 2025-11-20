@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Twitter, BookOpen } from "lucide-react";
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -62,6 +62,11 @@ const Hero = () => {
           <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full glow-effect" asChild>
             <a href="https://x.com/0xMojeeb" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-5 h-5" />
+            </a>
+          </Button>
+          <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full glow-effect" asChild>
+            <a href="https://0xmojeeb.medium.com" target="_blank" rel="noopener noreferrer">
+              <BookOpen className="w-5 h-5" />
             </a>
           </Button>
         </div>
