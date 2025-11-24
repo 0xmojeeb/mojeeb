@@ -11,7 +11,7 @@ const Education = () => {
             <span className="gradient-text">Education</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Building a foundation of critical thinking, research, and leadership skills
+            Academic foundation in diplomacy, leadership, and strategic research
           </p>
         </div>
 
@@ -26,44 +26,31 @@ const Education = () => {
                 <div className="flex-1">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold mb-2">University of Ilorin</h3>
-                      <p className="text-lg text-muted-foreground">Bachelor of Arts (Education) in History</p>
+                      <h3 className="text-2xl font-bold mb-2">University of Ilorin (UNILORIN)</h3>
+                      <p className="text-lg text-muted-foreground">B.A. (Ed) History</p>
                     </div>
                     <Badge variant="outline" className="text-sm px-4 py-2 mt-2 lg:mt-0">
                       2018 – 2023
                     </Badge>
                   </div>
                   
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Developed critical thinking, research evaluation, and analytical skills through 
-                    comprehensive study of historical contexts and educational methodologies. 
-                    This foundation has been instrumental in understanding complex ecosystem 
-                    dynamics and building effective collaboration strategies in Web3.
-                  </p>
+                  <div className="mb-6">
+                    <p className="text-sm font-semibold text-foreground/80 mb-2">Skills:</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="secondary">Diplomacy</Badge>
+                      <Badge variant="secondary">Leadership</Badge>
+                      <Badge variant="secondary">Research Evaluation</Badge>
+                    </div>
+                  </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="flex items-center gap-3 p-4 bg-background/50 rounded-lg">
-                      <Users className="w-6 h-6 text-primary flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold">Diplomacy</h4>
-                        <p className="text-sm text-muted-foreground">Conflict resolution & negotiation</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3 p-4 bg-background/50 rounded-lg">
-                      <BookOpen className="w-6 h-6 text-primary flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold">Leadership</h4>
-                        <p className="text-sm text-muted-foreground">Team management & strategy</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3 p-4 bg-background/50 rounded-lg">
-                      <Search className="w-6 h-6 text-primary flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold">Research</h4>
-                        <p className="text-sm text-muted-foreground">Analysis & evaluation</p>
-                      </div>
+                  <div className="border-l-2 border-primary/30 pl-6 py-2">
+                    <h4 className="text-lg font-bold mb-3">Leadership & Activities</h4>
+                    <div className="space-y-2">
+                      <p className="font-semibold text-foreground">Financial Secretary — ANUNSA, UNILORIN Chapter</p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Managed chapter finances, budgeting, and administrative coordination while supporting 
+                        student diplomatic initiatives and UN-focused programs.
+                      </p>
                     </div>
                   </div>
                 </div>
