@@ -45,7 +45,7 @@ const About = () => {
             With 12 years of Web2 marketing & sales leadership, I bring execution discipline and a structured approach combined with Web3-native storytelling, culture, and cross-community intuition.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4 font-semibold">
-            I don't just grow communities — I build ecosystems.
+            I don't just grow communities:I build ecosystems.
           </p>
         </div>
 
