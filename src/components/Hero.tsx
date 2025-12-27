@@ -27,13 +27,11 @@ const Hero = () => {
             </h1>
             
             <h2 className="text-xl md:text-2xl text-foreground mb-8 max-w-4xl lg:max-w-none font-semibold">
-              Web3 Growth Lead | Partnerships & Ecosystem Strategist | Community & BD Operator
+              Growth, partnerships, and ecosystem strategy across Web3.
             </h2>
             
             <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">
-              Helping Web3 companies, protocols, NFT projects, and DAOs scale through
-              ecosystem growth, partnerships, and community-driven execution across
-              Ethereum, Base, Solana, Polygon & Avalanche.
+              I help teams design and execute systems that scale communities, collaborations, and networks across Ethereum, Base, Solana, Polygon, and Avalanche.
             </p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
