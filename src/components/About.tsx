@@ -30,22 +30,19 @@ const About = () => {
             About <span className="gradient-text">Mojeeb</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a Web3 Growth Lead & Ecosystem Strategist with 16 years combined experience across Marketing, Sales, Community, Partnerships, and Web3 Ecosystem Development.
+            I work at the intersection of strategy, partnerships, and ecosystem growth.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-6">
+            Over the past few years, I've collaborated with Web3 protocols, DAOs, NFT projects, and early-stage teams to help them design systems that scale—not just grow fast, but grow deliberately. My work spans ecosystem partnerships, community-led execution, and go-to-market coordination across networks like Ethereum, Base, Solana, Polygon, and Avalanche.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            I specialize in multi-chain ecosystem growth, high-velocity partnership execution, narrative-driven adoption, and community systems that scale across chains.
+            I'm especially interested in how systems break, why growth stalls, and what actually moves the needle beyond surface-level tactics. That curiosity has shaped how I approach collaboration: clear incentives, aligned stakeholders, and execution that compounds over time.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            My background includes <span className="font-semibold text-foreground">200+ ecosystem collaborations</span> across ETH, Base, Solana & more, an <span className="font-semibold text-foreground">8.5/10 partnership negotiation success rate</span>, explosive traction like <span className="font-semibold text-foreground">3 → 9,000 users in 3.5 days for Taiku NFT</span>, and community revival achievements such as <span className="font-semibold text-foreground">5% → 95% engagement in 2 weeks for SkylosChain</span>.
-          </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            Creator of the <span className="gradient-text font-semibold">DAETO Framework</span>, a BD + growth system for Web3 teams, and Founder of <span className="gradient-text font-semibold">EchelonHQ</span>, focused on collaboration strategy, alpha research, and multi-chain growth.
-          </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            With 12 years of Web2 marketing & sales leadership, I bring execution discipline and a structured approach combined with Web3-native storytelling, culture, and cross-community intuition.
+            Outside of direct work, I write and think in public, sharing observations on structure, strategy, and clarity as they form. Not everything becomes a framework. Some things are simply notes from the field.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4 font-semibold">
-            I don't just grow communities:I build ecosystems.
+            This site is a record of that work, that thinking, and the systems built along the way.
           </p>
         </div>
 
