@@ -55,12 +55,12 @@ const Hero = () => {
         
         <div className="flex justify-center gap-6 mt-8">
           <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full glow-effect" asChild>
-            <a href="https://www.linkedin.com/in/mojeebeth/" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noopener noreferrer">
               <Linkedin className="w-5 h-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full glow-effect" asChild>
-            <a href="https://x.com/0xMojeeb" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/MojeebHQ" target="_blank" rel="noopener noreferrer">
               <Twitter className="w-5 h-5" />
             </a>
           </Button>
