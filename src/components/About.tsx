@@ -33,7 +33,7 @@ const About = () => {
             I work at the intersection of strategy, partnerships, and ecosystem growth.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-6">
-            Over the past few years, I've collaborated with Web3 protocols, DAOs, NFT projects, and early-stage teams to help them design systems that scale—not just grow fast, but grow deliberately. My work spans ecosystem partnerships, community-led execution, and go-to-market coordination across networks like Ethereum, Base, Solana, Polygon, and Avalanche.
+            Over the past few years, I've collaborated with Web3 protocols, DAOs, NFT projects, and early-stage teams to help them design systems that scale, not just grow fast, but grow deliberately. My work spans ecosystem partnerships, community-led execution, and go-to-market coordination across networks like Ethereum, Base, Solana, Polygon, and Avalanche.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
             I'm especially interested in how systems break, why growth stalls, and what actually moves the needle beyond surface-level tactics. That curiosity has shaped how I approach collaboration: clear incentives, aligned stakeholders, and execution that compounds over time.
