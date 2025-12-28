@@ -26,7 +26,7 @@ const Experience = () => {
         "Founded EchelonHQ, a Web3-native growth and collaboration studio focused on ecosystem partnerships, community expansion, and multi-chain business development",
         "Led ecosystem growth initiatives across Ethereum, Base, Solana, and Polygon",
         "Built structured collaboration frameworks and developed early GTM narratives and partnership systems",
-        "Laid the groundwork for research, systems thinking, and strategic audits — now carried forward through Blindspot Labs"
+        "Laid the groundwork for research, systems thinking, and strategic audits now carried forward through Blindspot Labs"
       ],
       highlight: false
     },
