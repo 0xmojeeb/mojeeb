@@ -67,18 +67,26 @@ const About = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Web3 Ecosystems</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  I work across multiple chains and understand the culture, speed, and growth dynamics of each.
-                  I build growth systems that adapt to chain culture, community expectations, and ecosystem strategy.
+                  I work across multiple chains and focus on how ecosystem design, culture, and incentives shape growth. My approach adapts strategy to chain-specific dynamics, community behavior, and ecosystem structure — rather than applying one-size-fits-all tactics.
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary">Ethereum</Badge>
-                  <Badge variant="secondary">Base</Badge>
-                  <Badge variant="secondary">Solana</Badge>
-                  <Badge variant="secondary">Polygon</Badge>
-                  <Badge variant="secondary">Avalanche</Badge>
-                  <Badge variant="secondary">DAOs</Badge>
-                  <Badge variant="secondary">NFTs</Badge>
-                  <Badge variant="secondary">DeFi</Badge>
+                <div className="mb-4">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">Ecosystems:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Ethereum</Badge>
+                    <Badge variant="secondary">Base</Badge>
+                    <Badge variant="secondary">Solana</Badge>
+                    <Badge variant="secondary">Polygon</Badge>
+                    <Badge variant="secondary">Avalanche</Badge>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-muted-foreground mb-2">Domains:</p>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">DAOs</Badge>
+                    <Badge variant="secondary">NFTs</Badge>
+                    <Badge variant="secondary">DeFi</Badge>
+                    <Badge variant="secondary">Protocols</Badge>
+                  </div>
                 </div>
               </div>
               <div>
