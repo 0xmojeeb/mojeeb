@@ -85,7 +85,7 @@ const Skills = () => {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <Network className="w-5 h-5 text-primary" />
-                <h3 className="text-lg font-semibold">Ecosystem Context</h3>
+                <h3 className="text-lg font-semibold">Ecosystem</h3>
               </div>
               <div className="space-y-4">
                 <div className="flex flex-wrap gap-2">
