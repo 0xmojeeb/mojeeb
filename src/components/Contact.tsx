@@ -109,9 +109,9 @@ const Contact = () => {
                 <CardContent className="p-8">
                   <h3 className="text-xl font-bold mb-4">Current Focus</h3>
                   <p className="text-muted-foreground mb-6">
-                    I'm actively building <span className="gradient-text font-semibold">EchelonHQ</span> and 
-                    looking for ambitious Web3 projects to collaborate with. Whether you need community growth, 
-                    strategic partnerships, or business development, let's explore how we can create mutual value.
+                    I'm actively building <span className="gradient-text font-semibold">Blindspot Labs</span>, 
+                    a research and strategy initiative focused on identifying structural blindspots in Web3 products, ecosystems, and narratives. 
+                    Whether you need system audits, ecosystem analysis, or strategic positioning, let's explore how we can work together.
                   </p>
                   
                   <div className="bg-primary/5 rounded-lg p-4">
