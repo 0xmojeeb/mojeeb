@@ -5,17 +5,30 @@ import { Building, Calendar, TrendingUp, Target, Star } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      company: "EchelonHQ (fka Anblabs)",
-      role: "Founder & Strategist",
-      period: "Aug 2024 – Present",
+      company: "Blindspot Labs",
+      role: "Founder & Research Lead",
+      period: "Dec 2024 – Present",
       type: "Founder",
       achievements: [
-        "Built a Web3-native ecosystem growth & collaboration studio",
-        "Created the DAETO Framework for scalable partnerships and BD ops",
-        "Led multi-chain ecosystem growth across ETH, Base, Solana, and Polygon",
-        "Designed GTM and narrative for EchelonPass & SHOB"
+        "Founded Blindspot Labs, a research and strategy startup focused on identifying structural blindspots in Web3 products, ecosystems, and narratives",
+        "Work centers on auditing systems, analyzing ecosystem design, incentive alignment, and positioning",
+        "Unpack why certain strategies fail at scale, translating insights into clear, actionable frameworks for founders and operators",
+        "Operates as a thinking and research layer, helping teams see what's often missed before execution compounds mistakes"
       ],
       highlight: true
+    },
+    {
+      company: "EchelonHQ (fka Anblabs)",
+      role: "Founder & Strategist",
+      period: "Aug 2024 – Dec 2024",
+      type: "Past",
+      achievements: [
+        "Founded EchelonHQ, a Web3-native growth and collaboration studio focused on ecosystem partnerships, community expansion, and multi-chain business development",
+        "Led ecosystem growth initiatives across Ethereum, Base, Solana, and Polygon",
+        "Built structured collaboration frameworks and developed early GTM narratives and partnership systems",
+        "Laid the groundwork for research, systems thinking, and strategic audits — now carried forward through Blindspot Labs"
+      ],
+      highlight: false
     },
     {
       company: "OnchainHQ",
@@ -133,7 +146,8 @@ const Experience = () => {
       Partnerships: "bg-gradient-to-r from-indigo-500 to-purple-500",
       Business: "bg-gradient-to-r from-yellow-500 to-orange-500",
       NFT: "bg-gradient-to-r from-pink-500 to-purple-500",
-      Community: "bg-gradient-to-r from-teal-500 to-green-500"
+      Community: "bg-gradient-to-r from-teal-500 to-green-500",
+      Past: "bg-gradient-to-r from-gray-500 to-gray-600"
     };
     return colors[type as keyof typeof colors] || "bg-gradient-to-r from-gray-500 to-gray-600";
   };
@@ -146,7 +160,7 @@ const Experience = () => {
             <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A track record of driving growth and building meaningful collaborations across the Web3 ecosystem
+            A record of building, transitioning, and refining systems across Web3.
           </p>
         </div>
 

@@ -82,13 +82,14 @@ const About = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-4">Current Focus — EchelonHQ</h3>
+                <h3 className="text-2xl font-bold mb-4">Current Focus — Blindspot Labs</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Founder of <span className="gradient-text font-semibold">EchelonHQ</span>, 
-                  a Web3-native growth and collaboration collective. Current work includes building EchelonPass NFT, 
-                  designing ecosystem-aligned collaboration systems, executing multi-chain BD workflows, 
-                  growing communities with strategic storytelling, creating frameworks for DAO expansion & partner alignment, 
-                  and building SHOB, a culture-layer for identity & ecosystem synergy.
+                  <span className="gradient-text font-semibold">Blindspot Labs</span> is my current startup and primary focus. 
+                  It operates as a research and strategy initiative dedicated to identifying blindspots in Web3 products, ecosystems, and narratives. 
+                  The work spans system audits, ecosystem analysis, incentive design, and positioning reviews, with insights shared through writing and public thinking.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mt-4">
+                  The goal is simple: help founders and operators see structural issues early, before they become expensive problems.
                 </p>
               </div>
             </div>
