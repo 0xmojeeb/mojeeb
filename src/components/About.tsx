@@ -1,27 +1,24 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Zap, Target } from "lucide-react";
+
 const About = () => {
-  const achievements = [{
+  const outcomes = [{
     icon: TrendingUp,
-    label: "90% MoM Engagement Increase",
-    value: "90%",
-    description: "OnchainHQ"
+    label: "Sustained engagement growth through system redesign",
+    context: "OnchainHQ"
   }, {
     icon: Users,
-    label: "Ecosystem Collaborations",
-    value: "200+",
-    description: "Delivered across multiple chains"
+    label: "Cross-ecosystem collaboration experience",
+    context: "200+ collaborations across multiple chains"
   }, {
     icon: Zap,
-    label: "Community Engagement Peak",
-    value: "95%",
-    description: "SkylosChain"
+    label: "High-participation community systems",
+    context: "SkylosChain"
   }, {
     icon: Target,
-    label: "Partnership Success Rate",
-    value: "8.5/10",
-    description: "DegenPirates"
+    label: "Repeatable partnership execution",
+    context: "DegenPirates"
   }];
   return <section id="about" className="py-20 px-6">
       <div className="container mx-auto">
@@ -46,17 +43,20 @@ const About = () => {
           </p>
         </div>
 
+        <div className="mb-8">
+          <h3 className="text-lg font-medium text-muted-foreground mb-2">Selected Outcomes</h3>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {achievements.map((achievement, index) => <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 animate-slide-in-left" style={{
+          {outcomes.map((outcome, index) => <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300 animate-slide-in-left" style={{
           animationDelay: `${index * 0.1}s`
         }}>
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <achievement.icon className="w-8 h-8 text-primary" />
+              <CardContent className="p-6">
+                <div className="w-12 h-12 mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <outcome.icon className="w-6 h-6 text-primary" />
                 </div>
-                <div className="achievement-number mb-2">{achievement.value}</div>
-                <h3 className="font-semibold mb-2">{achievement.label}</h3>
-                <p className="text-sm text-muted-foreground">{achievement.description}</p>
+                <h3 className="font-medium text-sm leading-relaxed mb-2">{outcome.label}</h3>
+                <p className="text-xs text-muted-foreground">{outcome.context}</p>
               </CardContent>
             </Card>)}
         </div>
