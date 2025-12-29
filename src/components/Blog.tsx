@@ -44,7 +44,7 @@ const Blog = () => {
             <span className="gradient-text">Featured Posts</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Insights on community building, Web3 growth, and the realities of scaling decentralized projects
+            Public thinking on systems, growth, and structural blindspots.
           </p>
         </div>
 
