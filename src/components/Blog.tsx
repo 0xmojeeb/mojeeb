@@ -5,33 +5,33 @@ import { ExternalLink } from "lucide-react";
 const Blog = () => {
   const blogPosts = [
     {
-      title: "How I Grew an NFT Project to 9k Followers in 3.5 Days, And The Mistake That Haunted Me After",
+      title: "Audit — Token Supply & Illusion of Scarcity",
+      description: "A structural analysis of token mechanics and how perceived scarcity shapes market behavior.",
+      link: "https://x.com/MojeebHQ/status/2005534320434299312?s=20",
+      platform: "Audit"
+    },
+    {
+      title: "Community Rewards Done Right",
+      description: "How to structure reward systems that honor early adopters and protect long-term trust.",
+      link: "https://mojeebhq.medium.com/community-rewards-done-right-stop-fvcking-over-your-early-users-e3ac552c3f9b",
+      platform: "Medium"
+    },
+    {
+      title: "How I Grew an NFT Project to 9k Followers (and the mistake after)",
       description: "A growth campaign deconstruction: what went right, what went wrong, and the lessons that reshaped my strategy.",
-      link: "https://x.com/0xMojeeb/status/1971794428789461365",
+      link: "https://x.com/MojeebHQ/status/1971794428789461365",
       platform: "X (Twitter)"
     },
     {
       title: "5 Myths About Community Growth",
-      description: "Dispelling the most common myths that hold back Web3 communities, and what actually drives engagement.",
-      link: "https://x.com/0xMojeeb/status/1974082528211304463",
+      description: "Dispelling the most common myths that hold back communities, and what actually drives engagement.",
+      link: "https://x.com/MojeebHQ/status/1974082528211304463",
       platform: "X (Twitter)"
     },
     {
-      title: "Community Rewards Done Right: Stop Fvcking Over Your Early Users",
-      description: "How to structure reward systems that honor early adopters and protect long-term trust.",
-      link: "https://0xmojeeb.medium.com/community-rewards-done-right-stop-fvcking-over-your-early-users-e3ac552c3f9b",
-      platform: "Medium"
-    },
-    {
-      title: "The Subtle Act of Not Giving a Fvck About Your Community: Community Building",
-      description: "Why caring too much can destroy your project, the counterintuitive art of leading with clarity, not chaos.",
-      link: "https://0xmojeeb.medium.com/the-subtle-act-of-not-giving-a-fvck-about-your-community-community-building-31043b5160aa",
-      platform: "Medium"
-    },
-    {
-      title: "The Subtle Act of Not Giving a Fvck About Your Community: Community Feedback",
-      description: "How to handle feedback like a pro, filtering noise, maintaining vision, and building with purpose.",
-      link: "https://0xmojeeb.medium.com/the-subtle-act-of-not-giving-a-fvck-about-your-community-community-building-6afe90b633f4",
+      title: "Basic Foundations of Community Building",
+      description: "The counterintuitive art of leading with clarity, not chaos.",
+      link: "https://mojeebhq.medium.com/the-subtle-act-of-not-giving-a-fvck-about-your-community-community-building-31043b5160aa",
       platform: "Medium"
     }
   ];
