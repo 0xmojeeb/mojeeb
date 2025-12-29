@@ -16,10 +16,10 @@ const Index = () => {
         </section>
         
         <About />
+        <Blog />
         <Experience />
         <Education />
         <Skills />
-        <Blog />
         <Contact />
       </main>
       
