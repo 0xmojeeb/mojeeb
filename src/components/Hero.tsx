@@ -35,7 +35,7 @@ const Hero = () => {
             </p>
             
             <p className="text-base text-muted-foreground mb-12 max-w-3xl lg:max-w-none">
-              Currently building <a href="http://bit.ly/BlindspotLabs" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Blindspot Labs</a> — a research and strategy initiative.
+              Currently building <a href="https://mojeebhq.medium.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Blindspot Labs</a> — a research and strategy initiative.
             </p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
