@@ -35,7 +35,7 @@ const Hero = () => {
             </p>
             
             <p className="text-base text-muted-foreground mb-12 max-w-3xl lg:max-w-none">
-              Currently building <a href="https://mojeebhq.medium.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Blindspot Labs</a> — a research and strategy initiative.
+              Currently building <a href="http://bit.ly/BlindspotLabs" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Blindspot Labs</a> — a research and strategy initiative.
             </p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
@@ -67,7 +67,7 @@ const Hero = () => {
             </a>
           </Button>
           <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full glow-effect" asChild>
-            <a href="https://0xmojeeb.medium.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://mojeebhq.medium.com" target="_blank" rel="noopener noreferrer">
               <BookOpen className="w-5 h-5" />
             </a>
           </Button>
