@@ -92,7 +92,7 @@ const About = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Current Focus — Blindspot Labs</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  <a href="http://bit.ly/BlindspotLabs" target="_blank" rel="noopener noreferrer" className="gradient-text font-semibold hover:underline">Blindspot Labs</a> is my current startup and primary focus. 
+                  <a href="https://mojeebhq.medium.com" target="_blank" rel="noopener noreferrer" className="gradient-text font-semibold hover:underline">Blindspot Labs</a> is my current startup and primary focus. 
                   It operates as a research and strategy initiative dedicated to identifying blindspots in Web3 products, ecosystems, and narratives. 
                   The work spans system audits, ecosystem analysis, incentive design, and positioning reviews, with insights shared through writing and public thinking.
                 </p>
