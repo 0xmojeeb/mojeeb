@@ -30,8 +30,12 @@ const Hero = () => {
               Growth, partnerships, and ecosystem strategy across Web3.
             </h2>
             
-            <p className="text-lg text-muted-foreground mb-12 max-w-3xl lg:max-w-none leading-relaxed">
+            <p className="text-lg text-muted-foreground mb-6 max-w-3xl lg:max-w-none leading-relaxed">
               I help teams design and execute systems that scale communities, collaborations, and networks across Ethereum, Base, Solana, Polygon, and Avalanche.
+            </p>
+            
+            <p className="text-base text-muted-foreground mb-12 max-w-3xl lg:max-w-none">
+              Currently building <a href="http://bit.ly/BlindspotLabs" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Blindspot Labs</a> — a research and strategy initiative.
             </p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">

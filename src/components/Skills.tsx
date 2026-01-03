@@ -57,6 +57,9 @@ const Skills = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Systems and strategic capabilities developed through hands-on work across Web3 ecosystems.
           </p>
+          <p className="text-sm text-muted-foreground max-w-3xl mx-auto mt-4">
+            Research and strategy work via <a href="http://bit.ly/BlindspotLabs" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Blindspot Labs</a>.
+          </p>
         </div>
 
         {/* Core Capabilities */}
