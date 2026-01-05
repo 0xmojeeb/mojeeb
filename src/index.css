@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Web3 Portfolio Orange/Black Theme */
+    /* Web3 Portfolio Purple/Black Theme */
     --background: 0 0% 0%;
     --foreground: 0 0% 98%;
 
@@ -18,16 +18,16 @@ All colors MUST be HSL.
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 21 100% 50%;
+    --primary: 258 71% 48%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 21 30% 20%;
+    --secondary: 258 30% 20%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 21 100% 50%;
+    --accent: 258 71% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -35,14 +35,14 @@ All colors MUST be HSL.
 
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 21 100% 50%;
+    --ring: 258 71% 48%;
 
     /* Web3 Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(21 100% 50%), hsl(21 100% 45%));
-    --gradient-secondary: linear-gradient(135deg, hsl(21 30% 20%), hsl(0 0% 5%));
-    --gradient-accent: linear-gradient(135deg, hsl(21 100% 50%), hsl(21 100% 60%));
-    --glow-primary: 0 0 30px hsl(21 100% 50% / 0.5);
-    --glow-accent: 0 0 40px hsl(21 100% 50% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(258 71% 48%), hsl(258 71% 42%));
+    --gradient-secondary: linear-gradient(135deg, hsl(258 30% 20%), hsl(0 0% 5%));
+    --gradient-accent: linear-gradient(135deg, hsl(258 71% 48%), hsl(258 71% 58%));
+    --glow-primary: 0 0 30px hsl(258 71% 48% / 0.5);
+    --glow-accent: 0 0 40px hsl(258 71% 48% / 0.3);
     
     --radius: 0.75rem;
 
@@ -71,19 +71,19 @@ All colors MUST be HSL.
     --card-foreground: 220 26% 5%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 26% 5%;
-    --primary: 21 100% 50%;
+    --primary: 258 71% 48%;
     --primary-foreground: 0 0% 0%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 220 26% 5%;
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
-    --accent: 21 100% 50%;
+    --accent: 258 71% 48%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 21 100% 50%;
+    --ring: 258 71% 48%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
