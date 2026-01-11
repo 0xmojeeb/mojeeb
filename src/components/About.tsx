@@ -33,13 +33,10 @@ const About = () => {
             Over the past few years, I've collaborated with Web3 protocols, DAOs, NFT projects, and early-stage teams to help them design systems that scale, not just grow fast, but grow deliberately. My work spans ecosystem partnerships, community-led execution, and go-to-market coordination across networks like Ethereum, Base, Solana, Polygon, and Avalanche.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            I'm especially interested in how systems break, why growth stalls, and what actually moves the needle beyond surface-level tactics. That curiosity has shaped how I approach collaboration: clear incentives, aligned stakeholders, and execution that compounds over time.
+            I am currently the <span className="font-semibold text-foreground">Founder of Blindspot Labs</span>, where I lead a research initiative focused on the <span className="font-semibold text-foreground">2026 Series</span>, a framework for identifying structural blindspots in Web3 products and creator execution systems. My work moves beyond surface-level growth to focus on <span className="font-semibold text-foreground">ecosystem longevity</span> and <span className="font-semibold text-foreground">high-output strategy</span>.
           </p>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4">
-            Outside of direct work, I write and think in public, sharing observations on structure, strategy, and clarity as they form. Not everything becomes a framework. Some things are simply notes from the field.
-          </p>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-4 font-semibold">
-            This site is a record of that work, that thinking, and the systems built along the way.
+            My approach is built on the belief that in 2026, <span className="font-semibold text-foreground">longevity is the ultimate leverage</span>. Whether auditing token mechanics or designing "Maker vs. Manager" workflows, my goal is to help founders see structural issues early, before they become expensive problems.
           </p>
         </div>
 
