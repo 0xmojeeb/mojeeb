@@ -5,6 +5,24 @@ import { ExternalLink } from "lucide-react";
 const Blog = () => {
   const blogPosts = [
     {
+      title: "CREATORS IN 2026 WILL STRUGGLE WITHOUT THIS",
+      description: "An analysis of the internal system errors causing creator burnout and the structural blindspots for 2026 founders.",
+      link: "https://x.com/MojeebHQ/status/2009497216109695467?s=20",
+      platform: "Strategy"
+    },
+    {
+      title: "The 2026 Product Blueprint",
+      description: "A strategic deep dive into the next wave of Web3 products, moving from fragmented growth to integrated ecosystem design.",
+      link: "https://x.com/MojeebHQ/status/2009997538267435511?s=20",
+      platform: "Research"
+    },
+    {
+      title: "The 2026 Execution Pack",
+      description: "A burnout-free weekly system for high-output founders, implementing the 'Maker vs. Manager' split and spiritual anchors.",
+      link: "https://x.com/MojeebHQ/status/2010457986670448657?s=20",
+      platform: "Strategy"
+    },
+    {
       title: "Audit — Token Supply & Illusion of Scarcity",
       description: "A structural analysis of token mechanics and how perceived scarcity shapes market behavior.",
       link: "https://x.com/MojeebHQ/status/2005534320434299312?s=20",
@@ -21,18 +39,6 @@ const Blog = () => {
       description: "A growth campaign deconstruction: what went right, what went wrong, and the lessons that reshaped my strategy.",
       link: "https://x.com/MojeebHQ/status/1971794428789461365",
       platform: "X (Twitter)"
-    },
-    {
-      title: "5 Myths About Community Growth",
-      description: "Dispelling the most common myths that hold back communities, and what actually drives engagement.",
-      link: "https://x.com/MojeebHQ/status/1974082528211304463",
-      platform: "X (Twitter)"
-    },
-    {
-      title: "Basic Foundations of Community Building",
-      description: "The counterintuitive art of leading with clarity, not chaos.",
-      link: "https://mojeebhq.medium.com/the-subtle-act-of-not-giving-a-fvck-about-your-community-community-building-31043b5160aa",
-      platform: "Medium"
     }
   ];
 
