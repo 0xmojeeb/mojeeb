@@ -13,7 +13,8 @@ const Experience = () => {
         "Founded Blindspot Labs, a research and strategy startup focused on identifying structural blindspots in Web3 products, ecosystems, and narratives",
         "Work centers on auditing systems, analyzing ecosystem design, incentive alignment, and positioning",
         "Unpack why certain strategies fail at scale, translating insights into clear, actionable frameworks for founders and operators",
-        "Operates as a thinking and research layer, helping teams see what's often missed before execution compounds mistakes"
+        "Operates as a thinking and research layer, helping teams see what's often missed before execution compounds mistakes",
+        "Author of the '2026 Series,' a research initiative focused on ecosystem longevity, founder execution systems, and strategic blindspots in Web3"
       ],
       highlight: true
     },
