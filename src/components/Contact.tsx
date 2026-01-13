@@ -1,133 +1,115 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, MessageSquare, Linkedin, Twitter, Network, TrendingUp, Users, FileText } from "lucide-react";
+import { Mail, MessageSquare, Linkedin, Twitter, Network, TrendingUp, Users, FileText, ArrowRight } from "lucide-react";
 
 const Contact = () => {
-  const workAreas = [
-    {
-      icon: Network,
-      title: "Ecosystem & Partnership Strategy",
-    },
-    {
-      icon: TrendingUp,
-      title: "Growth Systems & Market Expansion",
-    },
-    {
-      icon: Users,
-      title: "Community & Participation Design",
-    },
-    {
-      icon: FileText,
-      title: "Positioning, Narrative & Content Strategy",
-    },
-  ];
-
-  const contactMethods = [
-    {
-      icon: Mail,
-      title: "Email",
-      description: "mojeeb.eth@gmail.com",
-      note: "Best for detailed context or longer discussions.",
-      color: "bg-blue-500",
-      href: "mailto:mojeeb.eth@gmail.com",
-    },
-    {
-      icon: MessageSquare,
-      title: "Telegram",
-      description: "@mojeebhq",
-      note: "Quick conversations and early alignment.",
-      color: "bg-sky-400",
-      href: "https://t.me/mojeebhq",
-    },
-    {
-      icon: Linkedin,
-      title: "LinkedIn",
-      description: "linkedin.com/in/mojeebhq",
-      note: "Professional context and background.",
-      color: "bg-blue-600",
-      href: "https://linkedin.com/in/mojeebhq",
-    },
-    {
-      icon: Twitter,
-      title: "X (Twitter)",
-      description: "@MojeebHQ",
-      note: "Public thinking and real-time ideas.",
-      color: "bg-black",
-      href: "https://x.com/MojeebHQ",
-    },
-  ];
-
   return (
-    <section id="contact" className="py-20 px-6">
+    <section id="contact" className="py-24 px-6 bg-background">
       <div className="container mx-auto">
-        {/* Work & Collaboration Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Work & <span className="gradient-text">Collaboration</span>
+        {/* HEADER */}
+        <div className="max-w-4xl mb-16 text-left">
+          <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">
+            Strategic Access
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-white">
+            Work & <span className="gradient-text">Collaboration.</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm open to conversations where thinking, structure, and long-term alignment matter.
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            I'm open to conversations where thinking, structure, and long-term alignment matter. If there's alignment, we'll figure out the shape together.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Work Areas */}
-          <Card className="glass-card mb-8 animate-fade-in">
+        <div className="max-w-4xl mx-auto space-y-6">
+          {/* WORK AREAS GRID */}
+          <Card className="glass-card border-white/10 bg-white/5 overflow-hidden">
             <CardContent className="p-8">
-              <p className="text-muted-foreground mb-6">This includes work around:</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {workAreas.map((area, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 p-3 bg-background/30 rounded-lg"
-                  >
-                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                      <area.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="font-medium">{area.title}</span>
-                  </div>
-                ))}
+              <p className="text-primary text-[10px] font-bold tracking-widest uppercase mb-8">Core Focus Areas</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 group hover:border-primary/30 transition-colors">
+                  <Network className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-bold text-white uppercase tracking-tight">Ecosystem & Partnership Strategy</span>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 group hover:border-primary/30 transition-colors">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-bold text-white uppercase tracking-tight">Growth Systems & Market Expansion</span>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 group hover:border-primary/30 transition-colors">
+                  <Users className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-bold text-white uppercase tracking-tight">Community & Participation Design</span>
+                </div>
+                <div className="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5 group hover:border-primary/30 transition-colors">
+                  <FileText className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-bold text-white uppercase tracking-tight">Positioning & Narrative Strategy</span>
+                </div>
               </div>
-              <p className="text-muted-foreground mt-6 text-sm">
-                If there's alignment, we'll figure out the shape together.
-              </p>
             </CardContent>
           </Card>
 
-          {/* Connect Section */}
-          <Card className="glass-card animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Connect</h3>
-              <p className="text-muted-foreground mb-6">
-                If you'd like to start a conversation around strategy, systems, or collaboration, you can reach me here:
-              </p>
-              <div className="space-y-4">
-                {contactMethods.map((method, index) => (
-                  <a
-                    key={index}
-                    href={method.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-background/30 rounded-lg hover:bg-background/50 transition-colors cursor-pointer group"
-                  >
-                    <div
-                      className={`w-12 h-12 ${method.color} rounded-full flex items-center justify-center text-white group-hover:scale-110 transition-transform`}
-                    >
-                      <method.icon className="w-6 h-6" />
+          {/* CONTACT METHODS - HARDCODED FOR STABILITY */}
+          <div className="grid grid-cols-1 gap-4">
+            {/* EMAIL */}
+            <a href="mailto:mojeeb.eth@gmail.com" className="group">
+              <Card className="glass-card hover:border-primary/50 transition-all duration-300">
+                <CardContent className="p-6 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                  <div className="flex items-center gap-6 w-full">
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">
+                      <Mail className="w-6 h-6" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-semibold">{method.title}</h4>
-                      <p className="text-sm text-muted-foreground">{method.description}</p>
-                      <p className="text-xs text-muted-foreground/70 mt-1">{method.note}</p>
+                    <div>
+                      <h4 className="font-bold text-white">Email</h4>
+                      <p className="text-sm text-muted-foreground">mojeeb.eth@gmail.com</p>
+                      <p className="text-[10px] text-muted-foreground/50 uppercase mt-1">Best for detailed context</p>
                     </div>
-                    <Button variant="ghost" size="sm" className="shrink-0">
-                      Start a conversation
-                    </Button>
-                  </a>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  </div>
+                  <Button variant="ghost" className="hidden md:flex gap-2 text-[10px] uppercase tracking-widest font-bold group-hover:text-primary">
+                    Send Mail <ArrowRight className="w-3 h-3" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </a>
+
+            {/* TELEGRAM */}
+            <a href="https://t.me/mojeebhq" target="_blank" className="group">
+              <Card className="glass-card hover:border-primary/50 transition-all duration-300">
+                <CardContent className="p-6 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                  <div className="flex items-center gap-6 w-full">
+                    <div className="w-12 h-12 bg-sky-400/20 rounded-full flex items-center justify-center text-sky-400">
+                      <MessageSquare className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white">Telegram</h4>
+                      <p className="text-sm text-muted-foreground">@mojeebhq</p>
+                      <p className="text-[10px] text-muted-foreground/50 uppercase mt-1">Quick conversations & alignment</p>
+                    </div>
+                  </div>
+                  <Button variant="ghost" className="hidden md:flex gap-2 text-[10px] uppercase tracking-widest font-bold group-hover:text-primary">
+                    Open Chat <ArrowRight className="w-3 h-3" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </a>
+
+            {/* TWITTER */}
+            <a href="https://x.com/MojeebHQ" target="_blank" className="group">
+              <Card className="glass-card hover:border-primary/50 transition-all duration-300">
+                <CardContent className="p-6 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                  <div className="flex items-center gap-6 w-full">
+                    <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white">
+                      <Twitter className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white">X (Twitter)</h4>
+                      <p className="text-sm text-muted-foreground">@MojeebHQ</p>
+                      <p className="text-[10px] text-muted-foreground/50 uppercase mt-1">Real-time ideas & thinking</p>
+                    </div>
+                  </div>
+                  <Button variant="ghost" className="hidden md:flex gap-2 text-[10px] uppercase tracking-widest font-bold group-hover:text-primary">
+                    Follow <ArrowRight className="w-3 h-3" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
         </div>
       </div>
     </section>
