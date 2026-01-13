@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, BookOpen, Briefcase, Award, Mail, PenTool } from "lucide-react";
+import { Menu, X, Home, User, BookOpen, Briefcase, Award, Mail, PenTool, Circle } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,113 +17,126 @@ const Navigation = () => {
   ];
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const sections = navItems.map(item => document.getElementById(item.id));
-          const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 150;
 
-          for (let i = sections.length - 1; i >= 0; i--) {
-            const section = sections[i];
-            if (section && section.offsetTop <= scrollPosition) {
-              setActiveSection(navItems[i].id);
-              break;
-            }
+      for (const item of navItems) {
+        const section = document.getElementById(item.id);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(item.id);
           }
-          ticking = false;
-        });
-        ticking = true;
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check initial position
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
     setIsOpen(false);
   };
 
   return (
     <>
-      {/* Desktop Navigation */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 hidden md:block">
-        <div className="glass-card px-6 py-3">
-          <div className="flex items-center gap-2">
+      {/* BRAND LOGO - LEFT */}
+      <div className="fixed top-6 left-6 z-[60]">
+        <Button
+          variant="ghost"
+          onClick={() => scrollToSection("hero")}
+          className="group flex items-center gap-2 p-0 hover:bg-transparent"
+        >
+          <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500">
+            <span className="text-black font-black text-xs">M</span>
+          </div>
+          <span className="text-lg font-bold tracking-tighter text-white hidden sm:block">
+            MOJEEB<span className="text-primary text-xl">.</span>
+          </span>
+        </Button>
+      </div>
+
+      {/* DESKTOP NAV - CENTER */}
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden md:block">
+        <div className="bg-black/40 backdrop-blur-xl border border-white/10 px-2 py-1.5 rounded-full shadow-2xl">
+          <div className="flex items-center gap-1">
             {navItems.map((item) => (
               <Button
                 key={item.id}
-                variant={activeSection === item.id ? "default" : "ghost"}
+                variant="ghost"
                 size="sm"
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-all duration-200 ${
+                className={`relative px-4 py-2 rounded-full transition-all duration-300 group ${
                   activeSection === item.id 
-                    ? "glow-effect" 
-                    : "hover:bg-primary/10"
+                    ? "text-primary bg-primary/10" 
+                    : "text-muted-foreground hover:text-white"
                 }`}
               >
-                <item.icon className="w-4 h-4 mr-2" />
-                {item.label}
+                <span className="text-[10px] font-bold uppercase tracking-widest relative z-10 flex items-center gap-2">
+                  {activeSection === item.id && (
+                    <Circle className="w-1.5 h-1.5 fill-primary text-primary animate-pulse" />
+                  )}
+                  {item.label}
+                </span>
               </Button>
             ))}
           </div>
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <nav className="md:hidden">
-        {/* Mobile Menu Button */}
+      {/* MOBILE TRIGGER - RIGHT */}
+      <div className="fixed top-6 right-6 z-[60] md:hidden">
         <Button
-          variant="default"
+          variant="outline"
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
-          className="fixed top-6 right-6 z-50 glow-effect"
+          className={`rounded-xl border-white/10 bg-black/50 backdrop-blur-md transition-all ${
+            isOpen ? "rotate-90 border-primary" : ""
+          }`}
         >
-          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {isOpen ? <X className="w-5 h-5 text-primary" /> : <Menu className="w-5 h-5 text-white" />}
         </Button>
+      </div>
 
-        {/* Mobile Menu Overlay */}
-        {isOpen && (
-          <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md">
-            <div className="flex items-center justify-center min-h-screen">
-              <div className="text-center space-y-6">
-                {navItems.map((item, index) => (
-                  <Button
-                    key={item.id}
-                    variant={activeSection === item.id ? "default" : "ghost"}
-                    size="lg"
-                    onClick={() => scrollToSection(item.id)}
-                    className={`w-48 justify-start transition-all duration-200 animate-fade-in ${
-                      activeSection === item.id ? "glow-effect" : ""
-                    }`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <item.icon className="w-5 h-5 mr-3" />
-                    {item.label}
-                  </Button>
-                ))}
-              </div>
-            </div>
+      {/* MOBILE OVERLAY */}
+      <div className={`fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl transition-transform duration-500 md:hidden ${
+        isOpen ? "translate-y-0" : "-translate-y-full"
+      }`}>
+        <div className="flex flex-col items-center justify-center h-full gap-8">
+          {navItems.map((item, index) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`flex items-center gap-4 text-3xl font-bold transition-all ${
+                activeSection === item.id ? "text-primary scale-110" : "text-white/40 hover:text-white"
+              }`}
+              style={{ transitionDelay: `${index * 50}ms` }}
+            >
+              <item.icon className={`w-6 h-6 ${activeSection === item.id ? "text-primary" : "text-white/20"}`} />
+              <span className="uppercase tracking-tighter">{item.label}</span>
+            </button>
+          ))}
+          
+          <div className="mt-12 pt-8 border-t border-white/10 w-48 text-center">
+            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026</p>
           </div>
-        )}
-      </nav>
-
-      {/* Brand Logo */}
-      <div className="fixed top-6 left-6 z-50">
-        <Button
-          variant="ghost"
-          onClick={() => scrollToSection("hero")}
-          className="text-xl font-bold gradient-text hover:scale-105 transition-transform"
-        >
-          Mojeeb
-        </Button>
+        </div>
       </div>
     </>
   );
