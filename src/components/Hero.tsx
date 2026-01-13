@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Github, Linkedin, Twitter, BookOpen } from "lucide-react";
@@ -7,15 +6,12 @@ const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
-      {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       </div>
@@ -27,36 +23,21 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="gradient-text">Mojeeb</span>
             </h1>
-            
-            <h2 className="text-xl md:text-2xl text-foreground mb-8 max-w-4xl lg:max-w-none font-semibold">
+            <h2 className="text-xl md:text-2xl text-foreground mb-8 font-semibold">
               Growth, partnerships, and ecosystem strategy across Web3.
             </h2>
-            
-            <p className="text-lg text-muted-foreground mb-6 max-w-3xl lg:max-w-none leading-relaxed">
-              I help teams design and execute systems that scale communities, collaborations, and networks across Ethereum, Base, Solana, Polygon, and Avalanche.
+            <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+              Currently building <a target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium" href="https://blindspotlabs.lovable.app/">Blindspot Labs</a>.
             </p>
-            
-            <p className="text-base text-muted-foreground mb-12 max-w-3xl lg:max-w-none">
-              Currently building <a target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium" href="https://blindspotlabs.lovable.app/">Blindspot Labs</a> — a research and strategy initiative.
-            </p>
-            
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
-              <Button size="lg" className="px-8 py-6 text-lg glow-effect rounded-full" onClick={() => scrollToSection('contact')}>Let's Discuss Strategy</Button>
-              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg rounded-full" onClick={() => scrollToSection('experience')}>
-                View My Work
-              </Button>
+              <Button size="lg" className="px-8 py-6 text-lg rounded-full" onClick={() => scrollToSection('contact')}>Let's Discuss Strategy</Button>
             </div>
           </div>
           
-          {/* IMAGE SIDE: The Offset "Blindspot" Style */}
+          {/* THE IMAGE: Standard Div instead of Framer Motion to prevent blank screen */}
           <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-56 h-56 md:w-72 md:h-72 relative shrink-0"
-            >
-              {/* The rotated background logic you requested */}
+            <div className="w-56 h-56 md:w-72 md:h-72 relative shrink-0 transition-all duration-500 hover:scale-105">
+              {/* The rotated background logic */}
               <div className="absolute inset-0 bg-primary rounded-2xl rotate-6 z-0 opacity-20" />
               
               <img 
@@ -64,35 +45,19 @@ const Hero = () => {
                 alt="Mojeeb - Founder" 
                 className="relative z-10 w-full h-full object-cover rounded-2xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" 
               />
-              
-              {/* Optional Purple Outer Glow */}
-              <div className="absolute inset-0 rounded-2xl shadow-[0_0_40px_rgba(139,92,246,0.2)] pointer-events-none" />
-            </motion.div>
+            </div>
           </div>
         </div>
-        
+
         {/* Social Icons */}
         <div className="flex justify-center gap-6 mt-8">
           <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full border border-white/5 bg-white/5 hover:bg-primary/20" asChild>
-            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-5 h-5" />
-            </a>
+            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noopener noreferrer"><Linkedin className="w-5 h-5" /></a>
           </Button>
           <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full border border-white/5 bg-white/5 hover:bg-primary/20" asChild>
-            <a href="https://x.com/MojeebHQ" target="_blank" rel="noopener noreferrer">
-              <Twitter className="w-5 h-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full border border-white/5 bg-white/5 hover:bg-primary/20" asChild>
-            <a href="https://mojeebhq.medium.com" target="_blank" rel="noopener noreferrer">
-              <BookOpen className="w-5 h-5" />
-            </a>
+            <a href="https://x.com/MojeebHQ" target="_blank" rel="noopener noreferrer"><Twitter className="w-5 h-5" /></a>
           </Button>
         </div>
-      </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-muted-foreground" />
       </div>
     </section>
   );
