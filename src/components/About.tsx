@@ -4,12 +4,15 @@ import { Users, TrendingUp, Zap, Target, Eye, ShieldCheck, Gauge } from "lucide-
 
 const About = () => {
   const ecosystems = [
-    const ecosystems = [
-    { name: "ETHEREUM", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/eth/eth.svg" },
-    { name: "BASE", logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/white/base-symbol-white.svg" },
-    { name: "SOLANA", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/sol/sol.svg" },
-    { name: "POLYGON", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/matic/matic.svg" },
-    { name: "AVALANCHE", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/avax/avax.svg" },
+    { name: "ETHEREUM", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" },
+    // BASE LOGO: Embedded as a Data URI to ensure 100% stability
+    { 
+      name: "BASE", 
+      logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQ5IiBoZWlnaHQ9IjI0OSIgdmlld0JveD0iMCAwIDI0OSAyNDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxwYXRoIGQ9Ik0wIDE5LjY3MUMwIDEyLjkzMzIgMCA5LjU2NDI1IDEuMjY5NTYgNi45NzI3NkMyLjQ4NTExIDQuNDkxNTEgNC40OTE1MSAyLjQ4NTExIDYuOTcyNzYgMS4yNjk1NlM5LjU2NDI1IDAgMTIuOTMzMiAwSDIyOS4zMjlDMjM2LjA2NyAwIDIzOS40MzYgMCAyNDIuMDI3IDEuMjY5NTZDMjQ0LjUwOCAyLjQ4NTExIDI0Ni41MTUgNC40OTE1MSAyNDcuNzMgNi45NzI3NkMyNDkgOS41NjQyNSAyNDkgMTIuOTMzMiAyNDkgMTkuNjcxVjIyOS4zMjlDMjQ5IDIzNi4wNjcgMjQ5IDIzOS40MzYgMjQ3LjczIDI0Mi4wMjdDMjQ2LjUxNSAyNDQuNTA4IDI0NC41MDggMjQ2LjUxNSAyNDIuMDI3IDI0Ny43M0MyMzkuNDM2IDI0OSAyMzYuMDY3IDI0OSAyMjkuMzI5IDI0OUgxOS42NzFDMTIuOTMzMiAyNDkgOS41NjQyNSAyNDkgNi45NzI3NiAyNDcuNzNDNC40OTE1MSAyNDYuNTE1IDIuNDg1MTEgMjQ0LjUwOCAxLjI2OTU2IDI0Mi4wMjdDMCAyMzkuNDM2IDAgMjM2LjA2NyAwIDIyOS4zMjlWMTkuNjcxWiIgZmlsbD0iIzAwMDBGRiIvPiA8L3N2Zz4=" 
+    },
+    { name: "SOLANA", logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" },
+    { name: "POLYGON", logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" },
+    { name: "AVALANCHE", logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" },
   ];
 
   return (
@@ -23,7 +26,7 @@ const About = () => {
           <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
             Longevity is the <span className="gradient-text">Ultimate Leverage.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-6">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed italic border-l-2 border-primary/30 pl-6 text-white">
             "I help teams design systems that grow deliberately, identifying structural blindspots before they become expensive problems."
           </p>
         </div>
@@ -32,11 +35,11 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
           {/* Left Column: The Persona */}
           <div className="lg:col-span-5 space-y-6 animate-slide-in-left">
-            <h3 className="text-2xl font-bold">Mojeeb</h3>
+            <h3 className="text-2xl font-bold text-white">Mojeeb</h3>
             <p className="text-muted-foreground leading-relaxed">
               Strategist working at the intersection of partnerships and ecosystem growth. 
               I’ve collaborated with Web3 protocols, DAOs, and early-stage teams across 
-              <span className="text-foreground font-medium"> Ethereum, Base, Solana, and Polygon</span> 
+              <span className="text-foreground font-medium text-white"> Ethereum, Base, Solana, and Polygon</span> 
               to move beyond surface-level growth.
             </p>
             <div className="space-y-4 pt-4">
@@ -44,13 +47,13 @@ const About = () => {
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <Eye className="w-5 h-5 text-primary" />
                 </div>
-                <p className="text-sm font-medium">Structural Audit Specialist</p>
+                <p className="text-sm font-medium text-white">Structural Audit Specialist</p>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-5 h-5 text-primary" />
                 </div>
-                <p className="text-sm font-medium">Incentive & Token Design</p>
+                <p className="text-sm font-medium text-white">Incentive & Token Design</p>
               </div>
             </div>
           </div>
@@ -59,26 +62,26 @@ const About = () => {
           <div className="lg:col-span-7">
             <Card className="glass-card border-primary/20 bg-primary/5 overflow-hidden relative">
               <div className="absolute top-0 right-0 p-4 opacity-10">
-                <Gauge size={120} />
+                <Gauge size={120} className="text-primary" />
               </div>
               <CardContent className="p-8 md:p-10">
-                <Badge className="mb-4 bg-primary text-white hover:bg-primary">Current Focus</Badge>
-                <h3 className="text-3xl font-bold mb-6">Blindspot Labs</h3>
+                <Badge className="mb-4 bg-primary text-white hover:bg-primary border-none">Current Focus</Badge>
+                <h3 className="text-3xl font-bold mb-6 text-white">Blindspot Labs</h3>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  A research initiative dedicated to the <span className="text-foreground font-semibold">2026 Series</span>. 
+                  A research initiative dedicated to the <span className="text-white font-semibold">2026 Series</span>. 
                   We unpack why certain strategies fail at scale, translating insights into high-output frameworks for founders.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Ecosystems</p>
                     <div className="flex flex-wrap gap-1">
-                      {['Base', 'Solana', 'ETH'].map(t => <span key={t} className="text-xs font-bold px-2 py-1 bg-white/5 rounded">{t}</span>)}
+                      {['Base', 'Solana', 'ETH'].map(t => <span key={t} className="text-[10px] font-bold px-2 py-1 bg-white/10 rounded text-white">{t}</span>)}
                     </div>
                   </div>
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Domains</p>
                     <div className="flex flex-wrap gap-1">
-                      {['DAOs', 'NFTs', 'DeFi'].map(t => <span key={t} className="text-xs font-bold px-2 py-1 bg-white/5 rounded">{t}</span>)}
+                      {['DAOs', 'NFTs', 'DeFi'].map(t => <span key={t} className="text-[10px] font-bold px-2 py-1 bg-white/10 rounded text-white">{t}</span>)}
                     </div>
                   </div>
                 </div>
@@ -92,14 +95,19 @@ const About = () => {
 
         {/* 3. ECOSYSTEM LOGO RIBBON */}
         <div className="mt-20 pt-12 border-t border-white/5">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-10 text-center lg:text-left">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-10 text-center lg:text-left font-bold">
             Systems Architecture Across
           </p>
           <div className="flex flex-wrap justify-center lg:justify-start gap-x-12 gap-y-8">
             {ecosystems.map((eco) => (
               <div key={eco.name} className="group flex items-center gap-3 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-crosshair">
-                <img src={eco.logo} alt={eco.name} className="w-6 h-6 object-contain" />
-                <span className="text-[11px] font-bold tracking-widest text-foreground group-hover:text-primary transition-colors">
+                <img 
+                  src={eco.logo} 
+                  alt={eco.name} 
+                  className="w-6 h-6 object-contain" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+                <span className="text-[11px] font-bold tracking-widest text-white group-hover:text-primary transition-colors">
                   {eco.name}
                 </span>
               </div>
