@@ -61,7 +61,7 @@ const About = () => {
           <CardContent className="p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold mb-4">Web3 Ecosystems</h3>
+                <h3 className="text-2xl font-bold mb-4">I work across multiple chains and focus on how ecosystem design, culture, and incentives shape growth. My approach adapts strategy to chain-specific dynamics, community behavior, and ecosystem structure, rather than applying one-size-fits-all tactics.</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   I work across multiple chains and focus on how ecosystem design, culture, and incentives shape growth. My approach adapts strategy to chain-specific dynamics, community behavior, and ecosystem structure — rather than applying one-size-fits-all tactics.
                 </p>
