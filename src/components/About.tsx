@@ -3,6 +3,14 @@ import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Zap, Target, Eye, ShieldCheck, Gauge } from "lucide-react";
 
 const About = () => {
+  const ecosystems = [
+    { name: "ETHEREUM", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" },
+    { name: "BASE", logo: "https://cryptologos.cc/logos/base-base-logo.svg?v=024" },
+    { name: "SOLANA", logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" },
+    { name: "POLYGON", logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" },
+    { name: "AVALANCHE", logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" },
+  ];
+
   return (
     <section id="about" className="py-24 px-6 bg-background/50">
       <div className="container mx-auto">
@@ -78,6 +86,23 @@ const About = () => {
                 </a>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* 3. ECOSYSTEM LOGO RIBBON */}
+        <div className="mt-20 pt-12 border-t border-white/5">
+          <p className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-10 text-center lg:text-left">
+            Systems Architecture Across
+          </p>
+          <div className="flex flex-wrap justify-center lg:justify-start gap-x-12 gap-y-8">
+            {ecosystems.map((eco) => (
+              <div key={eco.name} className="group flex items-center gap-3 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-crosshair">
+                <img src={eco.logo} alt={eco.name} className="w-6 h-6 object-contain" />
+                <span className="text-[11px] font-bold tracking-widest text-foreground group-hover:text-primary transition-colors">
+                  {eco.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
