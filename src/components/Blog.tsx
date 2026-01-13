@@ -9,48 +9,43 @@ const Blog = () => {
       description: "The basic foundations of community building are Emotional Intelligence and Communication. A counter-intuitive look at authentic engagement.",
       link: "https://mojeebhq.medium.com/the-subtle-act-of-not-giving-a-fvck-about-your-community-community-building-31043b5160aa",
       platform: "Foundation",
-      isLarge: true
+      layout: "col-span-1 md:col-span-2", // Takes up 2/4 of the width
+      isPrimary: true
     },
     {
-      title: "One of the greatest hacks for community and brand growth is FEEDBACK",
-      description: "You can never go wrong with feeding on community feedback. Learn how to turn raw input into a growth engine.",
+      title: "Community Growth Hack: FEEDBACK",
+      description: "You can never go wrong with feeding on community feedback. Turn raw input into a growth engine.",
       link: "https://mojeebhq.medium.com/the-subtle-act-of-not-giving-a-fvck-about-your-community-community-building-6afe90b633f4",
       platform: "Growth",
-      isLarge: false
+      layout: "col-span-1", // Takes up 1/4 of the width
     },
     {
-      title: "Community Rewards Done Right: Stop Fvcking Over Your Early Users",
-      description: "How to structure reward systems that honor early adopters and protect long-term trust without compromising the system.",
+      title: "Community Rewards Done Right",
+      description: "Stop fvcking over your early users. Structure reward systems that honor trust.",
       link: "https://mojeebhq.medium.com/community-rewards-done-right-stop-fvcking-over-your-early-users-e3ac552c3f9b",
       platform: "Rewards",
-      isLarge: false
+      layout: "col-span-1", // Takes up 1/4 of the width
     },
     {
       title: "CREATORS IN 2026 WILL STRUGGLE WITHOUT THIS",
       description: "An analysis of the internal system errors causing creator burnout and the structural blindspots for 2026 founders.",
       link: "https://x.com/MojeebHQ/status/2009497216109695467?s=20",
       platform: "Strategy",
-      isLarge: false
+      layout: "col-span-1 md:col-span-2",
     },
     {
       title: "The 2026 Product Blueprint",
-      description: "A strategic deep dive into the next wave of Web3 products, moving from fragmented growth to integrated ecosystem design.",
+      description: "A strategic deep dive into the next wave of Web3 products and integrated ecosystem design.",
       link: "https://x.com/MojeebHQ/status/2009997538267435511?s=20",
       platform: "Research",
-      isLarge: false
-    },
-    {
-      title: "9k Followers & The Mistake After",
-      description: "A growth campaign deconstruction: what went right, what went wrong, and the lessons that reshaped my strategy.",
-      link: "https://x.com/MojeebHQ/status/1971794428789461365",
-      platform: "X (Twitter)",
-      isLarge: false
+      layout: "col-span-1 md:col-span-2",
     }
   ];
 
   return (
     <section id="blog" className="py-24 px-6 bg-background">
       <div className="container mx-auto">
+        {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-white">
           <div className="max-w-2xl">
             <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">
@@ -65,11 +60,12 @@ const Blog = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 4-COLUMN BENTO GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {blogPosts.map((post, index) => (
             <Card 
               key={index} 
-              className={`glass-card group hover:border-primary/50 transition-all duration-300 flex flex-col h-full ${post.isLarge ? 'lg:col-span-2' : ''}`}
+              className={`glass-card group hover:border-primary/50 transition-all duration-300 flex flex-col h-full ${post.layout}`}
             >
               <CardContent className="p-8 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-6">
@@ -79,11 +75,11 @@ const Blog = () => {
                   <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
                 
-                <h3 className={`font-bold mb-4 text-white group-hover:text-primary transition-colors ${post.isLarge ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
+                <h3 className={`font-bold mb-4 text-white group-hover:text-primary transition-colors ${post.isPrimary ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl'}`}>
                   {post.title}
                 </h3>
                 
-                <p className="text-muted-foreground mb-8 leading-relaxed flex-grow">
+                <p className="text-muted-foreground mb-8 leading-relaxed flex-grow text-sm">
                   {post.description}
                 </p>
 
