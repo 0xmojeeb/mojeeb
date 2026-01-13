@@ -4,11 +4,12 @@ import { Users, TrendingUp, Zap, Target, Eye, ShieldCheck, Gauge } from "lucide-
 
 const About = () => {
   const ecosystems = [
-    { name: "ETHEREUM", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" },
-    { name: "BASE", logo: "https://cryptologos.cc/logos/base-base-logo.svg?v=024" },
-    { name: "SOLANA", logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" },
-    { name: "POLYGON", logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" },
-    { name: "AVALANCHE", logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" },
+    const ecosystems = [
+    { name: "ETHEREUM", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/eth/eth.svg" },
+    { name: "BASE", logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/white/base-symbol-white.svg" },
+    { name: "SOLANA", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/sol/sol.svg" },
+    { name: "POLYGON", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/matic/matic.svg" },
+    { name: "AVALANCHE", logo: "https://raw.githubusercontent.com/spothq/cryptologos/master/logos/avax/avax.svg" },
   ];
 
   return (
