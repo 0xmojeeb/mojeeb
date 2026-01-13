@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Building, Calendar, TrendingUp, Target, Star } from "lucide-react";
+import { Building, Calendar, TrendingUp, Target, Star, ChevronRight, Activity } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
@@ -10,11 +10,9 @@ const Experience = () => {
       period: "Dec 2024 – Present",
       type: "Founder",
       achievements: [
-        "Founded Blindspot Labs, a research and strategy startup focused on identifying structural blindspots in Web3 products, ecosystems, and narratives",
-        "Work centers on auditing systems, analyzing ecosystem design, incentive alignment, and positioning",
-        "Unpack why certain strategies fail at scale, translating insights into clear, actionable frameworks for founders and operators",
-        "Operates as a thinking and research layer, helping teams see what's often missed before execution compounds mistakes",
-        "Author of the '2026 Series,' a research initiative focused on ecosystem longevity, founder execution systems, and strategic blindspots in Web3"
+        "Founded research startup focused on identifying structural blindspots in Web3 products and narratives",
+        "Author of the '2026 Series,' a research initiative focused on ecosystem longevity and founder execution systems",
+        "Unpack strategy failures to translate insights into actionable frameworks for founders",
       ],
       highlight: true
     },
@@ -24,113 +22,20 @@ const Experience = () => {
       period: "Aug 2024 – Dec 2024",
       type: "Past",
       achievements: [
-        "Founded EchelonHQ, a Web3-native growth and collaboration studio focused on ecosystem partnerships, community expansion, and multi-chain business development",
         "Led ecosystem growth initiatives across Ethereum, Base, Solana, and Polygon",
-        "Built structured collaboration frameworks and developed early GTM narratives and partnership systems",
-        "Laid the groundwork for research, systems thinking, and strategic audits now carried forward through Blindspot Labs"
+        "Built structured collaboration frameworks and developed early GTM narratives",
+        "Laid the groundwork for systems thinking audits now carried forward through Blindspot Labs"
       ],
-      highlight: false
+      highlight: true
     },
-    {
-      company: "OnchainHQ",
-      role: "Community Moderator",
-      period: "Apr 2025 – Jun 2025",
-      type: "Community",
-      achievements: [
-        "Managed community operations on Telegram & Discord",
-        "Ensured smooth moderation, engagement, and feedback loops"
-      ]
-    },
-    {
-      company: "The Crypto Family",
-      role: "Collaboration Lead & Co-Founder",
-      period: "Nov 2023 – Nov 2024",
-      type: "Partnerships",
-      achievements: [
-        "Secured multi-chain partnerships and narrative alignment",
-        "Drove brand optimization and early adoption",
-        "Onboarded Luckygo and aligned ecosystem messaging"
-      ]
-    },
-    {
-      company: "GX DAO",
-      role: "Collaboration Manager & Strategist",
-      period: "Sep 2023 – Mar 2024",
-      type: "DAO",
-      achievements: [
-        "Structured DAO collaborations across Ethereum",
-        "Improved retention and community activation",
-        "Led narrative and DAO integration workflows"
-      ]
-    },
-    {
-      company: "Racerclublabs",
-      role: "Partnerships & Collaboration Manager",
-      period: "Jul 2023 – Nov 2024",
-      type: "Partnerships",
-      achievements: [
-        "Negotiated cross-ecosystem collaborations",
-        "Strengthened visibility via co-marketing strategies"
-      ]
-    },
-    {
-      company: "SkylosChain",
-      role: "Community Manager & Marketer",
-      period: "Jun 2023 – Jul 2023",
-      type: "Community",
-      achievements: [
-        "Boosted community engagement 5% → 95% in 2 weeks",
-        "Implemented scalable community & content systems"
-      ]
-    },
-    {
-      company: "Playgr0und (fka Readers DAO)",
-      role: "Collaboration & Community Manager",
-      period: "Aug 2022 – Mar 2023",
-      type: "Community",
-      achievements: [
-        "Built partnerships with NFT projects & DAOs",
-        "Integrated Alphabot to automate collab ops"
-      ]
-    },
-    {
-      company: "BlueValley DAO (SolChasers)",
-      role: "Collaboration Manager",
-      period: "Oct 2022 – Dec 2023",
-      type: "DAO",
-      achievements: [
-        "Secured ecosystem collaborations to expand reach",
-        "Contributed to DAO rebrand & strategic planning"
-      ]
-    },
-    {
-      company: "Taiku NFT",
-      role: "BD & Growth Strategist",
-      period: "Jan 2023",
-      type: "NFT",
-      achievements: [
-        "Engineered viral growth 3 → 9,000 followers in 3.5 days",
-        "Activated cross-chain partnerships & GTM alignment"
-      ]
-    },
-    {
-      company: "Pups Cub",
-      role: "Collaboration Manager",
-      period: "Oct 2022",
-      type: "Partnerships",
-      achievements: [
-        "Strengthened NFT collaboration outreach and brand positioning"
-      ]
-    },
-    {
-      company: "Solfiends",
-      role: "Collaboration Manager",
-      period: "Sep 2022",
-      type: "Partnerships",
-      achievements: [
-        "Expanded community reach by ~20%"
-      ]
-    }
+    // The following are moved to the "Systems History" section
+    { company: "OnchainHQ", role: "Community Moderator", period: "2025", type: "Community" },
+    { company: "The Crypto Family", role: "Co-Founder", period: "2023 - 2024", type: "Partnerships" },
+    { company: "GX DAO", role: "Strategist", period: "2023 - 2024", type: "DAO" },
+    { company: "Racerclublabs", role: "Partnerships", period: "2023 - 2024", type: "Partnerships" },
+    { company: "SkylosChain", role: "Community Lead", period: "2023", type: "Community" },
+    { company: "Playgr0und", role: "Community Manager", period: "2022 - 2023", type: "Community" },
+    { company: "Taiku NFT", role: "Growth Strategist", period: "Jan 2023", type: "NFT", note: "3 → 9k followers in 3.5 days" },
   ];
 
   const ambassadorships = [
@@ -140,97 +45,97 @@ const Experience = () => {
 
   const getTypeColor = (type: string) => {
     const colors = {
-      Founder: "bg-gradient-to-r from-purple-500 to-pink-500",
-      Growth: "bg-gradient-to-r from-green-500 to-emerald-500",
-      Strategy: "bg-gradient-to-r from-blue-500 to-cyan-500",
-      DAO: "bg-gradient-to-r from-orange-500 to-red-500",
-      Partnerships: "bg-gradient-to-r from-indigo-500 to-purple-500",
-      Business: "bg-gradient-to-r from-yellow-500 to-orange-500",
-      NFT: "bg-gradient-to-r from-pink-500 to-purple-500",
-      Community: "bg-gradient-to-r from-teal-500 to-green-500",
-      Past: "bg-gradient-to-r from-gray-500 to-gray-600"
+      Founder: "bg-primary/20 text-primary border-primary/50",
+      DAO: "bg-orange-500/20 text-orange-400 border-orange-500/50",
+      Partnerships: "bg-purple-500/20 text-purple-400 border-purple-500/50",
+      NFT: "bg-pink-500/20 text-pink-400 border-pink-500/50",
+      Community: "bg-teal-500/20 text-teal-400 border-teal-500/50",
     };
-    return colors[type as keyof typeof colors] || "bg-gradient-to-r from-gray-500 to-gray-600";
+    return colors[type as keyof typeof colors] || "bg-gray-500/20 text-gray-400 border-gray-500/50";
   };
 
   return (
-    <section id="experience" className="py-20 px-6">
+    <section id="experience" className="py-24 px-6 bg-background/50">
       <div className="container mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text">Experience</span>
+        <div className="max-w-4xl mb-20 animate-fade-in">
+          <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">
+            The Track Record
+          </span>
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-white">
+            Systems <span className="gradient-text">History.</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A record of building, transitioning, and refining systems across Web3.
-          </p>
         </div>
 
-        <div className="max-w-4xl mx-auto relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border"></div>
-
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative animate-slide-in-left" style={{animationDelay: `${index * 0.1}s`}}>
-                {/* Timeline dot */}
-                <div className="absolute left-6 timeline-dot"></div>
+        {/* 1. FEATURED ROLES (The Big Two) */}
+        <div className="grid grid-cols-1 gap-6 mb-16">
+          {experiences.filter(e => e.highlight).map((exp, index) => (
+            <Card key={index} className="glass-card border-primary/20 bg-primary/5 overflow-hidden group">
+              <CardContent className="p-8 md:p-10 relative">
+                <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <Activity size={120} className="text-primary" />
+                </div>
                 
-                <Card className={`ml-20 glass-card hover:scale-[1.02] transition-all duration-300 ${exp.highlight ? 'ring-2 ring-primary/50' : ''}`}>
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-xl font-bold">{exp.company}</h3>
-                          {exp.highlight && <Star className="w-5 h-5 text-primary fill-current" />}
-                        </div>
-                        <h4 className="text-lg text-primary font-semibold mb-2">{exp.role}</h4>
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar className="w-4 h-4" />
-                          <span>{exp.period}</span>
-                        </div>
-                      </div>
-                      <Badge className={`${getTypeColor(exp.type)} text-white border-0`}>
-                        {exp.type}
-                      </Badge>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white">{exp.company}</h3>
+                      <Star className="w-5 h-5 text-primary fill-current" />
                     </div>
-                    
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-muted-foreground">
-                          <TrendingUp className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                    <p className="text-primary font-bold tracking-widest text-xs uppercase">{exp.role}</p>
+                  </div>
+                  <div className="flex flex-col md:items-end">
+                    <span className="text-sm text-muted-foreground font-mono">{exp.period}</span>
+                    <Badge variant="outline" className={`mt-2 ${getTypeColor(exp.type)}`}>{exp.type}</Badge>
+                  </div>
+                </div>
+
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {exp.achievements?.map((achievement, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-muted-foreground group/item">
+                      <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-1 group-hover/item:translate-x-1 transition-transform" />
+                      <span className="text-sm leading-relaxed">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* 2. COMPACT SYSTEMS LOG (The rest of the history) */}
+        <div className="mb-20">
+          <h3 className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground mb-8 font-bold">Evolutionary Benchmarks</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {experiences.filter(e => !e.highlight).map((exp, index) => (
+              <div key={index} className="flex items-center justify-between p-4 border border-white/5 rounded-lg hover:bg-white/5 transition-colors group">
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
+                  <div>
+                    <p className="text-sm font-bold text-white">{exp.company}</p>
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-tighter">{exp.role}</p>
+                  </div>
+                </div>
+                <div className="text-right">
+                   <p className="text-[10px] font-mono text-muted-foreground">{exp.period}</p>
+                   {/* @ts-ignore */}
+                   {exp.note && <p className="text-[9px] text-primary italic">{exp.note}</p>}
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Ambassador Section */}
-        <div className="mt-16 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            <span className="gradient-text">Ambassador Roles</span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {ambassadorships.map((amb, index) => (
-              <Card key={index} className="glass-card animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Target className="w-6 h-6 text-primary" />
-                    <h4 className="text-lg font-semibold">{amb.name}</h4>
-                  </div>
-                  <p className="text-muted-foreground">{amb.achievement}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Experience;
+        {/* 3. AMBASSADORSHIPS */}
+        <div className="pt-12 border-t border-white/5">
+          <div className="flex flex-wrap gap-12 justify-center lg:justify-start">
+             <div>
+                <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-4 font-bold">Ambassador Protocols</p>
+                <div className="flex gap-6">
+                  {ambassadorships.map((amb, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <Target className="w-4 h-4 text-primary" />
+                      <span className="text-sm font-bold text-white">{amb.name}</span>
+                    </div>
+                  ))}
+                </div>
+             </div>
