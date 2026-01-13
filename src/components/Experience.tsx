@@ -33,7 +33,7 @@ const Experience = () => {
                   <p className="text-primary font-bold tracking-widest text-xs uppercase text-left">Founder & Research Lead</p>
                 </div>
                 <div className="flex flex-col md:items-end text-left md:text-right">
-                  <span className="text-sm text-muted-foreground font-mono">Dec 2024 – Present</span>
+                  <span className="text-sm text-muted-foreground font-mono">Dec 2025 – Present</span>
                   <Badge variant="outline" className="mt-2 bg-primary/20 text-primary border-primary/50">Founder</Badge>
                 </div>
               </div>
@@ -55,7 +55,7 @@ const Experience = () => {
                   <p className="text-muted-foreground font-bold tracking-widest text-xs uppercase text-left">Founder & Strategist</p>
                 </div>
                 <div className="flex flex-col md:items-end text-left md:text-right">
-                  <span className="text-sm text-muted-foreground font-mono">Aug 2024 – Dec 2024</span>
+                  <span className="text-sm text-muted-foreground font-mono">Aug 2024 – Dec 2025</span>
                   <Badge variant="outline" className="mt-2 bg-gray-500/20 text-gray-400 border-gray-500/50">Past</Badge>
                 </div>
               </div>
