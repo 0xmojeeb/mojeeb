@@ -1,14 +1,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Users, TrendingUp, Zap, Target, Eye, ShieldCheck, Gauge } from "lucide-react";
+import { Eye, ShieldCheck, Gauge } from "lucide-react";
 
 const About = () => {
   const ecosystems = [
     { name: "ETHEREUM", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" },
-    // BASE LOGO: Embedded as a Data URI to ensure 100% stability
     { 
       name: "BASE", 
-      logo: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQ5IiBoZWlnaHQ9IjI0OSIgdmlld0JveD0iMCAwIDI0OSAyNDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+IDxwYXRoIGQ9Ik0wIDE5LjY3MUMwIDEyLjkzMzIgMCA5LjU2NDI1IDEuMjY5NTYgNi45NzI3NkMyLjQ4NTExIDQuNDkxNTEgNC40OTE1MSAyLjQ4NTExIDYuOTcyNzYgMS4yNjk1NlM5LjU2NDI1IDAgMTIuOTMzMiAwSDIyOS4zMjlDMjM2LjA2NyAwIDIzOS40MzYgMCAyNDIuMDI3IDEuMjY5NTZDMjQ0LjUwOCAyLjQ4NTExIDI0Ni41MTUgNC40OTE1MSAyNDcuNzMgNi45NzI3NkMyNDkgOS41NjQyNSAyNDkgMTIuOTMzMiAyNDkgMTkuNjcxVjIyOS4zMjlDMjQ5IDIzNi4wNjcgMjQ5IDIzOS40MzYgMjQ3LjczIDI0Mi4wMjdDMjQ2LjUxNSAyNDQuNTA4IDI0NC41MDggMjQ2LjUxNSAyNDIuMDI3IDI0Ny43M0MyMzkuNDM2IDI0OSAyMzYuMDY3IDI0OSAyMjkuMzI5IDI0OUgxOS42NzFDMTIuOTMzMiAyNDkgOS41NjQyNSAyNDkgNi45NzI3NiAyNDcuNzNDNC40OTE1MSAyNDYuNTE1IDIuNDg1MTEgMjQ0LjUwOCAxLjI2OTU2IDI0Mi4wMjdDMCAyMzkuNDM2IDAgMjM2LjA2NyAwIDIyOS4zMjlWMTkuNjcxWiIgZmlsbD0iIzAwMDBGRiIvPiA8L3N2Zz4=" 
+      // Sourced directly from the official Base brand kit on GitHub
+      logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/Basemark/Base_Network_Logo_Primary.svg" 
     },
     { name: "SOLANA", logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" },
     { name: "POLYGON", logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" },
