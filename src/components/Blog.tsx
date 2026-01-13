@@ -19,17 +19,17 @@ const Blog = () => {
       isLarge: false
     },
     {
+      title: "Community Foundation & The Long Game",
+      description: "A deep dive into why 90% of community foundations fail and how to build structural trust that lasts through market cycles.",
+      link: "https://x.com/MojeebHQ/status/2005534320434299312?s=20", // Linking your audit/foundation thread
+      platform: "Foundation",
+      isLarge: false
+    },
+    {
       title: "The 2026 Execution Pack",
       description: "A burnout-free weekly system for high-output founders, implementing the 'Maker vs. Manager' split and spiritual anchors.",
       link: "https://x.com/MojeebHQ/status/2010457986670448657?s=20",
       platform: "Strategy",
-      isLarge: false
-    },
-    {
-      title: "Audit — Token Supply & Illusion of Scarcity",
-      description: "A structural analysis of token mechanics and how perceived scarcity shapes market behavior.",
-      link: "https://x.com/MojeebHQ/status/2005534320434299312?s=20",
-      platform: "Audit",
       isLarge: false
     },
     {
@@ -45,18 +45,26 @@ const Blog = () => {
       link: "https://x.com/MojeebHQ/status/1971794428789461365",
       platform: "X (Twitter)",
       isLarge: false
+    },
+    {
+      title: "SYSTEM FEEDBACK & AUDIT",
+      description: "Have a system that needs a structural audit? Submit your framework for a blindspot analysis.",
+      link: "https://mojeebhq.typeform.com/to/feedback", // Adjust link if different
+      platform: "Inquiry",
+      isLarge: true,
+      isCTA: true // Highlighted style
     }
   ];
 
   return (
     <section id="blog" className="py-24 px-6 bg-background">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 text-white">
           <div className="max-w-2xl">
             <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">
               Intelligence Feed
             </span>
-            <h2 className="text-4xl md:text-6xl font-bold leading-tight text-white">
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
               Featured <span className="gradient-text">Posts.</span>
             </h2>
           </div>
@@ -65,16 +73,19 @@ const Blog = () => {
           </p>
         </div>
 
-        {/* REPAIR: Simplified Grid to prevent blank rendering */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogPosts.map((post, index) => (
             <Card 
               key={index} 
-              className={`glass-card group hover:border-primary/50 transition-all duration-300 flex flex-col h-full ${post.isLarge ? 'lg:col-span-2' : ''}`}
+              className={`glass-card group hover:border-primary/50 transition-all duration-300 flex flex-col h-full 
+                ${post.isLarge ? 'lg:col-span-2' : ''} 
+                ${post.isCTA ? 'bg-primary/10 border-primary/30' : ''}`}
             >
               <CardContent className="p-8 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="text-[10px] font-bold tracking-widest text-primary uppercase">{post.platform}</span>
+                  <span className={`text-[10px] font-bold tracking-widest uppercase ${post.isCTA ? 'text-white' : 'text-primary'}`}>
+                    {post.platform}
+                  </span>
                   <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
                 
@@ -88,11 +99,13 @@ const Blog = () => {
 
                 <Button 
                   variant="ghost" 
-                  className="w-fit p-0 h-auto font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-transparent hover:text-white group/btn"
+                  className={`w-fit p-0 h-auto font-bold text-[10px] uppercase tracking-[0.2em] hover:bg-transparent group/btn 
+                    ${post.isCTA ? 'text-white hover:text-primary' : 'hover:text-white'}`}
                   asChild
                 >
                   <a href={post.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    Read Analysis <span className="text-primary group-hover/btn:translate-x-1 transition-transform">→</span>
+                    {post.isCTA ? "Submit Inquiry" : "Read Analysis"} 
+                    <span className="text-primary group-hover/btn:translate-x-1 transition-transform">→</span>
                   </a>
                 </Button>
               </CardContent>
