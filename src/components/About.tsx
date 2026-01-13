@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, TrendingUp, Zap, Target } from "lucide-react";
-
 const About = () => {
   const outcomes = [{
     icon: TrendingUp,
@@ -89,7 +88,7 @@ const About = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Current Focus — Blindspot Labs</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  <a href="http://bit.ly/BlindspotLabs" target="_blank" rel="noopener noreferrer" className="gradient-text font-semibold hover:underline">Blindspot Labs</a> is my current startup and primary focus. 
+                  <a target="_blank" rel="noopener noreferrer" className="gradient-text font-semibold hover:underline" href="https://blindspotlabs.lovable.app/">Blindspot Labs</a> is my current startup and primary focus. 
                   It operates as a research and strategy initiative dedicated to identifying blindspots in Web3 products, ecosystems, and narratives. 
                   The work spans system audits, ecosystem analysis, incentive design, and positioning reviews, with insights shared through writing and public thinking.
                 </p>
