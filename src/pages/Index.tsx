@@ -1,3 +1,4 @@
+import { motion, useScroll, useSpring } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -6,80 +7,104 @@ import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#030303] text-white selection:bg-[#7c3aed]/30">
+      {/* GLOBAL PROGRESS BAR */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[2px] bg-[#7c3aed] z-[100] origin-left shadow-[0_0_10px_#7c3aed]"
+        style={{ scaleX }}
+      />
+
       <Navigation />
       
-      <main>
+      <main className="relative">
         <section id="hero">
           <Hero />
         </section>
         
-        <About />
-        <Blog />
-        <Experience />
-        <Education />
-        <Skills />
-        <Contact />
+        {/* SECTION WRAPPERS FOR DEPTH */}
+        <div className="space-y-32 pb-32">
+          <About />
+          <div className="container mx-auto px-6">
+             <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+          </div>
+          <Blog />
+          <Experience />
+          <Education />
+          <Skills />
+          <Contact />
+        </div>
       </main>
       
-      {/* STRATEGIC FOOTER */}
-      <footer className="py-12 px-6 border-t border-white/5 bg-background">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      {/* 2026 STRATEGIC FOOTER */}
+      <footer className="py-20 px-6 border-t border-white/5 bg-[#050505]">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             
-            <div className="text-left">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                  <span className="text-black font-black text-[10px]">M</span>
+            {/* BRANDING DNA */}
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-[#7c3aed] rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.3)]">
+                  <span className="text-white font-black text-lg">M</span>
                 </div>
-                <span className="text-lg font-bold tracking-tighter text-white uppercase">
-                  Mojeeb<span className="text-primary">.</span>
+                <span className="text-2xl font-black tracking-tighter text-white uppercase">
+                  Mojeeb<span className="text-[#7c3aed]">HQ</span>
                 </span>
               </div>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-[0.3em] font-bold">
+              <p className="text-[10px] text-gray-500 uppercase tracking-[0.4em] font-bold">
                 Systems • Strategy • Research
               </p>
             </div>
 
-            <div className="flex items-center gap-6">
-              <div className="text-left md:text-right">
-                <p className="text-[9px] text-primary font-mono uppercase tracking-tighter">● System: Operational</p>
-                <p className="text-[10px] text-muted-foreground uppercase font-mono">© 2026 MojeebHQ</p>
-              </div>
-              <Button 
-                variant="outline" 
-                size="icon" 
-                onClick={scrollToTop}
-                className="rounded-full border-white/10 hover:border-primary hover:text-primary group"
-              >
-                <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
-              </Button>
+            {/* SYSTEM STATUS */}
+            <div className="flex flex-col md:items-end gap-4">
+               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
+                  <div className="text-right">
+                    <p className="text-[9px] text-[#7c3aed] font-mono uppercase tracking-widest animate-pulse">● System: Operational</p>
+                    <p className="text-[10px] text-gray-500 uppercase font-mono mt-1">v.2026.01.HQ</p>
+                  </div>
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    onClick={scrollToTop}
+                    className="rounded-xl border border-white/10 hover:border-[#7c3aed] hover:text-[#7c3aed] transition-all bg-white/5"
+                  >
+                    <ArrowUp className="w-4 h-4" />
+                  </Button>
+               </div>
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4">
-            <p className="text-[9px] text-muted-foreground/40 uppercase tracking-[0.2em] leading-relaxed max-w-sm text-left">
-              Building communities that don't just grow, they evolve. Strategic analysis for the next wave of Web3.
-            </p>
-            <div className="flex gap-6 items-center">
-               <span className="text-[9px] text-muted-foreground/60 uppercase tracking-widest font-bold">Nigeria Based</span>
-               <div className="w-1 h-1 rounded-full bg-white/10" />
-               <span className="text-[9px] text-muted-foreground/60 uppercase tracking-widest font-bold">Global Strategy</span>
+          {/* LOWER FOOTER */}
+          <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between gap-8 items-center">
+            <div className="flex items-center gap-3">
+               <Zap size={14} className="text-[#7c3aed]" />
+               <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] leading-relaxed max-w-sm">
+                 Architecting long-term leverage for Web3 ecosystems.
+               </p>
             </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Index;
+            
+            <div className="flex gap-8 items-center">
+               <div className="flex flex-col items-end">
+                  <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Location</span>
+                  <span className="text-[11px] text-white uppercase tracking-widest font-black">Nigeria / Global</span>
+               </div>
+               <div className="w-[1px] h-8 bg-white/10" />
+               <div className="flex flex-col items-start">
+                  <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Availability</span>
+                  <span className="text-[11px] text-[#
