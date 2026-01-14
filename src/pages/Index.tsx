@@ -40,23 +40,29 @@ const Index = () => {
 
       <Navigation />
       
-      <main className="relative">
-        <section id="hero">
-          <Hero />
-        </section>
-        
-        <div className="space-y-32 pb-32">
-          <About />
-          <div className="container mx-auto px-6">
-             <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-          </div>
-          <Blog />
-          <Experience />
-          <Education />
-          <Skills />
-          <Contact />
-        </div>
-      </main>
+      // Find this part in your Index.tsx and replace it:
+
+<main className="relative">
+  <section id="hero">
+    <Hero />
+  </section>
+  
+  {/* Changed space-y-32 to space-y-4 and removed large pb-32 */}
+  <div className="space-y-4 pb-16">
+    <About />
+    
+    {/* This is your divider line */}
+    <div className="container mx-auto px-6">
+       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+    </div>
+    
+    <Blog />
+    <Experience />
+    <Education />
+    <Skills />
+    <Contact />
+  </div>
+</main>
       
       <footer className="py-20 px-6 border-t border-white/5 bg-[#050505]">
         <div className="container mx-auto max-w-6xl">
