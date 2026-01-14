@@ -4,16 +4,28 @@ import { Eye, ShieldCheck, Gauge } from "lucide-react";
 
 const About = () => {
     const ecosystems = [
-    { name: "ETHEREUM", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" },
-    { 
-      name: "BASE", 
-      // Updated to a more reliable CDN link for the Base logo
-      logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Blue.svg" 
-    },
-    { name: "SOLANA", logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" },
-    { name: "POLYGON", logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" },
-    { name: "AVALANCHE", logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" },
-  ];
+  { 
+    name: "ETHEREUM", 
+    logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" 
+  },
+  { 
+    name: "BASE", 
+    // This is the direct RAW link from the brand-kit repo you shared
+    logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Blue.svg" 
+  },
+  { 
+    name: "SOLANA", 
+    logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" 
+  },
+  { 
+    name: "POLYGON", 
+    logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" 
+  },
+  { 
+    name: "AVALANCHE", 
+    logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" 
+  },
+];
 
   return (
    <section id="about" className="py-12 px-6 bg-background/50">
