@@ -1,58 +1,61 @@
-import { Briefcase, TrendingUp, Star, ChevronRight } from "lucide-react";
-
-const experiences = [
-  {
-    role: "Founder & Research Lead",
-    company: "Blindspot Labs",
-    period: "Dec 2025 – Present",
-    desc: "Author of the '2026 Series' focused on ecosystem longevity and structural blindspots.",
-    highlight: "Web3 Research"
-  },
-  {
-    role: "Founder & Strategist",
-    company: "EchelonHQ (fka Anblabs)",
-    period: "Aug 2024 – Dec 2025",
-    desc: "Led growth initiatives across Ethereum, Base, and Solana for top-tier protocols.",
-    highlight: "Ecosystem Growth"
-  },
-  {
-    role: "Viral Growth Lead",
-    company: "Taiku NFT",
-    period: "Case Study",
-    desc: "Engineered growth from 3 to 9,000 followers in 3.5 days through cross-chain alignment.",
-    highlight: "95% Engagement"
-  }
-];
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Star, ChevronRight, TrendingUp, Target } from "lucide-react";
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="py-16 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="mb-16">
-          <span className="text-[#7c3aed] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">Track Record</span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white uppercase">Full Systems <span className="text-gray-500">History.</span></h2>
+        <div className="mb-12">
+          <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-2 block">Track Record</span>
+          <h2 className="text-4xl font-black text-white uppercase tracking-tighter text-left">Full Systems History.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {experiences.map((exp, idx) => (
-            <div key={idx} className="p-8 rounded-[2.5rem] bg-[#111] border border-white/10 hover:border-[#7c3aed]/50 transition-all group">
-              <div className="flex justify-between items-start mb-8">
-                <div className="bg-[#7c3aed]/10 p-3 rounded-2xl text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-white transition-colors">
-                  {idx === 2 ? <TrendingUp size={20} /> : <Briefcase size={20} />}
-                </div>
-                <span className="text-[10px] font-mono text-gray-500">{exp.period}</span>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          <Card className="md:col-span-12 glass-card border-primary/20 bg-primary/5 p-8">
+            <div className="flex flex-col md:flex-row justify-between mb-6 gap-4">
+              <div>
+                <div className="flex items-center gap-3"><h3 className="text-2xl font-bold text-white uppercase">Blindspot Labs</h3><Star className="w-5 h-5 text-primary fill-current" /></div>
+                <p className="text-primary font-bold text-xs tracking-widest">Founder & Research Lead</p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-1">{exp.company}</h3>
-              <p className="text-[#7c3aed] text-[10px] font-black uppercase tracking-widest mb-4">{exp.role}</p>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">{exp.desc}</p>
-              <div className="pt-4 border-t border-white/5">
-                <span className="text-white font-bold text-[10px] uppercase tracking-tighter">Key Output: {exp.highlight}</span>
-              </div>
+              <span className="text-sm text-muted-foreground font-mono">Dec 2025 – Present</span>
             </div>
-          ))}
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <li className="flex items-start gap-2 text-sm text-muted-foreground"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-1" /> Founded research startup for Web3 structural analysis.</li>
+              <li className="flex items-start gap-2 text-sm text-muted-foreground"><ChevronRight className="w-4 h-4 text-primary shrink-0 mt-1" /> Author of the '2026 Series' focused on longevity.</li>
+            </ul>
+          </Card>
+
+          <Card className="md:col-span-6 glass-card p-8 bg-primary/5 border-primary/20">
+            <div className="flex justify-between items-start mb-4">
+              <span className="text-[10px] text-primary font-bold uppercase">Viral Growth</span>
+              <TrendingUp className="w-4 h-4 text-primary" />
+            </div>
+            <h4 className="text-xl font-bold text-white mb-1">Taiku NFT</h4>
+            <p className="text-lg font-bold text-white mb-2 italic">3 → 9k followers in 3.5 days</p>
+            <p className="text-xs text-muted-foreground">Engineered viral GTM alignment and community activation.</p>
+          </Card>
+
+          <Card className="md:col-span-6 glass-card p-8">
+            <h4 className="text-xl font-bold text-white mb-1">SkylosChain</h4>
+            <p className="text-lg font-bold text-white mb-2">5% → 95% Engagement</p>
+            <p className="text-xs text-muted-foreground">Implemented scalable content systems in 2 weeks.</p>
+          </Card>
+
+          <div className="md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              {c:"EchelonHQ", r:"Strategist"}, {c:"OnchainHQ", r:"Moderator"},
+              {c:"GX DAO", r:"Strategist"}, {c:"Crypto Family", r:"Co-Founder"}
+            ].map((item, i) => (
+              <div key={i} className="p-4 border border-white/5 rounded-xl bg-white/5">
+                <p className="text-white text-xs font-bold">{item.c}</p>
+                <p className="text-[9px] text-primary uppercase font-bold">{item.r}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
-
 export default Experience;
