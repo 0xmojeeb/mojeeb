@@ -3,32 +3,31 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, ShieldCheck, Gauge } from "lucide-react";
 
 const About = () => {
-    const ecosystems = [
-  { 
-    name: "ETHEREUM", 
-    logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" 
-  },
-  { 
-    name: "BASE", 
-    // This is the direct RAW link from the brand-kit repo you shared
-    logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Blue.svg" 
-  },
-  { 
-    name: "SOLANA", 
-    logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" 
-  },
-  { 
-    name: "POLYGON", 
-    logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" 
-  },
-  { 
-    name: "AVALANCHE", 
-    logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" 
-  },
-];
+  const ecosystems = [
+    { 
+      name: "ETHEREUM", 
+      logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" 
+    },
+    { 
+      name: "BASE", 
+      logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Blue.svg" 
+    },
+    { 
+      name: "SOLANA", 
+      logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" 
+    },
+    { 
+      name: "POLYGON", 
+      logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" 
+    },
+    { 
+      name: "AVALANCHE", 
+      logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" 
+    },
+  ];
 
   return (
-   <section id="about" className="py-12 px-6 bg-background/50">
+    <section id="about" className="py-12 px-6 bg-background/50">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <Card className="md:col-span-8 glass-card border-primary/20 bg-primary/5 p-8 md:p-10">
@@ -40,8 +39,14 @@ const About = () => {
               "I help teams design systems that grow deliberately, identifying structural blindspots before they become expensive problems."
             </p>
             <div className="flex gap-4">
-              <div className="flex items-center gap-2"><Eye className="w-4 h-4 text-primary"/><span className="text-[10px] font-bold text-white uppercase">Audit Specialist</span></div>
-              <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-primary"/><span className="text-[10px] font-bold text-white uppercase">Incentive Design</span></div>
+              <div className="flex items-center gap-2">
+                <Eye className="w-4 h-4 text-primary"/>
+                <span className="text-[10px] font-bold text-white uppercase">Audit Specialist</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-primary"/>
+                <span className="text-[10px] font-bold text-white uppercase">Incentive Design</span>
+              </div>
             </div>
           </Card>
 
@@ -53,11 +58,22 @@ const About = () => {
             <a href="https://blindspotlabs.lovable.app/" target="_blank" className="text-primary font-bold text-xs uppercase tracking-widest hover:underline">Visit The Lab →</a>
           </Card>
 
+          {/* Ecosystems Bar with updated Logo logic */}
           <div className="md:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-[2rem] border border-white/5 mt-2">
             {ecosystems.map((eco) => (
-              <div key={eco.name} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
-                <img src={eco.logo} alt={eco.name} className="w-5 h-5 object-contain" />
-                <span className="text-[10px] font-bold tracking-widest text-white">{eco.name}</span>
+              <div key={eco.name} className="flex items-center gap-3 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
+                <img 
+                  src={eco.logo} 
+                  alt={eco.name} 
+                  className="w-6 h-6 min-w-[24px] min-h-[24px] object-contain" 
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                <span className="text-[10px] font-bold tracking-widest text-white uppercase">
+                  {eco.name}
+                </span>
               </div>
             ))}
           </div>
@@ -66,4 +82,5 @@ const About = () => {
     </section>
   );
 };
+
 export default About;
