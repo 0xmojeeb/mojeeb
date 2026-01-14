@@ -1,22 +1,25 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Eye, ShieldCheck, Gauge } from "lucide-react";
-
 const About = () => {
-  const ecosystems = [
-    { name: "ETHEREUM", logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" },
-    { 
-      name: "BASE", 
-      // Sourced directly from the official Base brand kit on GitHub
-      logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/Basemark/Base_Network_Logo_Primary.svg" 
-    },
-    { name: "SOLANA", logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" },
-    { name: "POLYGON", logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" },
-    { name: "AVALANCHE", logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" },
-  ];
-
-  return (
-    <section id="about" className="py-24 px-6 bg-background/50">
+  const ecosystems = [{
+    name: "ETHEREUM",
+    logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024"
+  }, {
+    name: "BASE",
+    // Sourced directly from the official Base brand kit on GitHub
+    logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/Basemark/Base_Network_Logo_Primary.svg"
+  }, {
+    name: "SOLANA",
+    logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024"
+  }, {
+    name: "POLYGON",
+    logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024"
+  }, {
+    name: "AVALANCHE",
+    logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024"
+  }];
+  return <section id="about" className="py-24 px-6 bg-background/50">
       <div className="container mx-auto">
         {/* 1. STRATEGIC HEADER */}
         <div className="max-w-4xl mb-20 animate-fade-in">
@@ -85,7 +88,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-                <a href="https://blindspotlabs.lovable.app/" target="_blank" className="inline-block mt-8 text-primary font-bold text-sm uppercase tracking-widest hover:underline">
+                <a target="_blank" className="inline-block mt-8 text-primary font-bold text-sm uppercase tracking-widest hover:underline" href="https://blindspotlabs.vercel.app/">
                   Visit The Lab →
                 </a>
               </CardContent>
@@ -99,24 +102,17 @@ const About = () => {
             Systems Architecture Across
           </p>
           <div className="flex flex-wrap justify-center lg:justify-start gap-x-12 gap-y-8">
-            {ecosystems.map((eco) => (
-              <div key={eco.name} className="group flex items-center gap-3 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-crosshair">
-                <img 
-                  src={eco.logo} 
-                  alt={eco.name} 
-                  className="w-6 h-6 object-contain" 
-                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                />
+            {ecosystems.map(eco => <div key={eco.name} className="group flex items-center gap-3 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-crosshair">
+                <img src={eco.logo} alt={eco.name} className="w-6 h-6 object-contain" onError={e => {
+              e.currentTarget.style.display = 'none';
+            }} />
                 <span className="text-[11px] font-bold tracking-widest text-white group-hover:text-primary transition-colors">
                   {eco.name}
                 </span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
