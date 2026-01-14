@@ -2,7 +2,7 @@ import { GraduationCap, Landmark, ShieldCheck, BookOpen } from "lucide-react";
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 px-6 bg-[#030303]">
+    <section id="education" className="py-12 px-6 bg-[#030303]">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div className="md:col-span-8 bg-white/[0.03] border border-white/10 p-10 rounded-[2.5rem] relative overflow-hidden group">
