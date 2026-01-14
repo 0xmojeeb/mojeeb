@@ -44,7 +44,7 @@ const Hero = () => {
           {/* 2. PROFILE IMAGE CARD */}
           <div className="md:col-span-4 h-[400px] md:h-auto bg-[#111] border border-white/10 rounded-[2.5rem] overflow-hidden relative group animate-in fade-in slide-in-from-right-5 duration-700">
             <img 
-              src="/mojeeb-avatar.png" 
+              src="/mojeeb-headshot.png" 
               alt="Mojeeb" 
               className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
             />
