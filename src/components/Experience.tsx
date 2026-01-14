@@ -1,10 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star, ChevronRight, Activity, Target, TrendingUp } from "lucide-react";
-
 const Experience = () => {
-  return (
-    <section id="experience" className="py-24 px-6 bg-background/50">
+  return <section id="experience" className="py-24 px-6 bg-background/50">
       <div className="container mx-auto">
         {/* HEADER */}
         <div className="max-w-4xl mb-20 text-left">
@@ -27,7 +25,7 @@ const Experience = () => {
                     <h3 className="text-2xl md:text-3xl font-bold text-white">Blindspot Labs</h3>
                     <Star className="w-5 h-5 text-primary fill-current" />
                   </div>
-                  <p className="text-primary font-bold tracking-widest text-xs uppercase">Founder & Research Lead</p>
+                  <p className="text-primary font-bold tracking-widest text-xs uppercase">Founder & Lead Auditor </p>
                 </div>
                 <div className="text-left md:text-right">
                   <span className="text-sm text-muted-foreground font-mono">Dec 2025 – Present</span>
@@ -101,17 +99,26 @@ const Experience = () => {
 
           {/* 5. REMAINING ROLES GRID */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {[
-              { c: "Racerclublabs", r: "Partnerships", p: "2023" },
-              { c: "Playgr0und", r: "Community", p: "2022" },
-              { c: "BlueValley DAO", r: "Collab Manager", p: "2022" },
-              { c: "Pups Cub", r: "NFT Collab", p: "2022" }
-            ].map((item, i) => (
-              <div key={i} className="p-4 border border-white/5 rounded-lg text-left">
+            {[{
+            c: "Racerclublabs",
+            r: "Partnerships",
+            p: "2023"
+          }, {
+            c: "Playgr0und",
+            r: "Community",
+            p: "2022"
+          }, {
+            c: "BlueValley DAO",
+            r: "Collab Manager",
+            p: "2022"
+          }, {
+            c: "Pups Cub",
+            r: "NFT Collab",
+            p: "2022"
+          }].map((item, i) => <div key={i} className="p-4 border border-white/5 rounded-lg text-left">
                 <p className="text-white text-xs font-bold mb-1">{item.c}</p>
                 <p className="text-[10px] text-muted-foreground uppercase">{item.r}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
@@ -131,8 +138,6 @@ const Experience = () => {
         </div>
 
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Experience;
