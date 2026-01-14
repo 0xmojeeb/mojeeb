@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Linkedin, Twitter, BookOpen, MapPin, Zap } from "lucide-react";
 
@@ -18,12 +17,8 @@ const Hero = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           
-          {/* 1. PRIMARY IDENTITY CARD (Bento Span 8) */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:col-span-8 bg-white/[0.03] border border-white/10 p-10 rounded-[2.5rem] backdrop-blur-3xl flex flex-col justify-between group"
-          >
+          {/* 1. PRIMARY IDENTITY CARD */}
+          <div className="md:col-span-8 bg-white/[0.03] border border-white/10 p-10 rounded-[2.5rem] backdrop-blur-3xl flex flex-col justify-between group transition-all duration-500 hover:border-white/20 animate-in fade-in slide-in-from-bottom-5">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7c3aed]/10 border border-[#7c3aed]/20 text-[#7c3aed] text-[10px] uppercase tracking-widest font-bold mb-8">
                 <Zap className="w-3 h-3 fill-[#7c3aed]" /> Available for Ecosystem Strategy
@@ -44,19 +39,14 @@ const Hero = () => {
                 Philosophy
               </Button>
             </div>
-          </motion.div>
+          </div>
 
-          {/* 2. PROFILE IMAGE CARD (Bento Span 4) */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="md:col-span-4 h-[400px] md:h-auto bg-[#111] border border-white/10 rounded-[2.5rem] overflow-hidden relative group"
-          >
+          {/* 2. PROFILE IMAGE CARD */}
+          <div className="md:col-span-4 h-[400px] md:h-auto bg-[#111] border border-white/10 rounded-[2.5rem] overflow-hidden relative group animate-in fade-in slide-in-from-right-5 duration-700">
             <img 
               src="/mojeeb-avatar.png" 
               alt="Mojeeb" 
-              className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+              className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8">
@@ -65,31 +55,21 @@ const Hero = () => {
                 <MapPin size={14} className="text-[#7c3aed]" /> Nigeria / Global
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* 3. CURRENT WORK CARD (Bento Span 5) */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="md:col-span-5 bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] backdrop-blur-md flex items-center justify-between group hover:border-[#7c3aed]/50 transition-colors"
-          >
+          {/* 3. CURRENT WORK CARD */}
+          <div className="md:col-span-5 bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] backdrop-blur-md flex items-center justify-between group hover:border-[#7c3aed]/50 transition-all duration-300 animate-in fade-in slide-in-from-bottom-5">
             <div className="space-y-1">
               <p className="text-gray-500 text-[10px] uppercase tracking-widest font-black">Current Project</p>
               <p className="text-white text-lg font-bold">Blindspot Labs</p>
             </div>
-            <a href="https://blindspotlabs.vercel.app/" target="_blank" className="w-12 h-12 rounded-xl bg-[#7c3aed]/10 flex items-center justify-center text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-white transition-all">
+            <a href="https://blindspotlabs.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#7c3aed]/10 flex items-center justify-center text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-white transition-all">
               <ArrowUpRight size={20} />
             </a>
-          </motion.div>
+          </div>
 
-          {/* 4. SOCIAL CONNECT CARD (Bento Span 7) */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="md:col-span-7 bg-[#0A0A0A] border border-white/5 p-8 rounded-[2rem] flex items-center justify-between"
-          >
+          {/* 4. SOCIAL CONNECT CARD */}
+          <div className="md:col-span-7 bg-[#0A0A0A] border border-white/5 p-8 rounded-[2rem] flex items-center justify-between animate-in fade-in slide-in-from-bottom-10">
             <span className="text-gray-500 text-[10px] uppercase tracking-widest font-black">Digital Presence</span>
             <div className="flex gap-4">
               {[
@@ -97,12 +77,12 @@ const Hero = () => {
                 { icon: <Twitter size={18} />, href: "https://x.com/MojeebHQ" },
                 { icon: <BookOpen size={18} />, href: "https://mojeebhq.medium.com" }
               ].map((social, idx) => (
-                <a key={idx} href={social.href} target="_blank" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#7c3aed] hover:bg-[#7c3aed]/10 transition-all">
+                <a key={idx} href={social.href} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#7c3aed] hover:bg-[#7c3aed]/10 transition-all">
                   {social.icon}
                 </a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
