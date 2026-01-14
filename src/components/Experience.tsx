@@ -4,7 +4,7 @@ import { Star, ChevronRight, TrendingUp, Target } from "lucide-react";
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-16 px-6 bg-background">
+   <section id="experience" className="py-12 px-6 bg-background/50">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-12">
           <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-2 block">Track Record</span>
