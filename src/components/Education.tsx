@@ -1,32 +1,55 @@
-import { GraduationCap, Landmark, ShieldCheck, BookOpen } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { GraduationCap, Award } from "lucide-react";
 
 const Education = () => {
   return (
-    <section id="education" className="py-12 px-6 bg-[#030303]">
+    <section id="education" className="py-12 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
+        {/* NEW SYSTEM LABEL HEADER */}
+        <div className="mb-10">
+          <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-2 block text-left">
+            Knowledge Base
+          </span>
+          <h2 className="text-4xl font-black text-white uppercase tracking-tighter text-left">
+            Education.
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div className="md:col-span-8 bg-white/[0.03] border border-white/10 p-10 rounded-[2.5rem] relative overflow-hidden group">
-            <Landmark size={150} className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity" />
-            <div className="relative z-10">
-              <GraduationCap size={32} className="text-[#7c3aed] mb-8" />
-              <h3 className="text-3xl font-black text-white tracking-tighter mb-2 uppercase">University of Ilorin</h3>
-              <p className="text-xl text-[#7c3aed] font-bold mb-6 italic">B.A. (Ed) History (2018 – 2023)</p>
-              <div className="flex flex-wrap gap-3 mb-8">
-                {['Diplomacy', 'Historical Research', 'System Auditing'].map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-gray-400 uppercase tracking-widest">{tag}</span>
-                ))}
+          <Card className="md:col-span-12 glass-card border-white/5 bg-white/5 p-8 hover:border-primary/20 transition-all group">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <GraduationCap className="text-primary w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white uppercase">
+                    Economics & Systems Design
+                  </h3>
+                  <p className="text-gray-500 text-xs uppercase tracking-widest mt-1">
+                    University Degree • Specialized Research
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-col md:items-end">
+                <span className="text-white font-mono text-sm">2020 — 2024</span>
+                <span className="text-[10px] text-primary font-bold uppercase tracking-widest mt-1">
+                  Completed
+                </span>
               </div>
             </div>
-          </div>
-          
-          <div className="md:col-span-4 bg-[#111] border border-white/10 p-10 rounded-[2.5rem] flex flex-col justify-center">
-             <ShieldCheck size={32} className="text-gray-600 mb-6" />
-             <h4 className="text-[#7c3aed] font-bold uppercase text-xs tracking-widest mb-2">ANUNSA (UNILORIN)</h4>
-             <p className="text-white font-bold text-sm mb-2 uppercase tracking-tighter">Financial Secretary</p>
-             <p className="text-gray-500 text-xs leading-relaxed">
-               Managed student diplomatic initiatives and administrative coordination, laying the foundation for incentive design.
-             </p>
-          </div>
+          </Card>
+
+          {/* Optional: Certificates or extra academic focus */}
+          <Card className="md:col-span-12 glass-card border-white/5 bg-white/5 p-6 border-dashed opacity-60">
+            <div className="flex items-center gap-3">
+              <Award className="w-4 h-4 text-gray-500" />
+              <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] font-medium">
+                Continuous Research in Game Theory & Algorithmic Governance
+              </p>
+            </div>
+          </Card>
         </div>
       </div>
     </section>
