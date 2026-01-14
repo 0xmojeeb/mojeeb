@@ -8,7 +8,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 px-6">
+    <section id="skills" className="py-12 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16">
           <span className="text-[#7c3aed] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">Intelligence Layer</span>
