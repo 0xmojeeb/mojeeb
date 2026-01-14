@@ -8,7 +8,7 @@ const Blog = () => {
       desc: "Foundations of community building through Emotional Intelligence. A counter-intuitive look at engagement.",
       link: "https://mojeebhq.medium.com/the-subtle-act-of-not-giving-a-fvck-about-your-community-community-building-31043b5160aa",
       span: "md:col-span-2",
-      tag: "Medium"
+      tag: "Community"
     },
     {
       title: "Growth Hack: FEEDBACK",
