@@ -1,85 +1,113 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Linkedin, Twitter, BookOpen } from "lucide-react";
+import { ArrowUpRight, Linkedin, Twitter, BookOpen, MapPin, Zap } from "lucide-react";
+
 const Hero = () => {
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
-  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
-      {/* Background Glow - Synced with Blindspot Brand */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          
-          {/* TEXT SIDE: Synced with 'Longevity & Systems' */}
-          <div className="animate-fade-in text-center lg:text-left order-2 lg:order-1">
-            <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-6 block">
-              Strategist & Founder
-            </span>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              <span className="gradient-text">Mojeeb</span>
-            </h1>
-            
-            <h2 className="text-xl md:text-2xl text-foreground mb-8 max-w-xl lg:max-w-none font-semibold leading-relaxed">
-              Designing growth systems and ecosystem strategy across the Web3 landscape.
-            </h2>
-            
-            <p className="text-lg text-muted-foreground mb-12 max-w-2xl lg:max-w-none leading-relaxed">
-              Focused on <span className="text-foreground font-medium">longevity as leverage</span>. 
-              Currently building <a target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium" href="https://blindspotlabs.vercel.app/">Blindspot Labs</a> — a research initiative identifying structural gaps in the 2026 Web3 landscape.
-            </p>
-            
-            <div className="flex justify-center lg:justify-start gap-4 mb-12">
-              <Button size="lg" className="px-8 py-6 text-lg glow-effect rounded-full shadow-[0_0_20px_rgba(139,92,246,0.3)]" onClick={() => scrollToSection('contact')}>
-                Discuss Strategy
-              </Button>
-              <Button variant="secondary" size="lg" className="px-8 py-6 text-lg rounded-full" onClick={() => scrollToSection('about')}>
-                The Philosophy
-              </Button>
-            </div>
-          </div>
-          
-          {/* IMAGE SIDE: The Offset "Blindspot" Style */}
-          <div className="animate-fade-in flex justify-center lg:justify-end order-1 lg:order-2">
-            <div className="w-56 h-56 md:w-72 md:h-72 relative shrink-0">
-              {/* Rotated background logic */}
-              <div className="absolute inset-0 bg-primary rounded-2xl rotate-6 z-0 opacity-20" />
-              
-              <img src="/mojeeb-avatar.png" alt="Mojeeb - Founder" className="relative z-10 w-full h-full object-cover rounded-2xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
-            </div>
-          </div>
-        </div>
 
-        {/* Updated Social Bar */}
-        <div className="flex justify-center gap-6 mt-8">
-          <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full border border-white/5 bg-white/5 hover:bg-primary/20 transition-all" asChild>
-            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="w-5 h-5" />
+  return (
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#030303] pt-32 pb-20 px-6">
+      {/* Cinematic Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#7c3aed]/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#7c3aed]/10 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+          
+          {/* 1. PRIMARY IDENTITY CARD (Bento Span 8) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:col-span-8 bg-white/[0.03] border border-white/10 p-10 rounded-[2.5rem] backdrop-blur-3xl flex flex-col justify-between group"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#7c3aed]/10 border border-[#7c3aed]/20 text-[#7c3aed] text-[10px] uppercase tracking-widest font-bold mb-8">
+                <Zap className="w-3 h-3 fill-[#7c3aed]" /> Available for Ecosystem Strategy
+              </div>
+              <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-[0.85] mb-6">
+                MOJEEB<span className="text-[#7c3aed]">.</span>
+              </h1>
+              <h2 className="text-xl md:text-2xl text-gray-400 font-medium max-w-xl leading-relaxed">
+                Designing <span className="text-white">growth systems</span> and ecosystem strategy across the Web3 landscape.
+              </h2>
+            </div>
+            
+            <div className="flex flex-wrap gap-4 mt-12">
+              <Button size="lg" className="bg-[#7c3aed] hover:bg-[#7c3aed]/90 text-white rounded-2xl px-8 h-14 font-bold uppercase tracking-widest text-xs group" onClick={() => scrollToSection('contact')}>
+                Discuss Strategy <ArrowUpRight className="ml-2 w-4 h-4 group-hover:rotate-45 transition-transform" />
+              </Button>
+              <Button variant="outline" size="lg" className="border-white/10 bg-white/5 text-white rounded-2xl px-8 h-14 font-bold uppercase tracking-widest text-xs hover:bg-white/10" onClick={() => scrollToSection('about')}>
+                Philosophy
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* 2. PROFILE IMAGE CARD (Bento Span 4) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="md:col-span-4 h-[400px] md:h-auto bg-[#111] border border-white/10 rounded-[2.5rem] overflow-hidden relative group"
+          >
+            <img 
+              src="/mojeeb-avatar.png" 
+              alt="Mojeeb" 
+              className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            <div className="absolute bottom-8 left-8">
+              <p className="text-white font-bold uppercase tracking-widest text-xs">Based In</p>
+              <div className="flex items-center gap-2 text-gray-400 text-sm mt-1">
+                <MapPin size={14} className="text-[#7c3aed]" /> Nigeria / Global
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 3. CURRENT WORK CARD (Bento Span 5) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="md:col-span-5 bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] backdrop-blur-md flex items-center justify-between group hover:border-[#7c3aed]/50 transition-colors"
+          >
+            <div className="space-y-1">
+              <p className="text-gray-500 text-[10px] uppercase tracking-widest font-black">Current Project</p>
+              <p className="text-white text-lg font-bold">Blindspot Labs</p>
+            </div>
+            <a href="https://blindspotlabs.vercel.app/" target="_blank" className="w-12 h-12 rounded-xl bg-[#7c3aed]/10 flex items-center justify-center text-[#7c3aed] group-hover:bg-[#7c3aed] group-hover:text-white transition-all">
+              <ArrowUpRight size={20} />
             </a>
-          </Button>
-          <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full border border-white/5 bg-white/5 hover:bg-primary/20 transition-all" asChild>
-            <a href="https://x.com/MojeebHQ" target="_blank" rel="noopener noreferrer">
-              <Twitter className="w-5 h-5" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" className="w-12 h-12 rounded-full border border-white/5 bg-white/5 hover:bg-primary/20 transition-all" asChild>
-            <a href="https://mojeebhq.medium.com" target="_blank" rel="noopener noreferrer">
-              <BookOpen className="w-5 h-5" />
-            </a>
-          </Button>
+          </motion.div>
+
+          {/* 4. SOCIAL CONNECT CARD (Bento Span 7) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="md:col-span-7 bg-[#0A0A0A] border border-white/5 p-8 rounded-[2rem] flex items-center justify-between"
+          >
+            <span className="text-gray-500 text-[10px] uppercase tracking-widest font-black">Digital Presence</span>
+            <div className="flex gap-4">
+              {[
+                { icon: <Linkedin size={18} />, href: "https://linkedin.com/in/mojeebhq" },
+                { icon: <Twitter size={18} />, href: "https://x.com/MojeebHQ" },
+                { icon: <BookOpen size={18} />, href: "https://mojeebhq.medium.com" }
+              ].map((social, idx) => (
+                <a key={idx} href={social.href} target="_blank" className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#7c3aed] hover:bg-[#7c3aed]/10 transition-all">
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={() => scrollToSection('about')}>
-        <ArrowDown className="w-6 h-6 text-muted-foreground" />
-      </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
