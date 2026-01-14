@@ -13,7 +13,6 @@ import { Button } from "@/components/ui/button";
 const Index = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
-  // Replaces Framer Motion's scroll bar with a standard React version
   useEffect(() => {
     const handleScroll = () => {
       const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -32,37 +31,39 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-[#030303] text-white selection:bg-[#7c3aed]/30">
       
-      {/* 2026 PROGRESS BAR (Standard CSS Version) */}
+      {/* 2026 PROGRESS BAR */}
       <div 
         className="fixed top-0 left-0 h-[2px] bg-[#7c3aed] z-[100] shadow-[0_0_10px_#7c3aed] transition-all duration-150 ease-out"
         style={{ width: `${scrollPercentage}%` }}
       />
 
       <Navigation />
-  
-
-<main className="relative">
-  <section id="hero">
-    <Hero />
-  </section>
-  
-  {/* Changed space-y-32 to space-y-4 and removed large pb-32 */}
-  <div className="space-y-4 pb-16">
-    <About />
-    
-    {/* This is your divider line */}
-    <div className="container mx-auto px-6">
-       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
-    </div>
-    
-    <Blog />
-    <Experience />
-    <Education />
-    <Skills />
-    <Contact />
-  </div>
-</main>
       
+      <main className="relative">
+        {/* HERO SECTION - Keep as is for impact */}
+        <section id="hero">
+          <Hero />
+        </section>
+        
+        {/* CONTENT CONTAINER: Removed space-y-32, using space-y-0 for a tight bento feel */}
+        <div className="space-y-0 pb-16">
+          
+          <About />
+          
+          {/* Subtle separator between About and the rest of the feed */}
+          <div className="container mx-auto px-6 py-4">
+             <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+          </div>
+          
+          <Blog />
+          <Experience />
+          <Education />
+          <Skills />
+          <Contact />
+        </div>
+      </main>
+      
+      {/* FOOTER: Standardized spacing */}
       <footer className="py-20 px-6 border-t border-white/5 bg-[#050505]">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
@@ -99,7 +100,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between gap-8 items-center">
+          <div className="mt-16 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between gap-8 items-center">
             <div className="flex items-center gap-3">
                <Zap size={14} className="text-[#7c3aed]" />
                <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] leading-relaxed max-w-sm text-left">
