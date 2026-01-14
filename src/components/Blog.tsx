@@ -34,7 +34,7 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-16 px-6 bg-background/50">
+    <section id="blog" className="py-12 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-10 text-left">
           <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-2 block">Intelligence Feed</span>
