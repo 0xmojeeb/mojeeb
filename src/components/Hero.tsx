@@ -1,16 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Linkedin, Twitter, BookOpen } from "lucide-react";
-
 const Hero = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+  return <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
       {/* Background Glow - Synced with Blindspot Brand */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
@@ -34,7 +33,7 @@ const Hero = () => {
             
             <p className="text-lg text-muted-foreground mb-12 max-w-2xl lg:max-w-none leading-relaxed">
               Focused on <span className="text-foreground font-medium">longevity as leverage</span>. 
-              Currently building <a target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium" href="https://blindspotlabs.lovable.app/">Blindspot Labs</a> — a research initiative identifying structural gaps in the 2026 Web3 landscape.
+              Currently building <a target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium" href="https://blindspotlabs.vercel.app/">Blindspot Labs</a> — a research initiative identifying structural gaps in the 2026 Web3 landscape.
             </p>
             
             <div className="flex justify-center lg:justify-start gap-4 mb-12">
@@ -53,11 +52,7 @@ const Hero = () => {
               {/* Rotated background logic */}
               <div className="absolute inset-0 bg-primary rounded-2xl rotate-6 z-0 opacity-20" />
               
-              <img 
-                src="/mojeeb-avatar.png" 
-                alt="Mojeeb - Founder" 
-                className="relative z-10 w-full h-full object-cover rounded-2xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" 
-              />
+              <img src="/mojeeb-avatar.png" alt="Mojeeb - Founder" className="relative z-10 w-full h-full object-cover rounded-2xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" />
             </div>
           </div>
         </div>
@@ -85,8 +80,6 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer" onClick={() => scrollToSection('about')}>
         <ArrowDown className="w-6 h-6 text-muted-foreground" />
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
