@@ -37,7 +37,6 @@ const Index = () => {
           <Hero />
         </section>
         
-        {/* SECTION WRAPPERS FOR DEPTH */}
         <div className="space-y-32 pb-32">
           <About />
           <div className="container mx-auto px-6">
@@ -51,12 +50,10 @@ const Index = () => {
         </div>
       </main>
       
-      {/* 2026 STRATEGIC FOOTER */}
       <footer className="py-20 px-6 border-t border-white/5 bg-[#050505]">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             
-            {/* BRANDING DNA */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-[#7c3aed] rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.3)]">
@@ -71,7 +68,6 @@ const Index = () => {
               </p>
             </div>
 
-            {/* SYSTEM STATUS */}
             <div className="flex flex-col md:items-end gap-4">
                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
                   <div className="text-right">
@@ -90,11 +86,10 @@ const Index = () => {
             </div>
           </div>
 
-          {/* LOWER FOOTER */}
           <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between gap-8 items-center">
             <div className="flex items-center gap-3">
                <Zap size={14} className="text-[#7c3aed]" />
-               <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] leading-relaxed max-w-sm">
+               <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] leading-relaxed max-w-sm text-left">
                  Architecting long-term leverage for Web3 ecosystems.
                </p>
             </div>
@@ -107,4 +102,14 @@ const Index = () => {
                <div className="w-[1px] h-8 bg-white/10" />
                <div className="flex flex-col items-start">
                   <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Availability</span>
-                  <span className="text-[11px] text-[#
+                  <span className="text-[11px] text-[#7c3aed] uppercase tracking-widest font-black">Open for Q1 '26</span>
+               </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
