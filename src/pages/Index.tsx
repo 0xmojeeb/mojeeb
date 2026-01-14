@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from "framer-motion";
+import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -11,12 +11,19 @@ import { ArrowUp, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  // Replaces Framer Motion's scroll bar with a standard React version
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollAmount = (window.scrollY / windowHeight) * 100;
+      setScrollPercentage(scrollAmount);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -24,10 +31,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-[#030303] text-white selection:bg-[#7c3aed]/30">
-      {/* GLOBAL PROGRESS BAR */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-[2px] bg-[#7c3aed] z-[100] origin-left shadow-[0_0_10px_#7c3aed]"
-        style={{ scaleX }}
+      
+      {/* 2026 PROGRESS BAR (Standard CSS Version) */}
+      <div 
+        className="fixed top-0 left-0 h-[2px] bg-[#7c3aed] z-[100] shadow-[0_0_10px_#7c3aed] transition-all duration-150 ease-out"
+        style={{ width: `${scrollPercentage}%` }}
       />
 
       <Navigation />
@@ -71,7 +79,7 @@ const Index = () => {
             <div className="flex flex-col md:items-end gap-4">
                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
                   <div className="text-right">
-                    <p className="text-[9px] text-[#7c3aed] font-mono uppercase tracking-widest animate-pulse">● System: Operational</p>
+                    <p className="text-[9px] text-[#7c3aed] font-mono uppercase tracking-widest">● System: Operational</p>
                     <p className="text-[10px] text-gray-500 uppercase font-mono mt-1">v.2026.01.HQ</p>
                   </div>
                   <Button 
