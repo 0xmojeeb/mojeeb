@@ -8,7 +8,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 px-6">
+   <section id="contact" className="py-12 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <div className="md:col-span-12 mb-12">
