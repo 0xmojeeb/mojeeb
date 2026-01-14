@@ -1,10 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Handshake, TrendingUp, MessageSquare, Building, Network, Compass, ChevronRight } from "lucide-react";
-
 const Skills = () => {
-  return (
-    <section id="skills" className="py-24 px-6 bg-secondary/10">
+  return <section id="skills" className="py-24 px-6 bg-secondary/10">
       <div className="container mx-auto">
         {/* HEADER */}
         <div className="max-w-4xl mb-16 text-left">
@@ -17,12 +15,7 @@ const Skills = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mb-6">
             Systems and strategic capabilities developed through hands-on work across Web3 ecosystems. 
           </p>
-          <a 
-            href="https://blindspotlabs.lovable.app/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest hover:opacity-80 transition-opacity"
-          >
+          <a target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest hover:opacity-80 transition-opacity" href="https://blindspotlabs.vercel.app/">
             Research via Blindspot Labs <ChevronRight size={14} />
           </a>
         </div>
@@ -107,11 +100,9 @@ const Skills = () => {
               <h4 className="text-xs font-bold uppercase tracking-widest text-white">Ecosystem Context</h4>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Ethereum", "Base", "Solana", "Polygon", "Avalanche", "DAOs", "NFTs", "DeFi"].map((tag) => (
-                <Badge key={tag} variant="secondary" className="bg-white/5 border-white/10 text-white font-mono text-[10px]">
+              {["Ethereum", "Base", "Solana", "Polygon", "Avalanche", "DAOs", "NFTs", "DeFi"].map(tag => <Badge key={tag} variant="secondary" className="bg-white/5 border-white/10 text-white font-mono text-[10px]">
                   {tag}
-                </Badge>
-              ))}
+                </Badge>)}
             </div>
           </Card>
 
@@ -121,17 +112,13 @@ const Skills = () => {
               <h4 className="text-xs font-bold uppercase tracking-widest text-white">Tools & Infrastructure</h4>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Discord", "Telegram", "Governance platforms", "Analytics", "CRM", "Research Tools"].map((tag) => (
-                <Badge key={tag} variant="outline" className="border-primary/20 text-primary font-mono text-[10px]">
+              {["Discord", "Telegram", "Governance platforms", "Analytics", "CRM", "Research Tools"].map(tag => <Badge key={tag} variant="outline" className="border-primary/20 text-primary font-mono text-[10px]">
                   {tag}
-                </Badge>
-              ))}
+                </Badge>)}
             </div>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Skills;
