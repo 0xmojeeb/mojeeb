@@ -39,8 +39,7 @@ const Index = () => {
       />
 
       <Navigation />
-      
-      // Find this part in your Index.tsx and replace it:
+  
 
 <main className="relative">
   <section id="hero">
