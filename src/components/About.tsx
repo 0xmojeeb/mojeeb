@@ -16,7 +16,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 px-6 bg-background/50">
+   <section id="about" className="py-12 px-6 bg-background/50">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           <Card className="md:col-span-8 glass-card border-primary/20 bg-primary/5 p-8 md:p-10">
