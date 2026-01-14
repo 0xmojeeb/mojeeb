@@ -55,7 +55,7 @@ const About = () => {
             <Badge className="mb-4 bg-primary text-white border-none">Current Focus</Badge>
             <h3 className="text-2xl font-bold mb-4 text-white">Blindspot Labs</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">A research initiative dedicated to the 2026 Series. Unpacking strategy failure at scale.</p>
-            <a href="https://blindspotlabs.lovable.app/" target="_blank" className="text-primary font-bold text-xs uppercase tracking-widest hover:underline">Visit The Lab →</a>
+            <a href="https://blindspotlabs.vercel.app/" target="_blank" className="text-primary font-bold text-xs uppercase tracking-widest hover:underline">Visit The Lab →</a>
           </Card>
 
           {/* Ecosystems Bar with updated Logo logic */}
