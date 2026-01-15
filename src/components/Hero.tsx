@@ -1,4 +1,4 @@
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin, ArrowRight, Twitter, Linkedin, BookOpen } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -20,13 +20,27 @@ const Hero = () => {
             <p className="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-medium mb-8">
               Designing growth systems and ecosystem strategy across the Web3 landscape. Focused on <span className="text-white">longevity as leverage</span>.
             </p>
-            <div className="flex gap-4">
+            
+            {/* ACTION ZONE: Button + Social Nodes */}
+            <div className="flex flex-wrap items-center gap-8">
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-[#7c3aed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#6d28d9] transition-all flex items-center gap-2"
               >
                 Discuss Strategy <ArrowRight size={16} />
               </button>
+
+              <div className="flex items-center gap-6">
+                <a href="https://x.com/MojeebHQ" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">
+                  <Twitter size={20} />
+                </a>
+                <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://mojeebhq.medium.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors">
+                  <BookOpen size={20} />
+                </a>
+              </div>
             </div>
           </div>
 
