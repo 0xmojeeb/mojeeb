@@ -3,29 +3,29 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, ShieldCheck, Gauge } from "lucide-react";
 
 const About = () => {
-  const ecosystems = [
-    { 
-      name: "ETHEREUM", 
-      logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" 
-    },
-    { 
-      name: "BASE", 
-      logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Blue.svg" 
-    },
-    { 
-      name: "SOLANA", 
-      logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" 
-    },
-    { 
-      name: "POLYGON", 
-      logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" 
-    },
-    { 
-      name: "AVALANCHE", 
-      logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" 
-    },
-  ];
-
+ const ecosystems = [
+  { 
+    name: "ETHEREUM", 
+    logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" 
+  },
+  { 
+    name: "BASE", 
+    // Updated to a reliable CDN link for the Base logo
+    logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Black.svg" 
+  },
+  { 
+    name: "SOLANA", 
+    logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" 
+  },
+  { 
+    name: "POLYGON", 
+    logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" 
+  },
+  { 
+    name: "AVALANCHE", 
+    logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" 
+  },
+];
   return (
     <section id="about" className="py-12 px-6 bg-background/50">
       <div className="container mx-auto max-w-6xl">
