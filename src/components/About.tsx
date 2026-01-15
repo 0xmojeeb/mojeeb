@@ -3,29 +3,30 @@ import { Badge } from "@/components/ui/badge";
 import { Eye, ShieldCheck, Gauge } from "lucide-react";
 
 const About = () => {
- const ecosystems = [
-  { 
-    name: "ETHEREUM", 
-    logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" 
-  },
-  { 
-    name: "BASE", 
-    // Updated to a reliable CDN link for the Base logo
-    logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Black.svg" 
-  },
-  { 
-    name: "SOLANA", 
-    logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" 
-  },
-  { 
-    name: "POLYGON", 
-    logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" 
-  },
-  { 
-    name: "AVALANCHE", 
-    logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" 
-  },
-];
+  const ecosystems = [
+    { 
+      name: "ETHEREUM", 
+      logo: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" 
+    },
+    { 
+      name: "BASE", 
+      // Reliable production URL for Base logo
+      logo: "https://raw.githubusercontent.com/base-org/brand-kit/main/logo/symbol/Base_Symbol_Blue.svg" 
+    },
+    { 
+      name: "SOLANA", 
+      logo: "https://cryptologos.cc/logos/solana-sol-logo.svg?v=024" 
+    },
+    { 
+      name: "POLYGON", 
+      logo: "https://cryptologos.cc/logos/polygon-matic-logo.svg?v=024" 
+    },
+    { 
+      name: "AVALANCHE", 
+      logo: "https://cryptologos.cc/logos/avalanche-avax-logo.svg?v=024" 
+    },
+  ];
+
   return (
     <section id="about" className="py-12 px-6 bg-background/50">
       <div className="container mx-auto max-w-6xl">
@@ -41,7 +42,8 @@ const About = () => {
             <div className="flex gap-4">
               <div className="flex items-center gap-2">
                 <Eye className="w-4 h-4 text-primary"/>
-                <span className="text-[10px] font-bold text-white uppercase">Audit Specialist</span>
+                {/* Updated Identity from Auditor to Architect */}
+                <span className="text-[10px] font-bold text-white uppercase">Growth Architect</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-primary"/>
@@ -58,20 +60,23 @@ const About = () => {
             <a href="https://blindspotlabs.vercel.app/" target="_blank" className="text-primary font-bold text-xs uppercase tracking-widest hover:underline">Visit The Lab →</a>
           </Card>
 
-          {/* Ecosystems Bar with updated Logo logic */}
+          {/* Ecosystems Bar - Bulletproof Fix */}
           <div className="md:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-[2rem] border border-white/5 mt-2">
             {ecosystems.map((eco) => (
-              <div key={eco.name} className="flex items-center gap-3 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
-                <img 
-                  src={eco.logo} 
-                  alt={eco.name} 
-                  className="w-6 h-6 min-w-[24px] min-h-[24px] object-contain" 
-                  loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-                <span className="text-[10px] font-bold tracking-widest text-white uppercase">
+              <div key={eco.name} className="flex items-center gap-3 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer group">
+                <div className="w-6 h-6 flex items-center justify-center">
+                  <img 
+                    src={eco.logo} 
+                    alt={eco.name} 
+                    className="w-full h-full object-contain" 
+                    loading="lazy"
+                    onError={(e) => {
+                      // Logic to hide broken icons but keep text
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </div>
+                <span className="text-[10px] font-bold tracking-widest text-white uppercase group-hover:text-[#7c3aed] transition-colors">
                   {eco.name}
                 </span>
               </div>
