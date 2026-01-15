@@ -60,28 +60,35 @@ const About = () => {
             <a href="https://blindspotlabs.vercel.app/" target="_blank" className="text-primary font-bold text-xs uppercase tracking-widest hover:underline">Visit The Lab →</a>
           </Card>
 
-          {/* Ecosystems Bar - Bulletproof Fix */}
-          <div className="md:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-[2rem] border border-white/5 mt-2">
-            {ecosystems.map((eco) => (
-              <div key={eco.name} className="flex items-center gap-3 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer group">
-                <div className="w-6 h-6 flex items-center justify-center">
-                  <img 
-                    src={eco.logo} 
-                    alt={eco.name} 
-                    className="w-full h-full object-contain" 
-                    loading="lazy"
-                    onError={(e) => {
-                      // Logic to hide broken icons but keep text
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
-                </div>
-                <span className="text-[10px] font-bold tracking-widest text-white uppercase group-hover:text-[#7c3aed] transition-colors">
-                  {eco.name}
-                </span>
-              </div>
-            ))}
-          </div>
+         {/* Ecosystems Bar - Permanent SVG Fix */}
+<div className="md:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-[2rem] border border-white/5 mt-2">
+  {ecosystems.map((eco) => (
+    <div key={eco.name} className="flex items-center gap-3 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer group">
+      <div className="w-6 h-6 flex items-center justify-center">
+        {eco.name === "BASE" ? (
+          /* Inline Base SVG - Never breaks */
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+            <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#0052FF"/>
+            <path d="M12 17.5C15.0376 17.5 17.5 15.0376 17.5 12C17.5 8.96244 15.0376 6.5 12 6.5C8.96244 6.5 6.5 8.96244 6.5 12C6.5 15.0376 8.96244 17.5 12 17.5Z" fill="white"/>
+          </svg>
+        ) : (
+          <img 
+            src={eco.logo} 
+            alt={eco.name} 
+            className="w-full h-full object-contain" 
+            loading="lazy"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        )}
+      </div>
+      <span className="text-[10px] font-bold tracking-widest text-white uppercase group-hover:text-[#7c3aed] transition-colors">
+        {eco.name}
+      </span>
+    </div>
+  ))}
+</div>
         </div>
       </div>
     </section>
