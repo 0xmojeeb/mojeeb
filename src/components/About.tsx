@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Eye, ShieldCheck, Gauge, Terminal, ExternalLink } from "lucide-react";
+import { Eye, ShieldCheck, Gauge, Terminal, ExternalLink, Cpu, Gamepad2 } from "lucide-react";
 
 const About = () => {
   const ecosystems = [
@@ -16,6 +16,7 @@ const About = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           
+          {/* PHILOSOPHY CARD */}
           <Card className="md:col-span-8 glass-card border-primary/20 bg-primary/5 p-8 md:p-10">
             <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">The Philosophy</span>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
@@ -36,6 +37,7 @@ const About = () => {
             </div>
           </Card>
 
+          {/* ACTIVE BUILDS CARD */}
           <Card className="md:col-span-4 glass-card border-primary/20 bg-primary/5 p-8 relative overflow-hidden flex flex-col justify-between">
             <Gauge size={80} className="absolute -right-4 -bottom-4 text-primary opacity-10" />
             <div>
@@ -46,42 +48,45 @@ const About = () => {
               </p>
             </div>
             
-            <div className="space-y-4">
+            <div className="space-y-6">
+              {/* AI AUDITOR */}
               <a href="https://blindspotlabs.vercel.app/" target="_blank" className="group block">
-                <div className="flex items-center justify-between mb-1">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-primary uppercase">
-                    <Terminal size={14} /> Web3 AI Auditor 
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-primary uppercase tracking-widest">
+                    <Cpu size={14} className="group-hover:rotate-12 transition-transform" /> Web3 AI Auditor 
                   </div>
                   <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-all text-primary" />
                 </div>
-                <div className="text-[9px] text-white/40 group-hover:text-white/60 transition-colors">
-                  LLM-driven smart contract vulnerability detection & risk scoring.
+                <div className="text-[11px] leading-relaxed text-white/70 group-hover:text-white transition-colors border-l border-primary/20 pl-3">
+                  AI that audits Web3 strategies, <span className="text-primary">exposes blindspots</span>, and converts confusion into execution.
                 </div>
               </a>
 
+              {/* TRENCH SNIPER */}
               <a href="https://trench-sniper.vercel.app" target="_blank" className="group block">
-                <div className="flex items-center justify-between mb-1">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-primary uppercase">
-                    <ShieldCheck size={14} /> Trench Sniper: Intelligence Engine
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2 text-[10px] font-bold text-primary uppercase tracking-widest">
+                    <Gamepad2 size={14} className="group-hover:scale-110 transition-transform" /> Trench Sniper Engine
                   </div>
                   <div className="flex items-center gap-1">
                     <span className="w-1 h-1 rounded-full bg-green-500 animate-pulse" />
                     <span className="text-[7px] text-green-500 font-bold uppercase">Live</span>
                   </div>
                 </div>
-                <div className="text-[9px] text-white/40 group-hover:text-white/60 transition-colors">
-                  Behavioral alpha simulator for rapid on-chain pattern recognition.
+                <div className="text-[11px] leading-relaxed text-white/70 group-hover:text-white transition-colors border-l border-primary/20 pl-3">
+                  A gamified crypto learning experience that makes <span className="text-primary">Web3 concepts stick</span>.
                 </div>
               </a>
 
-              <hr className="border-white/5 my-2" />
+              <hr className="border-white/5" />
               
-              <a href="https://blindspotlabs.vercel.app/" target="_blank" className="text-white/80 font-bold text-[10px] uppercase tracking-widest hover:text-primary transition-all inline-flex items-center gap-2">
-                VISIT THE LAB <span className="text-primary">→</span>
+              <a href="https://blindspotlabs.vercel.app/" target="_blank" className="text-white/80 font-bold text-[10px] uppercase tracking-widest hover:text-primary transition-all inline-flex items-center gap-2 group">
+                VISIT THE LABS <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>
           </Card>
 
+          {/* ECOSYSTEMS BAR */}
           <div className="md:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-[2rem] border border-white/5 mt-2">
             {ecosystems.map((eco) => (
               <div key={eco.name} className="flex items-center gap-3 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer group">
