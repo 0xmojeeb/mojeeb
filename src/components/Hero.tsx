@@ -1,4 +1,4 @@
-import { MapPin, ArrowRight, Twitter, Linkedin, BookOpen } from "lucide-react";
+import { MapPin, ArrowRight, Twitter, Linkedin, BookOpen, Terminal, ShieldCheck } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -11,21 +11,27 @@ const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           
           {/* MAIN TEXT CARD */}
-          <div className="md:col-span-8 bg-[#111] border border-white/10 p-12 rounded-[2.5rem] flex flex-col justify-center min-h-[450px]">
+          <div className="md:col-span-8 bg-[#111] border border-white/10 p-12 rounded-[2.5rem] flex flex-col justify-center min-h-[450px] relative overflow-hidden">
+            {/* SUBTLE BACKGROUND DECOR */}
+            <div className="absolute top-0 right-0 p-8 opacity-5">
+              <Terminal size={200} />
+            </div>
+
             <span className="text-[#7c3aed] text-[10px] font-bold uppercase tracking-[0.4em] mb-6 block">Strategist & Founder</span>
             <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none mb-6 uppercase">
               MOJEEB <br />
               <span className="text-gray-500 italic">TITILAYO.</span>
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-lg leading-relaxed font-medium mb-8">
-              Designing growth systems and ecosystem strategy across the Web3 landscape. Focused on <span className="text-white">longevity as leverage</span>.
+              Founder of <span className="text-white underline decoration-[#7c3aed]/50 underline-offset-4 cursor-pointer hover:text-[#7c3aed] transition-colors" onClick={() => scrollToSection('about')}>Blindspot Labs</span>. 
+              Designing growth systems and ecosystem strategy across the Web3 landscape.
             </p>
             
             {/* ACTION ZONE: Button + Social Nodes */}
-            <div className="flex flex-wrap items-center gap-8">
+            <div className="flex flex-wrap items-center gap-8 mb-10">
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-[#7c3aed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#6d28d9] transition-all flex items-center gap-2"
+                className="bg-[#7c3aed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#6d28d9] transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(124,58,237,0.3)]"
               >
                 Discuss Strategy <ArrowRight size={16} />
               </button>
@@ -41,6 +47,19 @@ const Hero = () => {
                   <BookOpen size={20} />
                 </a>
               </div>
+            </div>
+
+            {/* LIVE ECOSYSTEM STATUS - Direct Product Links */}
+            <div className="flex flex-wrap gap-4 pt-6 border-t border-white/5">
+               <a href="https://trench-sniper.vercel.app" target="_blank" className="flex items-center gap-2 group cursor-pointer">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest group-hover:text-white transition-colors">Trench Sniper: Live Engine</span>
+               </a>
+               <div className="w-[1px] h-3 bg-white/10 self-center" />
+               <a href="https://blindspotlabs.vercel.app" target="_blank" className="flex items-center gap-2 group cursor-pointer">
+                  <ShieldCheck size={12} className="text-[#7c3aed]" />
+                  <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest group-hover:text-white transition-colors">AI Auditor: In-Dev</span>
+               </a>
             </div>
           </div>
 
