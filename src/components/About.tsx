@@ -77,7 +77,7 @@ const About = () => {
               <hr className="border-white/5 my-2" />
               
               <a href="https://blindspotlabs.vercel.app/" target="_blank" className="text-white/80 font-bold text-[10px] uppercase tracking-widest hover:text-primary transition-all inline-flex items-center gap-2">
-                Launch Dashboard <span className="text-primary">→</span>
+                VISIT THE LAB <span className="text-primary">→</span>
               </a>
             </div>
           </Card>
