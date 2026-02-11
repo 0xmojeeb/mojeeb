@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import ProjectVault from "@/components/ProjectVault";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
@@ -40,17 +41,22 @@ const Index = () => {
       <Navigation />
       
       <main className="relative">
-        {/* HERO SECTION - Keep as is for impact */}
+        {/* HERO SECTION */}
         <section id="hero">
           <Hero />
         </section>
         
-        {/* CONTENT CONTAINER: Removed space-y-32, using space-y-0 for a tight bento feel */}
+        {/* CONTENT CONTAINER */}
         <div className="space-y-0 pb-16">
           
           <About />
+
+          {/* PROJECT VAULT: The architectural heart of the portfolio */}
+          <section id="work">
+            <ProjectVault />
+          </section>
           
-          {/* Subtle separator between About and the rest of the feed */}
+          {/* Subtle separator */}
           <div className="container mx-auto px-6 py-4">
              <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
           </div>
@@ -63,7 +69,7 @@ const Index = () => {
         </div>
       </main>
       
-      {/* FOOTER: Standardized spacing */}
+      {/* FOOTER: Updated to v.2026.02.HQ */}
       <footer className="py-20 px-6 border-t border-white/5 bg-[#050505]">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
@@ -86,7 +92,7 @@ const Index = () => {
                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
                   <div className="text-right">
                     <p className="text-[9px] text-[#7c3aed] font-mono uppercase tracking-widest">● System: Operational</p>
-                    <p className="text-[10px] text-gray-500 uppercase font-mono mt-1">v.2026.01.HQ</p>
+                    <p className="text-[10px] text-gray-500 uppercase font-mono mt-1">v.2026.02.HQ</p>
                   </div>
                   <Button 
                     variant="ghost" 
@@ -104,7 +110,7 @@ const Index = () => {
             <div className="flex items-center gap-3">
                <Zap size={14} className="text-[#7c3aed]" />
                <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] leading-relaxed max-w-sm text-left">
-                 Architecting long-term leverage for Web3 ecosystems.
+                 Architecting long-term leverage for human and digital ecosystems.
                </p>
             </div>
             
