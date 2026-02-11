@@ -18,7 +18,7 @@ User-agent: LinkedInBot
 Allow: /
 
 # Sitemap location
-Sitemap: https://mojeeb.lovable.app/sitemap.xml
+Sitemap: https://mojeeb.xyz/sitemap.xml
 
 # Crawl delay (optional - uncomment if needed)
 # Crawl-delay: 1
