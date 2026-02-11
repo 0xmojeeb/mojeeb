@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, BookOpen, Briefcase, Award, Mail, PenTool, Circle } from "lucide-react";
+import { Menu, X, Home, User, BookOpen, Briefcase, Award, Mail, PenTool, Circle, Zap } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
+  // ADDED "WORK" to the nav items to link to ProjectVault
   const navItems = [
     { id: "hero", label: "Home", icon: Home },
     { id: "about", label: "About", icon: User },
+    { id: "work", label: "Work", icon: Zap }, // Points to ProjectVault
     { id: "experience", label: "Experience", icon: Briefcase },
-    { id: "education", label: "Education", icon: BookOpen },
-    { id: "skills", label: "Skills", icon: Award },
     { id: "blog", label: "Blog", icon: PenTool },
     { id: "contact", label: "Contact", icon: Mail },
   ];
@@ -35,7 +35,7 @@ const Navigation = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -63,7 +63,7 @@ const Navigation = () => {
           onClick={() => scrollToSection("hero")}
           className="group flex items-center gap-2 p-0 hover:bg-transparent"
         >
-          <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500">
+          <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)]">
             <span className="text-black font-black text-xs">M</span>
           </div>
           <span className="text-lg font-bold tracking-tighter text-white hidden sm:block">
@@ -134,7 +134,7 @@ const Navigation = () => {
           ))}
           
           <div className="mt-12 pt-8 border-t border-white/10 w-48 text-center">
-            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026</p>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026.02</p>
           </div>
         </div>
       </div>
