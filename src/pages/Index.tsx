@@ -41,22 +41,17 @@ const Index = () => {
       <Navigation />
       
       <main className="relative">
-        {/* HERO SECTION */}
         <section id="hero">
           <Hero />
         </section>
         
-        {/* CONTENT CONTAINER */}
         <div className="space-y-0 pb-16">
-          
           <About />
 
-          {/* PROJECT VAULT: The architectural heart of the portfolio */}
           <section id="work">
             <ProjectVault />
           </section>
           
-          {/* Subtle separator */}
           <div className="container mx-auto px-6 py-4">
              <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
           </div>
@@ -69,15 +64,20 @@ const Index = () => {
         </div>
       </main>
       
-      {/* FOOTER: Updated to v.2026.02.HQ */}
+      {/* FOOTER: Updated with Local Asset Integration */}
       <footer className="py-20 px-6 border-t border-white/5 bg-[#050505]">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             
             <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-[#7c3aed] rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.3)]">
-                  <span className="text-white font-black text-lg">M</span>
+              <div className="flex items-center gap-3 group">
+                {/* BRAND FAVICON INTEGRATION */}
+                <div className="w-10 h-10 bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.1)] group-hover:border-[#7c3aed]/50 transition-all overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/favicon.ico" 
+                    alt="M Brand Icon" 
+                    className="w-6 h-6 object-contain"
+                  />
                 </div>
                 <span className="text-2xl font-black tracking-tighter text-white uppercase">
                   Mojeeb<span className="text-[#7c3aed]">HQ</span>
@@ -92,7 +92,7 @@ const Index = () => {
                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center gap-4">
                   <div className="text-right">
                     <p className="text-[9px] text-[#7c3aed] font-mono uppercase tracking-widest">● System: Operational</p>
-                    <p className="text-[10px] text-gray-500 uppercase font-mono mt-1">v.2026.02.HQ</p>
+                    <p className="text-[10px] text-gray-500 uppercase font-mono mt-1">v.2026.02.16</p>
                   </div>
                   <Button 
                     variant="ghost" 
