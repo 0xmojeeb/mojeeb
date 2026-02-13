@@ -73,7 +73,7 @@ const Hero = () => {
           {/* HEADSHOT CARD */}
           <div className="md:col-span-4 h-[450px] md:h-auto bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] overflow-hidden relative group">
             <img 
-              src="/mojeeb-headshot.png" 
+              src="/mojeeb-2026-headshot.jpg" 
               alt="Mojeeb Titilayo" 
               className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
             />
