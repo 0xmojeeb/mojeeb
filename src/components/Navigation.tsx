@@ -6,7 +6,6 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
-  // Moved inside useMemo to prevent unnecessary re-renders of the scroll listener
   const navItems = useMemo(() => [
     { id: "hero", label: "Home", icon: Home },
     { id: "about", label: "About", icon: User },
@@ -63,11 +62,13 @@ const Navigation = () => {
           onClick={() => scrollToSection("hero")}
           className="group flex items-center gap-2 p-0 hover:bg-transparent"
         >
+          {/* LOGO CONTAINER */}
           <div className="w-8 h-8 bg-[#7c3aed] flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)] overflow-hidden">
             <img 
               src="/lovable-uploads/logo.png" 
               alt="Logo" 
-              className="w-full h-full object-contain p-1.5 brightness-0 invert" 
+              className="w-full h-full object-contain p-1" 
+              /* FILTERS REMOVED TO PREVENT WHITE BLANK SQUARE */
             />
           </div>
           <span className="text-lg font-bold tracking-tighter text-white hidden sm:block">
@@ -138,7 +139,7 @@ const Navigation = () => {
           ))}
           
           <div className="mt-12 pt-8 border-t border-white/10 w-48 text-center">
-            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026.02.41</p>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026.02.42</p>
           </div>
         </div>
       </div>
