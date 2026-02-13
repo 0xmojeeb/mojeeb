@@ -76,7 +76,7 @@ const About = () => {
               <div className="pt-2 border-t border-white/5">
                 <p className="text-[9px] text-gray-500 uppercase font-bold tracking-[0.2em] mb-3">Strategy Research</p>
                 <div className="flex gap-3">
-                   <a href="https://blindspotlabs.vercel.app/" target="_blank" className="bg-white/5 hover:bg-primary/20 p-2 rounded-lg transition-colors border border-white/10" title="AI Auditor">
+                   <a href="https://labs.mojeeb.xyz/" target="_blank" className="bg-white/5 hover:bg-primary/20 p-2 rounded-lg transition-colors border border-white/10" title="AI Auditor">
                      <Cpu size={16} className="text-primary" />
                    </a>
                    <a href="https://trench-sniper.vercel.app" target="_blank" className="bg-white/5 hover:bg-primary/20 p-2 rounded-lg transition-colors border border-white/10" title="Trench Sniper">
