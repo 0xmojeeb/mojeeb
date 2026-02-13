@@ -63,7 +63,7 @@ const Navigation = () => {
           className="group flex items-center gap-2 p-0 hover:bg-transparent"
         >
           {/* LOGO CONTAINER */}
-          <div className="w-8 h-8 bg-[#7c3aed] flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)] overflow-hidden">
+          <div className="w-8 h-8 bg-[#4e24cf] flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)] overflow-hidden">
             <img 
               src="/lovable-uploads/logo.png" 
               alt="Logo" 
@@ -72,7 +72,7 @@ const Navigation = () => {
             />
           </div>
           <span className="text-lg font-bold tracking-tighter text-white hidden sm:block">
-            MOJEEB<span className="text-[#7c3aed] text-xl">.</span>
+            MOJEEB<span className="text-[#4e24cf] text-xl">.</span>
           </span>
         </Button>
       </div>
@@ -89,13 +89,13 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`relative px-4 py-2 rounded-full transition-all duration-300 group ${
                   activeSection === item.id 
-                    ? "text-[#7c3aed] bg-[#7c3aed]/10" 
+                    ? "text-[#4e24cf] bg-[#4e24cf]/10" 
                     : "text-muted-foreground hover:text-white"
                 }`}
               >
                 <span className="text-[10px] font-bold uppercase tracking-widest relative z-10 flex items-center gap-2">
                   {activeSection === item.id && (
-                    <Circle className="w-1.5 h-1.5 fill-[#7c3aed] text-[#7c3aed] animate-pulse" />
+                    <Circle className="w-1.5 h-1.5 fill-[#4e24cf] text-[#4e24cf] animate-pulse" />
                   )}
                   {item.label}
                 </span>
@@ -112,10 +112,10 @@ const Navigation = () => {
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
           className={`rounded-xl border-white/10 bg-black/50 backdrop-blur-md transition-all ${
-            isOpen ? "rotate-90 border-[#7c3aed]" : ""
+            isOpen ? "rotate-90 border-[#4e24cf]" : ""
           }`}
         >
-          {isOpen ? <X className="w-5 h-5 text-[#7c3aed]" /> : <Menu className="w-5 h-5 text-white" />}
+          {isOpen ? <X className="w-5 h-5 text-[#4e24cf]" /> : <Menu className="w-5 h-5 text-white" />}
         </Button>
       </div>
 
@@ -129,11 +129,11 @@ const Navigation = () => {
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`flex items-center gap-4 text-3xl font-bold transition-all ${
-                activeSection === item.id ? "text-[#7c3aed] scale-110" : "text-white/40 hover:text-white"
+                activeSection === item.id ? "text-[#4e24cf] scale-110" : "text-white/40 hover:text-white"
               }`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
-              <item.icon className={`w-6 h-6 ${activeSection === item.id ? "text-[#7c3aed]" : "text-white/20"}`} />
+              <item.icon className={`w-6 h-6 ${activeSection === item.id ? "text-[#4e24cf]" : "text-white/20"}`} />
               <span className="uppercase tracking-tighter">{item.label}</span>
             </button>
           ))}

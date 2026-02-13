@@ -17,20 +17,20 @@ const Contact = () => {
           
           <div className="md:col-span-7 space-y-4">
             {social.map(s => (
-              <a href={s.link} target="_blank" key={s.label} className="flex items-center justify-between p-8 bg-[#111] border border-white/10 rounded-[2rem] group hover:border-[#7c3aed] transition-all">
+              <a href={s.link} target="_blank" key={s.label} className="flex items-center justify-between p-8 bg-[#111] border border-white/10 rounded-[2rem] group hover:border-[#4e24cf] transition-all">
                 <div className="flex items-center gap-6">
-                  <div className="text-gray-500 group-hover:text-[#7c3aed] transition-colors">{s.icon}</div>
+                  <div className="text-gray-500 group-hover:text-[#4e24cf] transition-colors">{s.icon}</div>
                   <div>
                     <p className="text-white font-bold uppercase text-xs tracking-[0.2em]">{s.label}</p>
                     <p className="text-gray-500 font-mono text-sm">{s.val}</p>
                   </div>
                 </div>
-                <div className="text-[#7c3aed] opacity-0 group-hover:opacity-100 transition-opacity">→</div>
+                <div className="text-[#4e24cf] opacity-0 group-hover:opacity-100 transition-opacity">→</div>
               </a>
             ))}
           </div>
 
-          <div className="md:col-span-5 bg-[#7c3aed] p-10 rounded-[2.5rem] text-white flex flex-col justify-center">
+          <div className="md:col-span-5 bg-[#4e24cf] p-10 rounded-[2.5rem] text-white flex flex-col justify-center">
              <h4 className="text-2xl font-black tracking-tight mb-8">CORE FOCUS AREAS</h4>
              <ul className="space-y-6">
                 <li className="flex items-center gap-4 text-sm font-bold border-b border-white/10 pb-4 uppercase tracking-tighter"><Network size={16} /> Ecosystem Strategy</li>
