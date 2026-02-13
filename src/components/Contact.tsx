@@ -1,10 +1,10 @@
-import { Mail, MessageSquare, Twitter, Network, TrendingUp, Users } from "lucide-react";
+import { Mail, MessageSquare, Network, TrendingUp, Users, X } from "lucide-react";
 
 const Contact = () => {
   const social = [
     { icon: <Mail />, label: "Email", val: "mojeeb.eth@gmail.com", link: "mailto:mojeeb.eth@gmail.com" },
     { icon: <MessageSquare />, label: "Telegram", val: "@mojeebhq", link: "https://t.me/mojeebhq" },
-    { icon: <Twitter />, label: "X (Twitter)", val: "@MojeebHQ", link: "https://x.com/MojeebHQ" }
+    { icon: <X />, label: "X (Twitter)", val: "@MojeebHQ", link: "https://x.com/MojeebHQ" }
   ];
 
   return (

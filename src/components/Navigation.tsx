@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, BookOpen, Briefcase, Award, Mail, PenTool, Circle, Zap } from "lucide-react";
+import { Menu, X, Home, User, Mail, PenTool, Circle, Zap, Briefcase } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
 
-  // ADDED "WORK" to the nav items to link to ProjectVault
-  const navItems = [
+  // Moved inside useMemo to prevent unnecessary re-renders of the scroll listener
+  const navItems = useMemo(() => [
     { id: "hero", label: "Home", icon: Home },
     { id: "about", label: "About", icon: User },
-    { id: "work", label: "Work", icon: Zap }, // Points to ProjectVault
+    { id: "work", label: "Work", icon: Zap }, 
     { id: "experience", label: "Experience", icon: Briefcase },
     { id: "blog", label: "Blog", icon: PenTool },
     { id: "contact", label: "Contact", icon: Mail },
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,11 +63,15 @@ const Navigation = () => {
           onClick={() => scrollToSection("hero")}
           className="group flex items-center gap-2 p-0 hover:bg-transparent"
         >
-          <div className="w-8 h-8 bg-primary flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)]">
-            <span className="text-black font-black text-xs">M</span>
+          <div className="w-8 h-8 bg-[#7c3aed] flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)] overflow-hidden">
+            <img 
+              src="/lovable-uploads/logo.png" 
+              alt="Logo" 
+              className="w-full h-full object-contain p-1.5 brightness-0 invert" 
+            />
           </div>
           <span className="text-lg font-bold tracking-tighter text-white hidden sm:block">
-            MOJEEB<span className="text-primary text-xl">.</span>
+            MOJEEB<span className="text-[#7c3aed] text-xl">.</span>
           </span>
         </Button>
       </div>
@@ -84,13 +88,13 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`relative px-4 py-2 rounded-full transition-all duration-300 group ${
                   activeSection === item.id 
-                    ? "text-primary bg-primary/10" 
+                    ? "text-[#7c3aed] bg-[#7c3aed]/10" 
                     : "text-muted-foreground hover:text-white"
                 }`}
               >
                 <span className="text-[10px] font-bold uppercase tracking-widest relative z-10 flex items-center gap-2">
                   {activeSection === item.id && (
-                    <Circle className="w-1.5 h-1.5 fill-primary text-primary animate-pulse" />
+                    <Circle className="w-1.5 h-1.5 fill-[#7c3aed] text-[#7c3aed] animate-pulse" />
                   )}
                   {item.label}
                 </span>
@@ -107,10 +111,10 @@ const Navigation = () => {
           size="icon"
           onClick={() => setIsOpen(!isOpen)}
           className={`rounded-xl border-white/10 bg-black/50 backdrop-blur-md transition-all ${
-            isOpen ? "rotate-90 border-primary" : ""
+            isOpen ? "rotate-90 border-[#7c3aed]" : ""
           }`}
         >
-          {isOpen ? <X className="w-5 h-5 text-primary" /> : <Menu className="w-5 h-5 text-white" />}
+          {isOpen ? <X className="w-5 h-5 text-[#7c3aed]" /> : <Menu className="w-5 h-5 text-white" />}
         </Button>
       </div>
 
@@ -124,17 +128,17 @@ const Navigation = () => {
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`flex items-center gap-4 text-3xl font-bold transition-all ${
-                activeSection === item.id ? "text-primary scale-110" : "text-white/40 hover:text-white"
+                activeSection === item.id ? "text-[#7c3aed] scale-110" : "text-white/40 hover:text-white"
               }`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
-              <item.icon className={`w-6 h-6 ${activeSection === item.id ? "text-primary" : "text-white/20"}`} />
+              <item.icon className={`w-6 h-6 ${activeSection === item.id ? "text-[#7c3aed]" : "text-white/20"}`} />
               <span className="uppercase tracking-tighter">{item.label}</span>
             </button>
           ))}
           
           <div className="mt-12 pt-8 border-t border-white/10 w-48 text-center">
-            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026.02</p>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026.02.41</p>
           </div>
         </div>
       </div>
