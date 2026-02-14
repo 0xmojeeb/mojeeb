@@ -38,8 +38,8 @@ const Hero = () => {
 
             <div className="relative z-10">
               <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="text-[#7c3aed] text-[10px] font-bold uppercase tracking-[0.4em] block">Strategist & Founder</span>
-                <div className="px-2 py-0.5 rounded bg-[#7c3aed]/10 border border-[#7c3aed]/20 text-[#7c3aed] text-[8px] font-bold uppercase tracking-widest">
+                <span className="text-[#4e24cf] text-[10px] font-bold uppercase tracking-[0.4em] block">Strategist & Founder</span>
+                <div className="px-2 py-0.5 rounded bg-[#4e24cf]/10 border border-[#4e24cf]/20 text-[#4e24cf] text-[8px] font-bold uppercase tracking-widest">
                   Resourceful
                 </div>
               </div>
@@ -52,8 +52,8 @@ const Hero = () => {
               {/* RESOURCE STACK / CAPABILITIES GRID */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 max-w-xl">
                 {capabilities.map((cap) => (
-                  <div key={cap.label} className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl group/item hover:border-[#7c3aed]/50 transition-colors">
-                    <div className="text-[#7c3aed] group-hover/item:scale-110 transition-transform">
+                  <div key={cap.label} className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl group/item hover:border-[#4e24cf]/50 transition-colors">
+                    <div className="text-[#4e24cf] group-hover/item:scale-110 transition-transform">
                       {cap.icon}
                     </div>
                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest group-hover/item:text-white transition-colors">
@@ -69,7 +69,7 @@ const Hero = () => {
                   href="https://labs.mojeeb.xyz" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-white underline decoration-[#7c3aed]/50 underline-offset-4 cursor-pointer hover:text-[#7c3aed] transition-colors"
+                  className="text-white underline decoration-[#4e24cf]/50 underline-offset-4 cursor-pointer hover:text-[#4e24cf] transition-colors"
                 >
                   Blindspot Labs
                 </a>. 
@@ -79,7 +79,7 @@ const Hero = () => {
               <div className="flex flex-wrap items-center gap-8 mb-10">
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="bg-[#7c3aed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#6d28d9] transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:scale-105 active:scale-95"
+                  className="bg-[#4e24cf] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#6d28d9] transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:scale-105 active:scale-95"
                 >
                   Discuss Strategy <ArrowRight size={16} />
                 </button>
@@ -100,7 +100,7 @@ const Hero = () => {
               {/* PROJECT QUICK-LINKS */}
               <div className="flex flex-wrap gap-4 pt-6 border-t border-white/5">
                  <a href="https://whate.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group cursor-pointer">
-                    <Utensils size={12} className="text-[#7c3aed] opacity-50 group-hover:opacity-100" />
+                    <Utensils size={12} className="text-[#4e24cf] opacity-50 group-hover:opacity-100" />
                     <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest group-hover:text-white transition-colors">Whate Engine</span>
                  </a>
                  <div className="w-[1px] h-3 bg-white/10 self-center" />
@@ -128,8 +128,8 @@ const Hero = () => {
             <div className="absolute bottom-8 left-8 text-left">
               <p className="text-white font-bold uppercase tracking-widest text-[10px] mb-1">Founder, Blindspot Labs</p>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
-                <div className="w-4 h-4 rounded-full bg-[#7c3aed]/20 flex items-center justify-center">
-                  <MapPin size={10} className="text-[#7c3aed]" />
+                <div className="w-4 h-4 rounded-full bg-[#4e24cf]/20 flex items-center justify-center">
+                  <MapPin size={10} className="text-[#4e24cf]" />
                 </div>
                 <span className="text-xs font-medium tracking-tight">Nigeria / Global</span>
               </div>

@@ -28,44 +28,44 @@ const About = () => {
           
           {/* PHILOSOPHY CARD  */}
           <Card className="lg:col-span-7 glass-card border-white/5 bg-white/5 p-8 md:p-10">
-            <span className="text-[#7c3aed] text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">The Philosophy</span>
+            <span className="text-[#4e24cf] text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">The Philosophy</span>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
-              Longevity is the <span className="text-[#7c3aed]">Ultimate Leverage.</span>
+              Longevity is the <span className="text-[#4e24cf]">Ultimate Leverage.</span>
             </h2>
-            <p className="text-lg text-white italic border-l-2 border-[#7c3aed]/30 pl-6 mb-8">
+            <p className="text-lg text-white italic border-l-2 border-[#4e24cf]/30 pl-6 mb-8">
               "I help teams design systems that grow deliberately, identifying structural blindspots before they become expensive problems."
             </p>
             <div className="flex gap-6">
               <div className="flex items-center gap-2">
-                <Eye className="w-4 h-4 text-[#7c3aed]"/>
+                <Eye className="w-4 h-4 text-[#4e24cf]"/>
                 <span className="text-[10px] font-bold text-white uppercase tracking-widest">Growth Architect</span>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#7c3aed]"/>
+                <ShieldCheck className="w-4 h-4 text-[#4e24cf]"/>
                 <span className="text-[10px] font-bold text-white uppercase tracking-widest">Incentive Design</span>
               </div>
             </div>
           </Card>
 
           {/* CAPABILITIES CARD */}
-          <Card className="lg:col-span-5 glass-card border-[#7c3aed]/20 bg-[#7c3aed]/5 p-8 flex flex-col justify-between group">
+          <Card className="lg:col-span-5 glass-card border-[#4e24cf]/20 bg-[#4e24cf]/5 p-8 flex flex-col justify-between group">
             <div>
               <div className="flex justify-between items-start mb-6">
-                <Badge className="bg-[#7c3aed] text-white border-none text-[8px] tracking-widest uppercase">Multi-Disciplinary</Badge>
-                <Binary className="text-[#7c3aed]/20 group-hover:text-[#7c3aed]/40 transition-colors" size={32} />
+                <Badge className="bg-[#4e24cf] text-white border-none text-[8px] tracking-widest uppercase">Multi-Disciplinary</Badge>
+                <Binary className="text-[#4e24cf]/20 group-hover:text-[#4e24cf]/40 transition-colors" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-tighter">Core Resourcefulness</h3>
               
               <div className="grid grid-cols-1 gap-4">
                 {capabilities.map((cap) => (
-                  <div key={cap.label} className="bg-white/5 p-4 rounded-xl border border-white/5 hover:border-[#7c3aed]/30 transition-all">
-                    <div className="flex items-center gap-2 text-[#7c3aed] text-[10px] font-black uppercase tracking-widest mb-2">
+                  <div key={cap.label} className="bg-white/5 p-4 rounded-xl border border-white/5 hover:border-[#4e24cf]/30 transition-all">
+                    <div className="flex items-center gap-2 text-[#4e24cf] text-[10px] font-black uppercase tracking-widest mb-2">
                       {cap.icon} {cap.label}
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {cap.skills.map(skill => (
                         <span key={skill} className="text-[11px] text-white/60 font-medium">
-                          {skill} <span className="text-[#7c3aed]/40 ml-1">/</span>
+                          {skill} <span className="text-[#4e24cf]/40 ml-1">/</span>
                         </span>
                       ))}
                     </div>
@@ -76,7 +76,7 @@ const About = () => {
           </Card>
 
           {/* ACTIVE BUILDS TERMINAL */}
-          <Card className="lg:col-span-12 glass-card border-white/5 bg-white/5 p-8 relative overflow-hidden transition-all hover:border-[#7c3aed]/20">
+          <Card className="lg:col-span-12 glass-card border-white/5 bg-white/5 p-8 relative overflow-hidden transition-all hover:border-[#4e24cf]/20">
             <div className="flex flex-col md:flex-row gap-8 justify-between items-end">
               <div className="w-full md:w-1/2">
                 <Badge className="mb-4 bg-white/10 text-white border-none text-[8px] tracking-widest uppercase">Deployment Terminal</Badge>
@@ -84,20 +84,20 @@ const About = () => {
                 
                 <div className="space-y-6">
                   <a href="https://whate.online" target="_blank" className="group block">
-                    <div className="flex items-center gap-2 text-[10px] font-bold text-[#7c3aed] uppercase tracking-[0.2em] mb-1">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-[#4e24cf] uppercase tracking-[0.2em] mb-1">
                       <Utensils size={14} /> Whate Engine
                     </div>
                     <p className="text-[12px] text-white/70 group-hover:text-white transition-colors">
-                      PWA solving decision fatigue with <span className="text-[#7c3aed]">10k+ food items</span> and persona-based logic.
+                      PWA solving decision fatigue with <span className="text-[#4e24cf]">10k+ food items</span> and persona-based logic.
                     </p>
                   </a>
 
                   <a href="https://dearly.icu" target="_blank" className="group block">
-                    <div className="flex items-center gap-2 text-[10px] font-bold text-[#7c3aed] uppercase tracking-[0.2em] mb-1">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-[#4e24cf] uppercase tracking-[0.2em] mb-1">
                       <Heart size={14} /> Dearly Personalizer
                     </div>
                     <p className="text-[12px] text-white/70 group-hover:text-white transition-colors">
-                      Human-centric greeting system converting <span className="text-[#7c3aed] font-bold">attributes into assets</span>.
+                      Human-centric greeting system converting <span className="text-[#4e24cf] font-bold">attributes into assets</span>.
                     </p>
                   </a>
                 </div>
@@ -106,16 +106,16 @@ const About = () => {
               <div className="w-full md:w-auto flex flex-col gap-4 items-end">
                  <p className="text-[9px] text-gray-500 uppercase font-bold tracking-[0.2em]">Strategic R&D</p>
                  <div className="flex gap-3">
-                    <a href="https://labs.mojeeb.xyz/" target="_blank" className="bg-white/5 hover:bg-[#7c3aed]/20 p-3 rounded-xl transition-colors border border-white/10 group">
-                      <Cpu size={20} className="text-gray-400 group-hover:text-[#7c3aed]" />
+                    <a href="https://labs.mojeeb.xyz/" target="_blank" className="bg-white/5 hover:bg-[#4e24cf]/20 p-3 rounded-xl transition-colors border border-white/10 group">
+                      <Cpu size={20} className="text-gray-400 group-hover:text-[#4e24cf]" />
                     </a>
-                    <a href="https://trench.mojeeb.xyz" target="_blank" className="bg-white/5 hover:bg-[#7c3aed]/20 p-3 rounded-xl transition-colors border border-white/10 group">
-                      <Gamepad2 size={20} className="text-gray-400 group-hover:text-[#7c3aed]" />
+                    <a href="https://trench.mojeeb.xyz" target="_blank" className="bg-white/5 hover:bg-[#4e24cf]/20 p-3 rounded-xl transition-colors border border-white/10 group">
+                      <Gamepad2 size={20} className="text-gray-400 group-hover:text-[#4e24cf]" />
                     </a>
                  </div>
               </div>
             </div>
-            <Gauge size={120} className="absolute -right-8 -bottom-8 text-[#7c3aed] opacity-[0.03] pointer-events-none" />
+            <Gauge size={120} className="absolute -right-8 -bottom-8 text-[#4e24cf] opacity-[0.03] pointer-events-none" />
           </Card>
 
           {/* ECOSYSTEMS BAR */}
@@ -132,7 +132,7 @@ const About = () => {
                     <img src={eco.logo} alt={eco.name} className="w-full h-full object-contain" />
                   )}
                 </div>
-                <span className="text-[9px] font-bold tracking-widest text-white uppercase group-hover:text-[#7c3aed] transition-colors">
+                <span className="text-[9px] font-bold tracking-widest text-white uppercase group-hover:text-[#4e24cf] transition-colors">
                   {eco.name}
                 </span>
               </div>
