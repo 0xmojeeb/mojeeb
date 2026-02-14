@@ -89,7 +89,7 @@ const Education = () => {
                 <History className="w-5 h-5 text-primary/60" />
                 <div>
                   <p className="text-[10px] text-white uppercase tracking-[0.2em] font-black">Historical Heritage Preservation</p>
-                  <p className="text-[9px] text-gray-500 uppercase tracking-widest">Integrating ancestral wisdom into modern educational frameworks</p>
+                  <p className="text-[9px] text-gray-500 uppercase tracking-widest">Integrating ancestral wisdom into modern technology frameworks</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
