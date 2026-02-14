@@ -92,12 +92,6 @@ const Education = () => {
                   <p className="text-[9px] text-gray-500 uppercase tracking-widest">Integrating ancestral wisdom into modern technology frameworks</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <BookOpen className="w-4 h-4 text-primary/60" />
-                <p className="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-medium">
-                  Curriculum Design & Educational Theory
-                </p>
-              </div>
             </div>
           </Card>
         </div>
