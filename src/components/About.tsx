@@ -26,7 +26,7 @@ const About = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           
-          {/* PHILOSOPHY CARD (Spans 7 columns) */}
+          {/* PHILOSOPHY CARD  */}
           <Card className="lg:col-span-7 glass-card border-white/5 bg-white/5 p-8 md:p-10">
             <span className="text-[#7c3aed] text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">The Philosophy</span>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
@@ -47,7 +47,7 @@ const About = () => {
             </div>
           </Card>
 
-          {/* CAPABILITIES CARD (Attention Grabber - Spans 5 columns) */}
+          {/* CAPABILITIES CARD */}
           <Card className="lg:col-span-5 glass-card border-[#7c3aed]/20 bg-[#7c3aed]/5 p-8 flex flex-col justify-between group">
             <div>
               <div className="flex justify-between items-start mb-6">
@@ -75,7 +75,7 @@ const About = () => {
             </div>
           </Card>
 
-          {/* ACTIVE BUILDS TERMINAL (Full width on bottom grid) */}
+          {/* ACTIVE BUILDS TERMINAL */}
           <Card className="lg:col-span-12 glass-card border-white/5 bg-white/5 p-8 relative overflow-hidden transition-all hover:border-[#7c3aed]/20">
             <div className="flex flex-col md:flex-row gap-8 justify-between items-end">
               <div className="w-full md:w-1/2">
