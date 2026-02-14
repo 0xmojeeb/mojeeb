@@ -20,5 +20,4 @@ Allow: /
 # Sitemap location
 Sitemap: https://mojeeb.xyz/sitemap.xml
 
-# Crawl delay (optional - uncomment if needed)
-# Crawl-delay: 1
+

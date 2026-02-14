@@ -11,13 +11,13 @@ interface ContactFormData {
   project?: string;
   message: string;
   collaborationTypes?: string[];
-  honeypot?: string; // Honeypot field for bot detection
+  honeypot?: string; 
 }
 
-// Simple in-memory rate limiting (resets on function cold start)
+
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
-const MAX_REQUESTS_PER_WINDOW = 5; // 5 requests per hour per IP
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; 
+const MAX_REQUESTS_PER_WINDOW = 5; 
 
 function isRateLimited(identifier: string): boolean {
   const now = Date.now();
@@ -36,7 +36,7 @@ function isRateLimited(identifier: string): boolean {
   return false;
 }
 
-// Input sanitization
+
 function sanitizeInput(input: string, maxLength: number): string {
   if (typeof input !== 'string') return '';
   return input.trim().slice(0, maxLength);
@@ -47,7 +47,7 @@ function isValidEmail(email: string): boolean {
   return emailRegex.test(email) && email.length <= 255;
 }
 
-// Escape HTML to prevent XSS in email content
+
 function escapeHtml(text: string): string {
   const htmlEntities: Record<string, string> = {
     '&': '&amp;',
@@ -60,13 +60,13 @@ function escapeHtml(text: string): string {
 }
 
 serve(async (req) => {
-  // Handle CORS preflight requests
+  
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
   }
 
   try {
-    // Rate limiting based on IP
+    
     const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
                      req.headers.get('cf-connecting-ip') || 
                      'unknown';
@@ -86,10 +86,10 @@ serve(async (req) => {
 
     const formData: ContactFormData = await req.json()
     
-    // Honeypot check - if this field is filled, it's likely a bot
+    
     if (formData.honeypot && formData.honeypot.length > 0) {
       console.warn(`Honeypot triggered from IP: ${clientIP}`);
-      // Return success to not alert the bot, but don't send email
+      
       return new Response(
         JSON.stringify({ success: true, message: 'Message sent successfully' }),
         { 
@@ -99,7 +99,7 @@ serve(async (req) => {
       )
     }
 
-    // Sanitize and validate inputs
+    
     const name = sanitizeInput(formData.name || '', 100);
     const email = sanitizeInput(formData.email || '', 255);
     const project = sanitizeInput(formData.project || '', 200);
@@ -108,7 +108,7 @@ serve(async (req) => {
       ? formData.collaborationTypes.slice(0, 10).map(t => sanitizeInput(String(t), 50))
       : [];
 
-    // Validation
+    
     if (!name || name.length < 2) {
       return new Response(
         JSON.stringify({ error: 'Name must be at least 2 characters' }),
@@ -139,7 +139,7 @@ serve(async (req) => {
       )
     }
 
-    // Get Resend API key from environment
+    
     const resendApiKey = Deno.env.get('RESEND_API_KEY')
     
     if (!resendApiKey) {
@@ -153,14 +153,14 @@ serve(async (req) => {
       )
     }
 
-    // Escape HTML in user inputs for email body
+    
     const safeName = escapeHtml(name);
     const safeEmail = escapeHtml(email);
     const safeProject = escapeHtml(project);
     const safeMessage = escapeHtml(message);
     const safeCollaborationTypes = collaborationTypes.map(escapeHtml);
 
-    // Prepare email content
+    
     const emailSubject = `New Contact Form Submission from ${safeName}`
     const emailBody = `
       <h2>New Contact Form Submission</h2>
@@ -177,7 +177,7 @@ serve(async (req) => {
       <p><small>Client IP: ${escapeHtml(clientIP)}</small></p>
     `
 
-    // Send email using Resend
+    
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {

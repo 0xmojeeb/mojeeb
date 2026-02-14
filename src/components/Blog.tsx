@@ -7,7 +7,7 @@ const Blog = () => {
       title: "Read Before It’s Too Late: The 2026 Creator Systems",
       desc: "Talent isn't enough anymore. Exploring the Top 5 Creator Packs required to survive the 2026 barrier to entry.",
       link: "https://x.com/MojeebHQ/status/2009497216109695467?s=20",
-      span: "md:col-span-2", // Large card for the new featured post
+      span: "md:col-span-2", 
       tag: "Strategy"
     },
     {

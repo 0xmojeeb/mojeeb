@@ -72,7 +72,7 @@ const About = () => {
                 </div>
               </a>
 
-              {/* BLINDSPOT LABS (Condensed) */}
+              
               <div className="pt-2 border-t border-white/5">
                 <p className="text-[9px] text-gray-500 uppercase font-bold tracking-[0.2em] mb-3">Strategy Research</p>
                 <div className="flex gap-3">
@@ -87,7 +87,7 @@ const About = () => {
             </div>
           </Card>
 
-          {/* ECOSYSTEMS BAR */}
+         
           <div className="md:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-[2rem] border border-white/5 mt-2">
             {ecosystems.map((eco) => (
               <div key={eco.name} className="flex items-center gap-3 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer group">

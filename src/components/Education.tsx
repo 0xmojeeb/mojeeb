@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <section id="education" className="py-12 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
-        {/* NEW SYSTEM LABEL HEADER */}
+        
         <div className="mb-10">
           <span className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-2 block text-left">
             Knowledge Base
@@ -46,7 +46,7 @@ const Education = () => {
               </div>
             </div>
 
-            {/* CORE COMPETENCIES DERIVED FROM HISTORY & EDUCATION */}
+            
             <div className="mt-8 pt-8 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-2">
@@ -82,7 +82,7 @@ const Education = () => {
             </div>
           </Card>
 
-          {/* Heritage Focus Card */}
+          
           <Card className="md:col-span-12 glass-card border-white/5 bg-white/5 p-6 border-dashed opacity-80 hover:opacity-100 transition-opacity">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">

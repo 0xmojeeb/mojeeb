@@ -9,7 +9,7 @@ const ProjectVault = () => {
       tech: ["Gemini AI", "Vercel", "Strategy"],
       link: "https://labs.mojeeb.xyz",
       icon: <Zap className="text-[#4e24cf]" size={20} />,
-      size: "md:col-span-7" // Featured Large
+      size: "md:col-span-7" 
     },
     {
       title: "Whate",
@@ -18,7 +18,7 @@ const ProjectVault = () => {
       tech: ["PWA", "UX Logic", "Global"],
       link: "https://whate.online",
       icon: <Utensils className="text-[#4e24cf]" size={20} />,
-      size: "md:col-span-5" // Large
+      size: "md:col-span-5" 
     },
     {
       title: "Trench Sniper",

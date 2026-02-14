@@ -55,20 +55,20 @@ const Navigation = () => {
 
   return (
     <>
-      {/* BRAND LOGO - LEFT */}
+      
       <div className="fixed top-6 left-6 z-[60]">
         <Button
           variant="ghost"
           onClick={() => scrollToSection("hero")}
           className="group flex items-center gap-2 p-0 hover:bg-transparent"
         >
-          {/* LOGO CONTAINER */}
+          
           <div className="w-8 h-8 bg-[#4e24cf] flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)] overflow-hidden">
             <img 
               src="/lovable-uploads/logo.png" 
               alt="Logo" 
               className="w-full h-full object-contain p-1" 
-              /* FILTERS REMOVED TO PREVENT WHITE BLANK SQUARE */
+              
             />
           </div>
           <span className="text-lg font-bold tracking-tighter text-white hidden sm:block">
@@ -77,7 +77,7 @@ const Navigation = () => {
         </Button>
       </div>
 
-      {/* DESKTOP NAV - CENTER */}
+      
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden md:block">
         <div className="bg-black/40 backdrop-blur-xl border border-white/10 px-2 py-1.5 rounded-full shadow-2xl">
           <div className="flex items-center gap-1">
@@ -105,7 +105,7 @@ const Navigation = () => {
         </div>
       </nav>
 
-      {/* MOBILE TRIGGER - RIGHT */}
+      
       <div className="fixed top-6 right-6 z-[60] md:hidden">
         <Button
           variant="outline"
@@ -119,7 +119,7 @@ const Navigation = () => {
         </Button>
       </div>
 
-      {/* MOBILE OVERLAY */}
+      
       <div className={`fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl transition-transform duration-500 md:hidden ${
         isOpen ? "translate-y-0" : "-translate-y-full"
       }`}>

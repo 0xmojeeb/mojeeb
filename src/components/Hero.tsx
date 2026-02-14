@@ -14,10 +14,10 @@ const Hero = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           
-          {/* MAIN TEXT CARD */}
+          
           <div className="md:col-span-8 bg-[#0a0a0a] border border-white/10 p-12 rounded-[2.5rem] flex flex-col justify-center min-h-[480px] relative overflow-hidden group">
             
-            {/* BRANDED BACKGROUND DECOR - Using favicon.io high-res asset */}
+            
             <div className="absolute -top-10 -right-10 p-8 opacity-5 group-hover:opacity-10 transition-all duration-500 pointer-events-none rotate-12 group-hover:rotate-0">
               <img 
                 src="/lovable-uploads/logo.png" 
@@ -45,7 +45,7 @@ const Hero = () => {
                 Designing growth systems and ecosystem strategy for the next on-chain cycle.
               </p>
               
-              {/* ACTION ZONE */}
+              
               <div className="flex flex-wrap items-center gap-8 mb-10">
                 <button 
                   onClick={() => scrollToSection('contact')}
@@ -67,7 +67,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* LIVE ECOSYSTEM STATUS */}
+              
               <div className="flex flex-wrap gap-4 pt-6 border-t border-white/5">
                  <a href="https://whate.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group cursor-pointer">
                     <Utensils size={12} className="text-[#4e24cf] opacity-50 group-hover:opacity-100" />
@@ -87,7 +87,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* HEADSHOT CARD */}
+          
           <div className="md:col-span-4 h-[450px] md:h-auto bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] overflow-hidden relative group">
             <img 
               src="/mojeeb-2026-headshot.jpg" 

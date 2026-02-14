@@ -15,7 +15,7 @@ const Experience = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           
-          {/* LEADERSHIP: BLINDSPOT LABS */}
+          
           <Card className="md:col-span-12 glass-card border-primary/20 bg-primary/5 p-8 hover:border-primary/40 transition-all">
             <div className="flex flex-col md:flex-row justify-between mb-6 gap-4">
               <div>
@@ -42,7 +42,7 @@ const Experience = () => {
             </ul>
           </Card>
 
-          {/* GROWTH MILESTONE: TAIKU */}
+          
           <Card className="md:col-span-6 glass-card p-8 bg-primary/5 border-primary/20 relative overflow-hidden group">
             <div className="flex justify-between items-start mb-6">
               <div className="p-2 bg-primary/10 rounded-lg">
@@ -57,7 +57,7 @@ const Experience = () => {
             </p>
           </Card>
 
-          {/* RETENTION MILESTONE: SKYLOS */}
+          
           <Card className="md:col-span-6 glass-card p-8 bg-white/5 border-white/5 relative overflow-hidden group">
              <div className="flex justify-between items-start mb-6">
               <div className="p-2 bg-white/10 rounded-lg">
@@ -72,7 +72,7 @@ const Experience = () => {
             </p>
           </Card>
 
-          {/* ECOSYSTEM NODES */}
+          
           <div className="md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               {c:"EchelonHQ", r:"Strategist", i: <Zap size={12}/>}, 

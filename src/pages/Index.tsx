@@ -32,7 +32,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-[#030303] text-white selection:bg-[#4e24cf]/30">
       
-      {/* 2026 PROGRESS BAR */}
+      
       <div 
         className="fixed top-0 left-0 h-[2px] bg-[#4e24cf] z-[100] shadow-[0_0_10px_#4e24cf] transition-all duration-150 ease-out"
         style={{ width: `${scrollPercentage}%` }}
@@ -64,18 +64,18 @@ const Index = () => {
         </div>
       </main>
       
-      {/* FOOTER: Updated with Local Asset Integration */}
+      
       <footer className="py-20 px-6 border-t border-white/5 bg-[#050505]">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
             
             <div className="space-y-6">
               <div className="flex items-center gap-3 group">
-                {/* BRAND FAVICON INTEGRATION */}
+                
                 <div className="w-10 h-10 bg-[#0a0a0a] border border-white/10 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(124,58,237,0.1)] group-hover:border-[#4e24cf]/50 transition-all overflow-hidden">
                   <img 
                     src="/lovable-uploads/favicon.ico" 
-                    alt="M Brand Icon" 
+                    alt="Mojeeb Icon" 
                     className="w-6 h-6 object-contain"
                   />
                 </div>
