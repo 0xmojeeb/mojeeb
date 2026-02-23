@@ -25,7 +25,7 @@ const ProjectVault = () => {
       tagline: "Culture Translator",
       description: "Gamified educational terminal for crypto-vernacular. Bridging the gap between the trenches and retail.",
       tech: ["Gamification", "Web3 Culture"],
-      link: "https://trench-sniper.vercel.app",
+      link: "https://trench.mojeeb.xyz",
       icon: <Gamepad2 className="text-[#4e24cf]" size={20} />,
       size: "md:col-span-4" 
     },
@@ -43,7 +43,7 @@ const ProjectVault = () => {
       tagline: "Smart Infrastructure",
       description: "Full-stack NFT ecosystem featuring on-chain SVG generation and custom smart contract deployment.",
       tech: ["Solidity", "SVG", "On-Chain"],
-      link: "https://bearo.vercel.app",
+      link: "https://bearo.mojeeb.xyz",
       icon: <Box className="text-[#4e24cf]" size={20} />,
       size: "md:col-span-4"
     }
