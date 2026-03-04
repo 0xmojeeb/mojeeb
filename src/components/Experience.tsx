@@ -20,7 +20,7 @@ const Experience = () => {
             <div className="flex flex-col md:flex-row justify-between mb-6 gap-4">
               <div>
                 <div className="flex items-center gap-3">
-                  <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">Blindspot Labs</h3>
+                  <h3 className="text-2xl font-bold text-white uppercase tracking-tighter">Blindspot Lab</h3>
                   <Star className="w-5 h-5 text-primary fill-current" />
                 </div>
                 <p className="text-primary font-bold text-xs tracking-[0.2em] uppercase mt-1">Founder & Systems Architect</p>

@@ -66,12 +66,12 @@ const Hero = () => {
               <p className="text-gray-400 text-lg max-w-lg leading-relaxed font-medium mb-10">
                 Founder of{" "}
                 <a 
-                  href="https://labs.mojeeb.xyz" 
+                  href="https://blindsplotlab.xyz" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white underline decoration-[#4e24cf]/50 underline-offset-4 cursor-pointer hover:text-[#4e24cf] transition-colors"
                 >
-                  Blindspot Labs
+                  Blindspot Lab
                 </a>. 
                 Designing growth systems and ecosystem strategy for the next on-chain cycle.
               </p>
@@ -126,7 +126,7 @@ const Hero = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
             <div className="absolute bottom-8 left-8 text-left">
-              <p className="text-white font-bold uppercase tracking-widest text-[10px] mb-1">Founder, Blindspot Labs</p>
+              <p className="text-white font-bold uppercase tracking-widest text-[10px] mb-1">Founder, Blindspot Lab</p>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <div className="w-4 h-4 rounded-full bg-[#4e24cf]/20 flex items-center justify-center">
                   <MapPin size={10} className="text-[#4e24cf]" />

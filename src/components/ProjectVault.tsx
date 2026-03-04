@@ -3,11 +3,11 @@ import { ExternalLink, Zap, Utensils, Target, Heart, Box, Gamepad2 } from "lucid
 const ProjectVault = () => {
   const projects = [
     {
-      title: "Blindspot Labs",
+      title: "Blindspot Lab",
       tagline: "Strategy Intelligence",
       description: "A Web3 AI Auditor designed to identify structural roadmap failures. Turning blind spots into leverage.",
       tech: ["Gemini AI", "Vercel", "Strategy"],
-      link: "https://labs.mojeeb.xyz",
+      link: "https://blindsplotlab.xyz",
       icon: <Zap className="text-[#4e24cf]" size={20} />,
       size: "md:col-span-7" 
     },

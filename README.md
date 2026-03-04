@@ -13,8 +13,8 @@ An integrated dashboard for **Systems Architecture** and **Web3 Growth Strategy*
 - **Icons:** Lucide-React
 - **State:** React Query / TanStack
 
-## 🔬 Core Focus: Blindspot Labs
-This site serves as the gateway to **Blindspot Labs**, a research initiative dedicated to the **2026 Series**. We focus on identifying structural failure points in Web3 ecosystems before they scale.
+## 🔬 Core Focus: Blindspot Lab
+This site serves as the gateway to **Blindspot Lab**, a research initiative dedicated to the **2026 Series**. We focus on identifying structural failure points in Web3 ecosystems before they scale.
 
 ## 📈 Track Record
 - **Taiku NFT:** Engineered viral growth from 3 → 9k followers in 3.5 days.
