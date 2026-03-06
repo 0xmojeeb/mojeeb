@@ -1,4 +1,4 @@
-import { ExternalLink, Zap, Utensils, Target, Heart, Box, Gamepad2 } from "lucide-react";
+import { ExternalLink, Zap, Utensils, Target, Heart, Box, Gamepad2, Radio } from "lucide-react";
 
 const ProjectVault = () => {
   const projects = [
@@ -19,6 +19,15 @@ const ProjectVault = () => {
       link: "https://whate.online",
       icon: <Utensils className="text-[#4e24cf]" size={20} />,
       size: "md:col-span-5" 
+    },
+    {
+      title: "VibeStream",
+      tagline: "Discovery Layer",
+      description: "Where the next unicorn gets discovered. A platform built to surface high-signal opportunities before the crowd catches on.",
+      tech: ["Discovery", "Signal", "Web3"],
+      link: "https://vibestream.cc",
+      icon: <Radio className="text-[#4e24cf]" size={20} />,
+      size: "md:col-span-4"
     },
     {
       title: "Trench Sniper",
@@ -45,7 +54,7 @@ const ProjectVault = () => {
       tech: ["Solidity", "SVG", "On-Chain"],
       link: "https://bearo.mojeeb.xyz",
       icon: <Box className="text-[#4e24cf]" size={20} />,
-      size: "md:col-span-4"
+      size: "md:col-span-12"
     }
   ];
 

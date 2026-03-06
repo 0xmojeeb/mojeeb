@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { 
   Eye, ShieldCheck, Gauge, ExternalLink, Cpu, 
   Gamepad2, Utensils, Heart, PenTool, Code2, 
-  LineChart, Layout, Rocket, Binary
+  LineChart, Layout, Rocket, Binary, Radio
 } from "lucide-react";
 
 const About = () => {
@@ -113,6 +113,15 @@ const About = () => {
                     </div>
                     <p className="text-[12px] text-white/70 group-hover:text-white transition-colors">
                       Human-centric greeting system converting <span className="text-[#4e24cf] font-bold">attributes into assets</span>.
+                    </p>
+                  </a>
+
+                  <a href="https://vibestream.cc" target="_blank" className="group block">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-[#4e24cf] uppercase tracking-[0.2em] mb-1">
+                      <Radio size={14} /> VibeStream
+                    </div>
+                    <p className="text-[12px] text-white/70 group-hover:text-white transition-colors">
+                      Discovery platform where <span className="text-[#4e24cf] font-bold">the next unicorn</span> gets found before the crowd catches on.
                     </p>
                   </a>
                 </div>
