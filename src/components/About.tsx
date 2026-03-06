@@ -26,7 +26,7 @@ const About = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
           
-          {/* PHILOSOPHY CARD  */}
+          {/* PHILOSOPHY CARD */}
           <Card className="lg:col-span-7 glass-card border-white/5 bg-white/5 p-8 md:p-10">
             <span className="text-[#4e24cf] text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">The Philosophy</span>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
@@ -47,7 +47,7 @@ const About = () => {
             </div>
           </Card>
 
-          
+          {/* CAPABILITIES CARD */}
           <Card className="lg:col-span-5 glass-card border-[#4e24cf]/20 bg-[#4e24cf]/5 p-8 flex flex-col justify-between group">
             <div>
               <div className="flex justify-between items-start mb-6">
@@ -75,7 +75,7 @@ const About = () => {
             </div>
           </Card>
 
-          
+          {/* ACTIVE SYSTEMS CARD */}
           <Card className="lg:col-span-12 glass-card border-white/5 bg-white/5 p-8 relative overflow-hidden transition-all hover:border-[#4e24cf]/20">
             <div className="flex flex-col md:flex-row gap-8 justify-between items-end">
               <div className="w-full md:w-1/2">
@@ -119,18 +119,16 @@ const About = () => {
           </Card>
 
           
-          <div className="lg:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-3xl border border-white/5 mt-2">
+          <div className="lg:col-span-12 flex flex-wrap justify-between items-center bg-white/5 p-6 rounded-3xl border border-white/5 mt-2 gap-4">
             {ecosystems.map((eco) => (
               <div key={eco.name} className="flex items-center gap-3 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer group">
-                <div className="w-5 h-5 flex items-center justify-center">
-                  {eco.name === "BASE" ? (
-                    <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
-                      <path d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z" fill="#0052FF"/>
-                      <path d="M12 17.5C15.0376 17.5 17.5 15.0376 17.5 12C17.5 8.96244 15.0376 6.5 12 6.5C8.96244 6.5 6.5 8.96244 6.5 12C6.5 15.0376 8.96244 17.5 12 17.5Z" fill="white"/>
-                    </svg>
-                  ) : (
-                    <img src={eco.logo} alt={eco.name} className="w-full h-full object-contain" />
-                  )}
+                <div className="w-5 h-5 flex items-center justify-center shrink-0">
+                  <img 
+                    src={eco.logo} 
+                    alt={eco.name} 
+                    className="w-full h-full object-contain"
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  />
                 </div>
                 <span className="text-[9px] font-bold tracking-widest text-white uppercase group-hover:text-[#4e24cf] transition-colors">
                   {eco.name}
