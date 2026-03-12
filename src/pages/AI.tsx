@@ -625,7 +625,7 @@ export default function AI() {
       document.head.appendChild(link)
     }
 
-    // Scroll reveal observer
+   
     const reveals = document.querySelectorAll('.ai-page .reveal')
     const observer = new IntersectionObserver(
       (entries) => {
@@ -722,7 +722,7 @@ export default function AI() {
             </div>
             <div className="about-stats reveal">
               <div className="stat-item">
-                <span className="stat-num">5+</span>
+                <span className="stat-num">8+</span>
                 <span className="stat-label">AI-powered products shipped</span>
               </div>
               <div className="stat-item">
