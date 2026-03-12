@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Home, User, Mail, PenTool, Circle, Zap, Briefcase } from "lucide-react";
+import { Menu, X, Home, User, Mail, PenTool, Circle, Zap, Briefcase, Sparkles } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +9,7 @@ const Navigation = () => {
   const navItems = useMemo(() => [
     { id: "hero", label: "Home", icon: Home },
     { id: "about", label: "About", icon: User },
-    { id: "work", label: "Work", icon: Zap }, 
+    { id: "work", label: "Work", icon: Zap },
     { id: "experience", label: "Experience", icon: Briefcase },
     { id: "blog", label: "Blog", icon: PenTool },
     { id: "contact", label: "Contact", icon: Mail },
@@ -55,20 +55,18 @@ const Navigation = () => {
 
   return (
     <>
-      
+      {/* Logo */}
       <div className="fixed top-6 left-6 z-[60]">
         <Button
           variant="ghost"
           onClick={() => scrollToSection("hero")}
           className="group flex items-center gap-2 p-0 hover:bg-transparent"
         >
-          
           <div className="w-8 h-8 bg-[#4e24cf] flex items-center justify-center rounded-lg group-hover:rotate-90 transition-transform duration-500 shadow-[0_0_15px_rgba(124,58,237,0.4)] overflow-hidden">
-            <img 
-              src="/lovable-uploads/logo.png" 
-              alt="Logo" 
-              className="w-full h-full object-contain p-1" 
-              
+            <img
+              src="/lovable-uploads/logo.png"
+              alt="Logo"
+              className="w-full h-full object-contain p-1"
             />
           </div>
           <span className="text-lg font-bold tracking-tighter text-white hidden sm:block">
@@ -77,7 +75,7 @@ const Navigation = () => {
         </Button>
       </div>
 
-      
+      {/* Desktop Nav */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden md:block">
         <div className="bg-black/40 backdrop-blur-xl border border-white/10 px-2 py-1.5 rounded-full shadow-2xl">
           <div className="flex items-center gap-1">
@@ -88,8 +86,8 @@ const Navigation = () => {
                 size="sm"
                 onClick={() => scrollToSection(item.id)}
                 className={`relative px-4 py-2 rounded-full transition-all duration-300 group ${
-                  activeSection === item.id 
-                    ? "text-[#4e24cf] bg-[#4e24cf]/10" 
+                  activeSection === item.id
+                    ? "text-[#4e24cf] bg-[#4e24cf]/10"
                     : "text-muted-foreground hover:text-white"
                 }`}
               >
@@ -101,11 +99,25 @@ const Navigation = () => {
                 </span>
               </Button>
             ))}
+
+            {/* AI Page Link — separate from scroll nav */}
+            <a href="/ai">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="relative px-4 py-2 rounded-full transition-all duration-300 text-muted-foreground hover:text-white hover:bg-[#4e24cf]/10 border border-[#4e24cf]/30 ml-1"
+              >
+                <span className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5">
+                  <Sparkles className="w-3 h-3 text-[#a855f7]" />
+                  AI
+                </span>
+              </Button>
+            </a>
           </div>
         </div>
       </nav>
 
-      
+      {/* Mobile Menu Button */}
       <div className="fixed top-6 right-6 z-[60] md:hidden">
         <Button
           variant="outline"
@@ -119,7 +131,7 @@ const Navigation = () => {
         </Button>
       </div>
 
-      
+      {/* Mobile Menu */}
       <div className={`fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl transition-transform duration-500 md:hidden ${
         isOpen ? "translate-y-0" : "-translate-y-full"
       }`}>
@@ -137,7 +149,18 @@ const Navigation = () => {
               <span className="uppercase tracking-tighter">{item.label}</span>
             </button>
           ))}
-          
+
+          {/* AI link in mobile menu */}
+          <a
+            href="/ai"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-4 text-3xl font-bold text-[#a855f7] hover:text-[#c084fc] transition-all"
+            style={{ transitionDelay: `${navItems.length * 50}ms` }}
+          >
+            <Sparkles className="w-6 h-6 text-[#a855f7]" />
+            <span className="uppercase tracking-tighter">AI</span>
+          </a>
+
           <div className="mt-12 pt-8 border-t border-white/10 w-48 text-center">
             <p className="text-[10px] text-muted-foreground uppercase tracking-[0.5em]">System Vers. 2026.02.42</p>
           </div>
