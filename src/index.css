@@ -134,3 +134,14 @@ All colors MUST be HSL.
     box-shadow: var(--glow-accent);
   }
 }
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex !important;
+  width: max-content; 
+  animation: ticker 30s linear infinite;
+}
