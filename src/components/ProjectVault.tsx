@@ -120,7 +120,7 @@ const ProjectVault = () => {
           {projects.map((p, i) => (
             <div
               key={i}
-              className={`${p.size} group relative bg-white border rounded-[1.75rem] p-8 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-md
+              className={`${p.size} group relative bg-white/90 backdrop-blur-sm border rounded-[1.75rem] p-8 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-md
                 ${p.accent ? "border-[#5B2BFF]/30 hover:border-[#5B2BFF]/60" : "border-gray-200 hover:border-[#5B2BFF]/30"}
               `}
             >
@@ -129,9 +129,9 @@ const ProjectVault = () => {
                 <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#5B2BFF]/5 rounded-full blur-3xl pointer-events-none group-hover:opacity-150 transition-opacity" />
               )}
 
-              {/* HOT badge */}
+              {/* HOT badge - keep solid for visibility */}
               {p.hot && (
-                <div className="absolute top-6 right-14 flex items-center gap-1.5 bg-[#5B2BFF]/10 border border-[#5B2BFF]/20 px-2.5 py-1 rounded-full">
+                <div className="absolute top-6 right-14 flex items-center gap-1.5 bg-[#5B2BFF]/10 backdrop-blur-sm border border-[#5B2BFF]/20 px-2.5 py-1 rounded-full">
                   <TrendingUp size={8} className="text-[#5B2BFF]" />
                   <span className="text-[8px] font-black text-[#5B2BFF] uppercase tracking-widest">New Launch</span>
                 </div>
@@ -158,7 +158,7 @@ const ProjectVault = () => {
 
                 {/* Launch stat */}
                 {p.stat && (
-                  <div className="bg-[#5B2BFF]/5 border border-[#5B2BFF]/20 rounded-xl px-4 py-2.5 mb-5 inline-flex items-center gap-3">
+                  <div className="bg-[#5B2BFF]/5 backdrop-blur-sm border border-[#5B2BFF]/20 rounded-xl px-4 py-2.5 mb-5 inline-flex items-center gap-3">
                     <TrendingUp size={10} className="text-[#5B2BFF]" />
                     <span className="text-[9px] text-[#5B2BFF] font-black uppercase tracking-widest">{p.stat.label}:</span>
                     <span className="text-[9px] text-gray-900 font-bold">{p.stat.value}</span>

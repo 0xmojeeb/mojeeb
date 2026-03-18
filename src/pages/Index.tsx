@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import { CapabilitiesTicker } from "@/components/CapabilitiesTicker"; 
 import About from "@/components/About";
 import ProjectVault from "@/components/ProjectVault";
 import Education from "@/components/Education";
@@ -32,7 +33,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-[#F9F6F2] text-gray-900 selection:bg-[#5B2BFF]/20">
       
-      {/* Scroll Progress Bar - Updated to your purple */}
+      {/* Scroll Progress Bar */}
       <div 
         className="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-[#5B2BFF] to-[#4E24CF] z-[100] shadow-[0_0_10px_rgba(91,43,255,0.3)] transition-all duration-150 ease-out"
         style={{ width: `${scrollPercentage}%` }}
@@ -44,6 +45,11 @@ const Index = () => {
         <section id="hero">
           <Hero />
         </section>
+
+        {/* Standalone Ticker - Full width between Hero and About */}
+        <div className="w-full">
+          <CapabilitiesTicker />
+        </div>
         
         <div className="space-y-0 pb-16">
           <About />
@@ -64,7 +70,7 @@ const Index = () => {
         </div>
       </main>
       
-      {/* Footer - Completely redesigned for light theme */}
+      {/* Footer */}
       <footer className="py-20 px-6 border-t border-gray-200 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row justify-between items-start gap-12">
@@ -129,7 +135,7 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Optional: AI page promo in footer */}
+          {/* AI page promo in footer */}
           <div className="mt-12 text-center">
             <a 
               href="/ai" 

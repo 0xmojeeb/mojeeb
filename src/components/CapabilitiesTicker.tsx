@@ -8,40 +8,18 @@ const capabilities = [
 
 export function CapabilitiesTicker() {
   
-  const tickerContent = capabilities.flatMap((cap) => [
-    ...cap.skills,
-  ]);
-
-  
+  const tickerContent = capabilities.flatMap((cap) => cap.skills);
   const items = [...tickerContent, ...tickerContent];
 
   return (
-    <div
-      className="overflow-hidden py-4 border-y"
-      style={{ 
-        borderColor: "var(--border)", 
-        background: "var(--bg-2)" 
-      }}
-      aria-hidden="true"
-    >
-      <div
-        className="flex gap-16 whitespace-nowrap"
-        style={{ animation: "ticker 40s linear infinite" }} 
-      >
+    <div className="overflow-hidden py-4 border-y border-gray-200 bg-white/30 backdrop-blur-sm w-full">
+      <div className="flex gap-16 whitespace-nowrap animate-ticker">
         {items.map((skill, i) => (
           <span
             key={i}
-            className="flex items-center gap-3 shrink-0"
-            style={{ 
-              fontFamily: "var(--font-mono)", 
-              fontSize: "0.7rem", 
-              letterSpacing: "0.1em", 
-              textTransform: "uppercase", 
-              color: "var(--text-tertiary)" 
-            }}
+            className="flex items-center gap-3 shrink-0 text-[0.7rem] font-mono uppercase tracking-[0.1em] text-gray-500"
           >
-            {/* Using a diamond icon as your separator */}
-            <span style={{ color: "var(--accent)", fontSize: "0.5rem" }}>◆</span>
+            <span className="text-[#5B2BFF] text-[0.5rem]">◆</span>
             {skill}
           </span>
         ))}

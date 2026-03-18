@@ -18,7 +18,7 @@ const Contact = () => {
     <section id="contact" className="py-20 px-6 bg-[#F9F6F2]">
       <div className="container mx-auto max-w-6xl">
 
-        {/* Hire Me Header */}
+        {/* Hire Me Header - Keep this solid with gradient */}
         <div className="bg-gradient-to-r from-[#5B2BFF] to-[#4E24CF] rounded-[2rem] p-10 md:p-14 mb-6 relative overflow-hidden shadow-lg">
           <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-full h-px bg-white/20" />
@@ -41,11 +41,11 @@ const Contact = () => {
         {/* Contact + Services */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
 
-          {/* Contact channels */}
+          {/* Contact channels - Updated with transparency */}
           <div className="md:col-span-7 flex flex-col gap-3">
             {social.map((s) => (
               <a key={s.label} href={s.link} target="_blank" rel="noopener noreferrer"
-                className="group flex items-center justify-between bg-white border border-gray-200 hover:border-[#5B2BFF]/40 rounded-[1.5rem] p-6 transition-all shadow-sm hover:shadow-md">
+                className="group flex items-center justify-between bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/40 rounded-[1.5rem] p-6 transition-all shadow-sm hover:shadow-md">
                 <div className="flex items-center gap-5">
                   <div className="w-9 h-9 bg-[#5B2BFF]/10 border border-[#5B2BFF]/20 rounded-xl flex items-center justify-center text-[#5B2BFF] group-hover:bg-[#5B2BFF]/20 transition-colors">
                     {s.icon}
@@ -60,8 +60,8 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Services */}
-          <div className="md:col-span-5 bg-white border border-gray-200 rounded-[1.75rem] p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+          {/* Services - Updated with transparency */}
+          <div className="md:col-span-5 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-[1.75rem] p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
             <p className="text-[9px] font-black text-[#5B2BFF] uppercase tracking-[0.4em] mb-6">What I Do</p>
             <ul className="flex flex-col gap-4 flex-1">
               {services.map((s) => (

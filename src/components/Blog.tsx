@@ -76,7 +76,7 @@ const Blog = () => {
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${post.span} group relative bg-white border rounded-[1.75rem] p-8 flex flex-col justify-between transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md
+              className={`${post.span} group relative bg-white/90 backdrop-blur-sm border rounded-[1.75rem] p-8 flex flex-col justify-between transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md
                 ${post.featured
                   ? "border-[#5B2BFF]/30 hover:border-[#5B2BFF]/60 min-h-[220px]"
                   : "border-gray-200 hover:border-[#5B2BFF]/30"

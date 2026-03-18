@@ -53,8 +53,8 @@ const Hero = () => {
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
 
-          {/* Left — Identity Block */}
-          <div className="lg:col-span-8 bg-white border border-gray-200 rounded-[2rem] p-10 md:p-14 relative overflow-hidden flex flex-col justify-between min-h-[520px] shadow-sm hover:shadow-md transition-shadow">
+          {/* Left — Identity Block - UPDATED with transparency */}
+          <div className="lg:col-span-8 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-[2rem] p-10 md:p-14 relative overflow-hidden flex flex-col justify-between min-h-[520px] shadow-sm hover:shadow-md transition-shadow">
 
             {/* Subtle grid texture */}
             <div
@@ -79,10 +79,10 @@ const Hero = () => {
                 <span className="inline-flex items-center gap-1.5 bg-[#5B2BFF]/10 border border-[#5B2BFF]/20 text-[#5B2BFF] text-[9px] font-black uppercase tracking-[0.35em] px-3 py-1.5 rounded-full">
                   <Zap size={9} /> Vibe Coder
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-gray-100 border border-gray-200 text-gray-500 text-[9px] font-black uppercase tracking-[0.35em] px-3 py-1.5 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-gray-100/80 backdrop-blur-sm border border-gray-200 text-gray-500 text-[9px] font-black uppercase tracking-[0.35em] px-3 py-1.5 rounded-full">
                   <Terminal size={9} /> Founder
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-gray-100 border border-gray-200 text-gray-500 text-[9px] font-black uppercase tracking-[0.35em] px-3 py-1.5 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-gray-100/80 backdrop-blur-sm border border-gray-200 text-gray-500 text-[9px] font-black uppercase tracking-[0.35em] px-3 py-1.5 rounded-full">
                   Web3 Strategist
                 </span>
               </div>
@@ -115,7 +115,7 @@ const Hero = () => {
 
                 <a
                   href="/ai"
-                  className="group bg-white border border-gray-200 hover:border-[#5B2BFF]/50 text-gray-500 hover:text-gray-900 px-7 py-3.5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] transition-all flex items-center gap-2"
+                  className="group bg-white/80 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/50 text-gray-500 hover:text-gray-900 px-7 py-3.5 rounded-full font-black text-[11px] uppercase tracking-[0.2em] transition-all flex items-center gap-2"
                 >
                   <Zap size={11} className="text-[#5B2BFF]" /> Vibe Portfolio
                 </a>
@@ -159,8 +159,8 @@ const Hero = () => {
           {/* Right Column */}
           <div className="lg:col-span-4 flex flex-col gap-4">
 
-            {/* Photo card */}
-            <div className="flex-1 bg-white border border-gray-200 rounded-[2rem] overflow-hidden relative group min-h-[300px] shadow-sm">
+            {/* Photo card - UPDATED with transparency */}
+            <div className="flex-1 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-[2rem] overflow-hidden relative group min-h-[300px] shadow-sm">
               <img
                 src="/mojeeb-2026-headshot.jpg"
                 alt="Mojeeb Titilayo"
@@ -173,9 +173,9 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Vibe Portfolio CTA card */}
+            {/* Vibe Portfolio CTA card - already has bg-[#5B2BFF]/5 which is transparent */}
             <a href="/ai"
-              className="group bg-[#5B2BFF]/5 border border-[#5B2BFF]/20 hover:border-[#5B2BFF]/40 rounded-[2rem] p-6 transition-all flex flex-col gap-3">
+              className="group bg-[#5B2BFF]/5 backdrop-blur-sm border border-[#5B2BFF]/20 hover:border-[#5B2BFF]/40 rounded-[2rem] p-6 transition-all flex flex-col gap-3">
               <div className="flex items-center justify-between">
                 <span className="text-[9px] font-black text-[#5B2BFF] uppercase tracking-[0.3em]">New</span>
                 <Zap size={14} className="text-[#5B2BFF] group-hover:scale-125 transition-transform" />

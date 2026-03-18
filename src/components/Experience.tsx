@@ -57,10 +57,10 @@ const Experience = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
 
-          {/* Featured Role */}
+          {/* Featured Role - UPDATED with transparency */}
           {featured.map((f, i) => (
             <div key={i}
-              className="md:col-span-12 bg-white border border-[#5B2BFF]/30 hover:border-[#5B2BFF]/50 rounded-[1.75rem] p-10 relative overflow-hidden transition-all shadow-sm hover:shadow-md">
+              className="md:col-span-12 bg-white/90 backdrop-blur-sm border border-[#5B2BFF]/30 hover:border-[#5B2BFF]/50 rounded-[1.75rem] p-10 relative overflow-hidden transition-all shadow-sm hover:shadow-md">
               <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-[#5B2BFF] via-[#5B2BFF]/40 to-transparent" />
 
               <div className="flex flex-col md:flex-row justify-between gap-4 mb-8">
@@ -89,10 +89,10 @@ const Experience = () => {
             </div>
           ))}
 
-          {/* Highlight Metrics */}
+          {/* Highlight Metrics - UPDATED with transparency */}
           {highlights.map((h, i) => (
             <div key={i}
-              className="md:col-span-6 bg-white border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-8 transition-all group shadow-sm hover:shadow-md">
+              className="md:col-span-6 bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-8 transition-all group shadow-sm hover:shadow-md">
               <div className="flex items-center justify-between mb-6">
                 <div className="w-9 h-9 bg-[#5B2BFF]/10 border border-[#5B2BFF]/20 rounded-xl flex items-center justify-center text-[#5B2BFF] group-hover:bg-[#5B2BFF]/20 transition-colors">
                   {h.icon}
@@ -106,11 +106,11 @@ const Experience = () => {
             </div>
           ))}
 
-          {/* Other Roles */}
+          {/* Other Roles - UPDATED with transparency */}
           <div className="md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-3">
             {others.map((o, i) => (
               <div key={i}
-                className="bg-white border border-gray-200 hover:border-[#5B2BFF]/25 rounded-[1.5rem] p-6 transition-all group shadow-sm hover:shadow-md">
+                className="bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/25 rounded-[1.5rem] p-6 transition-all group shadow-sm hover:shadow-md">
                 <div className="text-gray-300 group-hover:text-[#5B2BFF] transition-colors mb-4">
                   {o.icon}
                 </div>

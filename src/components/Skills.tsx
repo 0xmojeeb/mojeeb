@@ -37,11 +37,11 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Core Skills Grid */}
+        {/* Core Skills Grid - UPDATED with transparency */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
           {coreSkills.map((s, i) => (
             <div key={i}
-              className="bg-white border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-8 transition-all group shadow-sm hover:shadow-md">
+              className="bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-8 transition-all group shadow-sm hover:shadow-md">
               <div className="w-10 h-10 bg-[#5B2BFF]/10 border border-[#5B2BFF]/20 rounded-xl flex items-center justify-center text-[#5B2BFF] mb-6 group-hover:bg-[#5B2BFF]/20 group-hover:scale-110 transition-all">
                 {s.icon}
               </div>
@@ -54,8 +54,8 @@ const Skills = () => {
         {/* Bottom Row */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
 
-          {/* Full-stack strategy */}
-          <div className="md:col-span-8 bg-white border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-8 flex items-center gap-8 group transition-all shadow-sm hover:shadow-md">
+          {/* Full-stack strategy - UPDATED with transparency */}
+          <div className="md:col-span-8 bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-8 flex items-center gap-8 group transition-all shadow-sm hover:shadow-md">
             <div className="bg-[#5B2BFF]/10 border border-[#5B2BFF]/20 p-4 rounded-2xl text-[#5B2BFF] shrink-0 hidden md:flex group-hover:bg-[#5B2BFF]/20 transition-colors">
               <Cpu size={28} className="group-hover:rotate-12 transition-transform duration-500" />
             </div>
@@ -67,7 +67,7 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Ecosystem tags - Now with your purple gradient */}
+          {/* Ecosystem tags - Keep this solid with gradient (looks great already) */}
           <div className="md:col-span-4 bg-gradient-to-br from-[#5B2BFF] to-[#4E24CF] rounded-[1.75rem] p-8 flex flex-col justify-between hover:shadow-[0_0_40px_rgba(91,43,255,0.3)] transition-all">
             <Network size={32} className="text-white/30 mb-4" />
             <div>

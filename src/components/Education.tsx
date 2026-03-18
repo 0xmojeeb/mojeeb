@@ -37,8 +37,8 @@ const Education = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
 
-          {/* Main Degree Card */}
-          <div className="md:col-span-8 bg-white border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-10 transition-all group relative overflow-hidden shadow-sm hover:shadow-md">
+          {/* Main Degree Card - UPDATED with transparency */}
+          <div className="md:col-span-8 bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-10 transition-all group relative overflow-hidden shadow-sm hover:shadow-md">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#5B2BFF]/30 to-transparent" />
 
             <div className="flex items-center gap-5 mb-8">
@@ -56,10 +56,10 @@ const Education = () => {
               </div>
             </div>
 
-            {/* Competencies grid */}
+            {/* Competencies grid - keeping these solid for readability */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5">
               {competencies.map((c, i) => (
-                <div key={i} className="bg-gray-50 border border-gray-200 hover:border-[#5B2BFF]/30 rounded-xl p-3.5 transition-all">
+                <div key={i} className="bg-gray-50/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/30 rounded-xl p-3.5 transition-all">
                   <div className="flex items-center gap-2 text-[#5B2BFF] mb-1.5">
                     {c.icon}
                     <span className="text-[9px] font-black uppercase tracking-widest text-gray-700">{c.label}</span>
@@ -73,8 +73,8 @@ const Education = () => {
           {/* Right Column */}
           <div className="md:col-span-4 flex flex-col gap-3">
 
-            {/* Relevant Courses */}
-            <div className="flex-1 bg-[#5B2BFF]/5 border border-[#5B2BFF]/20 hover:border-[#5B2BFF]/40 rounded-[1.75rem] p-7 transition-all">
+            {/* Relevant Courses - already had transparency with bg-[#5B2BFF]/5 */}
+            <div className="flex-1 bg-[#5B2BFF]/5 backdrop-blur-sm border border-[#5B2BFF]/20 hover:border-[#5B2BFF]/40 rounded-[1.75rem] p-7 transition-all">
               <p className="text-[9px] font-black text-[#5B2BFF] uppercase tracking-[0.35em] mb-5">
                 Relevant Courses
               </p>
@@ -88,8 +88,8 @@ const Education = () => {
               </ul>
             </div>
 
-            {/* NYSC Card */}
-            <div className="bg-white border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-6 transition-all group shadow-sm hover:shadow-md">
+            {/* NYSC Card - UPDATED with transparency */}
+            <div className="bg-white/90 backdrop-blur-sm border border-gray-200 hover:border-[#5B2BFF]/30 rounded-[1.75rem] p-6 transition-all group shadow-sm hover:shadow-md">
               <div className="flex items-center justify-between mb-4">
                 <div className="w-9 h-9 bg-[#5B2BFF]/10 border border-[#5B2BFF]/20 rounded-xl flex items-center justify-center text-[#5B2BFF] group-hover:bg-[#5B2BFF]/20 transition-colors">
                   <Shield size={16} />

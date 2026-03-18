@@ -139,7 +139,7 @@ const Navigation = () => {
           <Cpu size={22} className="text-[#5B2BFF]" /> AI BUILDS
         </a>
 
-        {/* Optional: Divider before AI link */}
+        {/* Divider before AI link */}
         <div className="w-24 h-px bg-gray-200 my-2" />
 
         <p className="absolute bottom-10 text-[9px] text-gray-300 font-mono uppercase tracking-[0.5em]">
