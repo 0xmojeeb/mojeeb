@@ -10,15 +10,36 @@ export default {
 	],
 	prefix: "",
 	theme: {
+		// OPTION 1: Comment out or remove the container section entirely
+		// container: {
+		//   center: true,
+		//   padding: '2rem',
+		//   screens: {
+		//     '2xl': '1400px'
+		//   }
+		// },
+		
+		// OPTION 2: Or modify it to be less restrictive
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: '1rem',
 			screens: {
-				'2xl': '1400px'
+				sm: '100%',
+				md: '100%',
+				lg: '100%',
+				xl: '100%',
+				'2xl': '1400px' // Only constrain at largest screen size
 			}
 		},
 		extend: {
 			colors: {
+				// Your brand colors (added for convenience)
+				brand: {
+					purple: '#5B2BFF',
+					indigo: '#4E24CF',
+					offwhite: '#F9F6F2',
+				},
+				// Keep existing HSL variables
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -63,6 +84,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			backgroundImage: {
+				'brand-gradient': 'linear-gradient(135deg, #5B2BFF 0%, #4E24CF 100%)',
+				'brand-gradient-subtle': 'linear-gradient(135deg, rgba(91,43,255,0.1) 0%, rgba(78,36,207,0.1) 100%)',
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -92,6 +117,10 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'ticker': {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-50%)' }
 				}
 			},
 			animation: {
@@ -100,7 +129,8 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-left': 'slide-in-left 0.6s ease-out',
 				'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
-				'float': 'float 3s ease-in-out infinite'
+				'float': 'float 3s ease-in-out infinite',
+				'ticker': 'ticker 40s linear infinite',
 			}
 		}
 	},

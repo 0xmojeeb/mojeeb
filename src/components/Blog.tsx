@@ -40,29 +40,29 @@ const posts = [
 ];
 
 const tagColors: Record<string, string> = {
-  Strategy: "text-[#4e24cf] bg-[#4e24cf]/10 border-[#4e24cf]/25",
-  Community: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
-  Research: "text-sky-400 bg-sky-400/10 border-sky-400/20",
-  "Case Study": "text-amber-400 bg-amber-400/10 border-amber-400/20",
-  Growth: "text-rose-400 bg-rose-400/10 border-rose-400/20",
+  Strategy: "text-[#5B2BFF] bg-[#5B2BFF]/10 border-[#5B2BFF]/25",
+  Community: "text-emerald-600 bg-emerald-50 border-emerald-200",
+  Research: "text-sky-600 bg-sky-50 border-sky-200",
+  "Case Study": "text-amber-600 bg-amber-50 border-amber-200",
+  Growth: "text-rose-600 bg-rose-50 border-rose-200",
 };
 
 const Blog = () => {
   return (
-    <section id="blog" className="py-20 px-6 bg-[#030303]">
+    <section id="blog" className="py-20 px-6 bg-[#F9F6F2]">
       <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
-        <div className="flex items-end justify-between mb-10 pb-6 border-b border-white/[0.06]">
+        <div className="flex items-end justify-between mb-10 pb-6 border-b border-gray-200">
           <div>
-            <span className="text-[#4e24cf] text-[10px] font-black uppercase tracking-[0.4em] mb-3 block">
+            <span className="text-[#5B2BFF] text-[10px] font-black uppercase tracking-[0.4em] mb-3 block">
               Intelligence Feed
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white tracking-[-0.04em] uppercase leading-none">
-              Featured <span className="text-white/20 italic">Posts.</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-[-0.04em] uppercase leading-none">
+              Featured <span className="text-gray-300 italic">Posts.</span>
             </h2>
           </div>
-          <div className="hidden md:flex items-center gap-2 text-[9px] text-white/20 font-mono uppercase tracking-widest">
+          <div className="hidden md:flex items-center gap-2 text-[9px] text-gray-400 font-mono uppercase tracking-widest">
             <PenTool size={10} />
             {posts.length} articles
           </div>
@@ -76,41 +76,41 @@ const Blog = () => {
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`${post.span} group relative bg-[#080808] border rounded-[1.75rem] p-8 flex flex-col justify-between transition-all duration-300 overflow-hidden
+              className={`${post.span} group relative bg-white border rounded-[1.75rem] p-8 flex flex-col justify-between transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md
                 ${post.featured
-                  ? "border-[#4e24cf]/25 hover:border-[#4e24cf]/50 min-h-[220px]"
-                  : "border-white/[0.06] hover:border-[#4e24cf]/25"
+                  ? "border-[#5B2BFF]/30 hover:border-[#5B2BFF]/60 min-h-[220px]"
+                  : "border-gray-200 hover:border-[#5B2BFF]/30"
                 }`}
             >
               {/* Featured glow */}
               {post.featured && (
-                <div className="absolute -top-16 -right-16 w-40 h-40 bg-[#4e24cf]/10 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -top-16 -right-16 w-40 h-40 bg-[#5B2BFF]/10 rounded-full blur-3xl pointer-events-none" />
               )}
 
               {/* Top row */}
               <div className="flex items-start justify-between mb-6 relative z-10">
-                <span className={`text-[8px] font-black uppercase tracking-[0.3em] border px-2.5 py-1 rounded-full ${tagColors[post.tag] ?? "text-white/30 bg-white/5 border-white/10"}`}>
+                <span className={`text-[8px] font-black uppercase tracking-[0.3em] border px-2.5 py-1 rounded-full ${tagColors[post.tag] ?? "text-gray-400 bg-gray-100 border-gray-200"}`}>
                   {post.tag}
                 </span>
                 <ArrowUpRight
                   size={16}
-                  className="text-white/15 group-hover:text-[#4e24cf] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
+                  className="text-gray-300 group-hover:text-[#5B2BFF] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all"
                 />
               </div>
 
               {/* Content */}
               <div className="relative z-10">
-                <h3 className={`font-black text-white uppercase tracking-tight leading-tight mb-3 group-hover:text-[#4e24cf] transition-colors
+                <h3 className={`font-black text-gray-900 uppercase tracking-tight leading-tight mb-3 group-hover:text-[#5B2BFF] transition-colors
                   ${post.featured ? "text-2xl md:text-3xl" : "text-lg"}`}>
                   {post.title}
                 </h3>
-                <p className="text-white/35 text-sm leading-relaxed">{post.desc}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{post.desc}</p>
               </div>
 
               {/* Bottom read indicator */}
-              <div className="relative z-10 mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-1 h-1 rounded-full bg-[#4e24cf]" />
-                <span className="text-[9px] font-black text-[#4e24cf] uppercase tracking-widest">Read Article</span>
+              <div className="relative z-10 mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="w-1 h-1 rounded-full bg-[#5B2BFF]" />
+                <span className="text-[9px] font-black text-[#5B2BFF] uppercase tracking-widest">Read Article</span>
               </div>
             </a>
           ))}

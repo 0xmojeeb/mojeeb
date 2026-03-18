@@ -722,12 +722,12 @@ export default function AI() {
             </div>
             <div className="about-stats reveal">
               <div className="stat-item">
-                <span className="stat-num">8+</span>
+                <span className="stat-num">10+</span>
                 <span className="stat-label">AI-powered products shipped</span>
               </div>
               <div className="stat-item">
-                <span className="stat-num">3</span>
-                <span className="stat-label">AI models in active use (Claude · ChatGPT · Gemini)</span>
+                <span className="stat-num">5</span>
+                <span className="stat-label">AI models in active use (Claude · ChatGPT · Gemini · DeepSeek · Grok)</span>
               </div>
               <div className="stat-item">
                 <span className="stat-num">Solo</span>
@@ -749,9 +749,9 @@ export default function AI() {
           <div className="projects-grid reveal">
             <div className="project-card">
               <div className="project-num">01</div>
-              <div className="project-name">Vibestream</div>
-              <a href="https://vibestream.cc" className="project-url" target="_blank" rel="noreferrer">vibestream.cc ↗</a>
-              <p className="project-desc">AI-assisted product discovery and visibility platform. Built to explore how AI can improve how VC-backed founders get discovered and how products get distributed.</p>
+              <div className="project-name">Arcapush (formerly Vibestream)</div>
+              <a href="https://arcapush.com" className="project-url" target="_blank" rel="noreferrer">arcapush.com ↗</a>
+              <p className="project-desc">AI-assisted product discovery and visibility platform. </p>
               <div className="project-tags">
                 <span className="tag">Product Discovery</span>
                 <span className="tag">Founder Profiles</span>
@@ -776,7 +776,7 @@ export default function AI() {
             <div className="project-card">
               <div className="project-num">03</div>
               <div className="project-name">Prompt Strength Analyzer</div>
-              <a href="https://vibe.blindspotlab.xyz" className="project-url" target="_blank" rel="noreferrer">vibe.blindspotlab.xyz ↗</a>
+              <a href="https://promptrank.arcapush.com" className="project-url" target="_blank" rel="noreferrer">promptrank.arcapush.com ↗</a>
               <p className="project-desc">Evaluates prompts and assigns capability rankings — Senior, Mid, or Junior — to help users understand and improve their prompt effectiveness in real time.</p>
               <div className="project-tags">
                 <span className="tag">Prompt Engineering</span>
@@ -863,7 +863,7 @@ export default function AI() {
           <h2 className="section-title reveal">What I Build With</h2>
           <div className="stack-row reveal">
             {[
-              'Claude (Anthropic)', 'ChatGPT (OpenAI)', 'Gemini (Google)',
+              'Claude (Anthropic)', 'ChatGPT (OpenAI)', 'Gemini (Google)', 'DeepSeek (High Flyer)',
               'Next.js', 'Vercel', 'Prisma',
               'Prompt Engineering', 'LLM API Integration', 'AI Workflow Design', 'Web3 Ecosystems'
             ].map((tool) => (
@@ -893,7 +893,7 @@ export default function AI() {
           <div className="footer-links">
             <a href="https://x.com/mojeebeth" target="_blank" rel="noreferrer">X</a>
             <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://vibestream.cc" target="_blank" rel="noreferrer">Vibestream</a>
+            <a href="https://arcapush.com" target="_blank" rel="noreferrer">Arcapush</a>
             <a href="https://blindspotlab.xyz" target="_blank" rel="noreferrer">BlindspotLab</a>
           </div>
         </footer>
