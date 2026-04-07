@@ -319,42 +319,35 @@ const PROJECTS = [
     stat: null,
   },
   {
-    num: "05", name: "VibeCheck", url: "vibe.blindspotlab.xyz", href: "https://vibe.blindspotlab.xyz",
-    desc: "Builder intelligence tool — audit your builder prompt and get ranked. Know your level, identify your blindspots, level up your build velocity.",
-    tags: ["Builder Audit", "Intelligence", "Blindspot Lab"],
-    powered: "Gemini 2.5 Flash",
-    stat: null,
-  },
-  {
-    num: "06", name: "FirstTx", url: "firsttx.xyz", href: "https://firsttx.xyz",
+    num: "05", name: "FirstTx", url: "firsttx.xyz", href: "https://firsttx.xyz",
     desc: "Celebrate your first on-chain transaction across 11 EVM chains. Binary search via Alchemy, personal story, shareable card, leaderboard. Your origin story on-chain.",
     tags: ["Web3", "11 EVM Chains", "Social", "RainbowKit"],
     powered: "Alchemy API",
     stat: "11 EVM chains",
   },
   {
-    num: "07", name: "AngelVow", url: "angelvow.xyz", href: "https://angelvow.xyz",
+    num: "06", name: "AngelVow", url: "angelvow.xyz", href: "https://angelvow.xyz",
     desc: "Decentralized wishlist and charity on Base Mainnet. USDC donations, anonymous giving vaults with pseudo-random winner selection. Two smart contracts deployed and verified.",
     tags: ["Base Mainnet", "USDC", "Smart Contracts", "Charity"],
     powered: "Base · Coinbase Wallet",
     stat: "2 contracts deployed",
   },
   {
-    num: "08", name: "Dearly", url: "dearly.icu", href: "https://dearly.icu",
+    num: "07", name: "Dearly", url: "dearly.icu", href: "https://dearly.icu",
     desc: "Gemini-powered personalization engine. Transforms generic greetings into emotional assets through attribute mapping and contextual message crafting.",
     tags: ["Personalization", "Message Gen", "Emotional Intelligence"],
     powered: "Gemini AI",
     stat: null,
   },
   {
-    num: "09", name: "Whate", url: "whate.online", href: "https://whate.online",
+    num: "08", name: "Whate", url: "whate.online", href: "https://whate.online",
     desc: "Zero-decision meal intelligence PWA. 10,000+ meals, 9+ global personas — tech entrepreneur, student, gym goer, heritage soul, and more. 2-click logic, no scroll, no thinking.",
     tags: ["PWA", "10k+ Meals", "Persona Logic", "JSON-LD"],
     powered: "Next.js 15",
     stat: "10,000+ meals",
   },
   {
-    num: "10", name: "SyncSurge", url: "syncsurge.xyz", href: "https://syncsurge.xyz",
+    num: "09", name: "SyncSurge", url: "syncsurge.xyz", href: "https://syncsurge.xyz",
     desc: "Creator management platform for the Surge.xyz ecosystem. Built as a surprise for the team — username-based routing, full dashboard, custom auth.",
     tags: ["Creator Mgmt", "Surge.xyz", "Dashboard"],
     powered: "Next.js · Supabase",
@@ -525,7 +518,7 @@ export default function AI() {
               { icon: "⚡", name: "AI-Native Product Builds", desc: "Ship AI-powered products fast. Idea → live URL without a traditional dev team. I build with Claude, Gemini, and OpenAI as core infrastructure, not add-ons." },
               { icon: "🧠", name: "Prompt System Design", desc: "Design, evaluate, and optimize prompt frameworks for AI products. Build systems that are consistent, reliable, and calibrated to your output goals." },
               { icon: "🌐", name: "Web3 × AI Strategy", desc: "Help Web3 projects and DAOs integrate AI into their products and ops. I operate at the intersection most strategists can't bridge." },
-              { icon: "🔍", name: "AI Research & Auditing", desc: "Build AI-assisted research workflows, product audits, and intelligence tools. I've shipped VibeCheck, RoastURL, and PromptRank — I know what good looks like." },
+              { icon: "🔍", name: "AI Research & Auditing", desc: "Build AI-assisted research workflows, product audits, and intelligence tools. I've shipped, BlindspotLab Audit, Arcaprompt, Dearly, RoastURL, and PromptRank — I know what good looks like." },
               { icon: "🚀", name: "Growth Architecture", desc: "Design community growth systems, GTM strategies, and activation loops. Proven case studies: 3 → 9,000+ followers in 3.5 days, 5% → 95% engagement in 14 days." },
               { icon: "🛠", name: "LLM Integration", desc: "Integrate LLMs into existing products or workflows. API setup, prompt tuning, rate limiting, caching strategy — I've done this across multiple production apps." },
             ].map(s => (
@@ -570,7 +563,7 @@ export default function AI() {
           <span className="footer-l">© 2026 Mojeeb — mojeeb.xyz/ai</span>
           <div className="footer-links">
             <a href="https://x.com/mojeebeth" target="_blank" rel="noreferrer">X</a>
-            <a href="https://linkedin.com/in/mojeebeth" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://blindspotlab.xyz" target="_blank" rel="noreferrer">BlindspotLab</a>
             <a href="https://arcapush.com" target="_blank" rel="noreferrer">Arcapush</a>
           </div>
