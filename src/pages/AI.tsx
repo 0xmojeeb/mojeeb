@@ -1,19 +1,20 @@
 import { useEffect } from 'react'
 
 const aiStyles = `
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Mono:wght@400;500&display=swap');
+
   .ai-page *, .ai-page *::before, .ai-page *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   .ai-page {
-    --black: #080610;
+    --black: #050507;
+    --surface: #090910;
     --white: #f0eeff;
-    --cream: #e8e4ff;
-    --acid: #7c3aed;
-    --acid-bright: #a855f7;
-    --acid-glow: #c084fc;
-    --dim: #8b82a8;
-    --border: rgba(124,58,237,0.15);
-    --border-soft: rgba(240,238,255,0.08);
-
+    --dim: #7a778f;
+    --purple: #4e24cf;
+    --purple-bright: #7c4dff;
+    --purple-glow: rgba(78,36,207,0.15);
+    --border: rgba(78,36,207,0.12);
+    --border-soft: rgba(255,255,255,0.06);
     background: var(--black);
     color: var(--white);
     font-family: 'DM Mono', monospace;
@@ -23,638 +24,391 @@ const aiStyles = `
     min-height: 100vh;
   }
 
-  .ai-page .noise-overlay {
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.6;
+  .ai-page .grid-bg {
+    position: fixed; inset: 0;
+    background-image: linear-gradient(rgba(78,36,207,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(78,36,207,0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none; z-index: 0;
   }
 
-  .ai-page .grid-overlay {
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(124,58,237,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(124,58,237,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-    z-index: 0;
+  .ai-page .glow-1 {
+    position: fixed; top: -15%; right: -5%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(78,36,207,0.1) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
   }
 
-  .ai-page .bg-glow {
-    position: fixed;
-    top: -20%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .ai-page .bg-glow-2 {
-    position: fixed;
-    bottom: 10%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
+  .ai-page .glow-2 {
+    position: fixed; bottom: 5%; left: -8%;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(78,36,207,0.06) 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
   }
 
   .ai-page .ai-nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
-    background: rgba(8,6,16,0.88);
-    backdrop-filter: blur(16px);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 0.5px solid var(--border);
+    background: rgba(5,5,7,0.9);
+    backdrop-filter: blur(20px);
   }
 
   .ai-page .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    letter-spacing: -0.02em;
-    color: var(--white);
-    text-decoration: none;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px;
+    letter-spacing: -0.02em; color: var(--white); text-decoration: none;
   }
+  .ai-page .nav-logo span { color: var(--purple-bright); }
 
-  .ai-page .nav-logo span { color: var(--acid-bright); }
-
-  .ai-page .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
+  .ai-page .nav-links { display: flex; gap: 28px; list-style: none; }
   .ai-page .nav-links a {
-    color: var(--dim);
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.2s;
+    color: var(--dim); text-decoration: none; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s;
   }
+  .ai-page .nav-links a:hover { color: var(--white); }
 
-  .ai-page .nav-links a:hover { color: var(--acid-glow); }
-
-  .ai-page .hero {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  /* HERO */
+  .ai-page .ai-hero {
+    position: relative; z-index: 1;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
     padding: 120px 40px 80px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 0.5px solid var(--border-soft);
   }
 
-  .ai-page .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--acid-bright);
-    margin-bottom: 32px;
-    opacity: 0;
-    animation: aiFadeUp 0.6s ease forwards 0.2s;
+  .ai-page .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--purple-bright); margin-bottom: 28px;
+    opacity: 0; animation: fadeUp 0.6s ease forwards 0.2s;
   }
+  .ai-page .hero-eyebrow::before { content: ''; width: 20px; height: 0.5px; background: var(--purple-bright); }
 
-  .ai-page .hero-tag::before {
-    content: '';
-    width: 24px;
-    height: 1px;
-    background: var(--acid-bright);
+  .ai-page .ai-headline {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(48px, 8vw, 108px);
+    line-height: 0.92; letter-spacing: -0.03em;
+    max-width: 860px;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.35s;
   }
-
-  .ai-page .hero-headline {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(52px, 8vw, 112px);
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    max-width: 900px;
-    opacity: 0;
-    animation: aiFadeUp 0.8s ease forwards 0.4s;
-  }
-
-  .ai-page .hero-headline .accent {
-    color: transparent;
-    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .ai-page .ai-headline .grad {
+    background: linear-gradient(135deg, #4e24cf 0%, #7c4dff 50%, #a78bfa 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
 
   .ai-page .hero-sub {
-    margin-top: 40px;
-    max-width: 520px;
-    color: var(--dim);
-    font-size: 14px;
-    line-height: 1.8;
-    opacity: 0;
-    animation: aiFadeUp 0.8s ease forwards 0.6s;
+    margin-top: 36px; max-width: 500px;
+    color: var(--dim); font-size: 14px; line-height: 1.85;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s;
   }
-
   .ai-page .hero-sub strong { color: var(--white); font-weight: 400; }
 
   .ai-page .hero-cta {
-    margin-top: 48px;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    opacity: 0;
-    animation: aiFadeUp 0.8s ease forwards 0.8s;
+    margin-top: 44px; display: flex; gap: 14px; align-items: center;
+    opacity: 0; animation: fadeUp 0.8s ease forwards 0.65s;
   }
 
-  .ai-page .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #7c3aed, #a855f7);
-    color: var(--white);
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
+  .ai-page .btn-p {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 26px; background: #4e24cf; color: #fff;
+    font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    border: none; border-radius: 99px; cursor: pointer;
+    box-shadow: 0 0 32px rgba(78,36,207,0.35);
     transition: transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    overflow: hidden;
   }
+  .ai-page .btn-p:hover { transform: translateY(-2px); box-shadow: 0 0 52px rgba(78,36,207,0.55); }
 
-  .ai-page .btn-primary::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, #a855f7, #c084fc);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .ai-page .btn-primary:hover::before { opacity: 1; }
-  .ai-page .btn-primary span { position: relative; z-index: 1; }
-
-  .ai-page .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(124,58,237,0.45);
-  }
-
-  .ai-page .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    background: transparent;
-    color: var(--dim);
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--border);
+  .ai-page .btn-g {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 26px; background: transparent; color: var(--dim);
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    border: 0.5px solid rgba(255,255,255,0.1); border-radius: 99px;
     transition: color 0.2s, border-color 0.2s;
   }
+  .ai-page .btn-g:hover { color: var(--white); border-color: rgba(78,36,207,0.5); }
 
-  .ai-page .btn-ghost:hover { color: var(--acid-glow); border-color: rgba(168,85,247,0.4); }
-
-  .ai-page section {
-    position: relative;
-    z-index: 1;
-    padding: 100px 40px;
-    border-bottom: 1px solid var(--border-soft);
+  /* TICKER */
+  .ai-page .ticker {
+    position: relative; z-index: 1;
+    padding: 20px 0; overflow: hidden;
+    border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border);
+    background: rgba(78,36,207,0.03);
   }
-
-  .ai-page .section-label {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--acid-bright);
-    margin-bottom: 48px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .ai-page .section-label::after {
-    content: '';
-    flex: 1;
-    max-width: 60px;
-    height: 1px;
-    background: var(--acid-bright);
-    opacity: 0.4;
-  }
-
-  .ai-page .section-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: clamp(32px, 4vw, 52px);
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px;
-  }
-
-  .ai-page .identity {
-    position: relative;
-    z-index: 1;
-    padding: 48px 0;
-    background: rgba(124,58,237,0.05);
-    border-bottom: 1px solid var(--border);
-    border-top: 1px solid var(--border);
-    overflow: hidden;
-  }
-
-  .ai-page .identity-scroll {
-    display: flex;
-    gap: 48px;
-    animation: aiScroll 22s linear infinite;
+  .ai-page .ticker-track {
+    display: flex; gap: 0; animation: scroll 20s linear infinite;
     width: max-content;
   }
+  .ai-page .ticker-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 0 32px; font-family: 'Syne', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--dim); white-space: nowrap;
+    border-right: 0.5px solid var(--border);
+  }
+  .ai-page .ticker-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--purple-bright); box-shadow: 0 0 6px var(--purple-bright); }
 
-  .ai-page .identity-item {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--dim);
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    white-space: nowrap;
+  /* SECTIONS */
+  .ai-page .ai-section {
+    position: relative; z-index: 1;
+    padding: 96px 40px; border-bottom: 0.5px solid var(--border-soft);
+    max-width: 1200px; margin: 0 auto; width: 100%;
   }
 
-  .ai-page .identity-item .dot {
-    width: 4px;
-    height: 4px;
-    background: var(--acid-bright);
-    border-radius: 50%;
-    box-shadow: 0 0 6px var(--acid-bright);
+  .ai-page .s-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--purple-bright); margin-bottom: 44px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ai-page .s-label::after { content: ''; width: 40px; height: 0.5px; background: var(--purple-bright); opacity: 0.5; }
+
+  .ai-page .s-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(28px, 4vw, 48px); line-height: 1.0;
+    letter-spacing: -0.02em; margin-bottom: 20px;
   }
 
-  .ai-page .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    max-width: 1100px;
-  }
-
-  .ai-page .about-body {
-    color: var(--dim);
-    line-height: 1.9;
-  }
-
-  .ai-page .about-body p + p { margin-top: 20px; }
+  /* ABOUT */
+  .ai-page .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; max-width: 1100px; }
+  .ai-page .about-body { color: var(--dim); line-height: 1.9; }
+  .ai-page .about-body p + p { margin-top: 18px; }
   .ai-page .about-body strong { color: var(--white); font-weight: 400; }
 
-  .ai-page .about-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    border: 1px solid var(--border);
+  .ai-page .stat-grid { display: flex; flex-direction: column; gap: 1px; border: 0.5px solid var(--border); }
+  .ai-page .stat-row {
+    padding: 24px 28px; border-bottom: 0.5px solid var(--border);
+    transition: background 0.25s;
+  }
+  .ai-page .stat-row:hover { background: rgba(78,36,207,0.05); }
+  .ai-page .stat-row:last-child { border-bottom: none; }
+  .ai-page .stat-n {
+    font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800;
+    color: var(--purple-bright); line-height: 1; display: block; margin-bottom: 4px;
+  }
+  .ai-page .stat-l { font-size: 11px; color: var(--dim); letter-spacing: 0.04em; }
+
+  /* PROJECTS */
+  .ai-page .proj-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--border); border: 0.5px solid var(--border);
+  }
+  .ai-page .proj-card {
+    background: var(--black); padding: 36px; transition: background 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .ai-page .proj-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1.5px;
+    background: linear-gradient(90deg, #4e24cf, #a78bfa);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+  }
+  .ai-page .proj-card:hover::before { transform: scaleX(1); }
+  .ai-page .proj-card:hover { background: rgba(78,36,207,0.04); }
+
+  .ai-page .proj-num { font-size: 10px; color: var(--purple-bright); letter-spacing: 0.1em; margin-bottom: 18px; opacity: 0.5; }
+  .ai-page .proj-name { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .ai-page .proj-url {
+    font-size: 10px; color: var(--purple-bright); letter-spacing: 0.06em; margin-bottom: 14px;
+    text-decoration: none; opacity: 0.65; transition: opacity 0.2s; display: block;
+  }
+  .ai-page .proj-url:hover { opacity: 1; }
+  .ai-page .proj-desc { color: var(--dim); font-size: 12px; line-height: 1.75; margin-bottom: 20px; }
+  .ai-page .proj-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+  .ai-page .ptag {
+    font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 10px; border: 0.5px solid var(--border-soft); color: var(--dim);
+  }
+  .ai-page .ptag.hot { border-color: rgba(78,36,207,0.4); color: #a78bfa; }
+  .ai-page .proj-stat {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(78,36,207,0.08); border: 0.5px solid rgba(78,36,207,0.25);
+    padding: 4px 12px; font-size: 10px; color: var(--purple-bright);
+    margin-bottom: 14px; letter-spacing: 0.06em;
   }
 
-  .ai-page .stat-item {
-    padding: 28px 32px;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.3s;
+  /* SERVICES */
+  .ai-page .svc-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border); border: 0.5px solid var(--border);
   }
-
-  .ai-page .stat-item:hover { background: rgba(124,58,237,0.06); }
-  .ai-page .stat-item:last-child { border-bottom: none; }
-
-  .ai-page .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 36px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #7c3aed, #c084fc);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-    display: block;
-    margin-bottom: 4px;
+  .ai-page .svc-card {
+    background: var(--black); padding: 36px 32px; transition: background 0.25s; position: relative;
   }
+  .ai-page .svc-card:hover { background: rgba(78,36,207,0.04); }
+  .ai-page .svc-icon { font-size: 22px; margin-bottom: 18px; }
+  .ai-page .svc-name { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .ai-page .svc-desc { color: var(--dim); font-size: 12px; line-height: 1.7; }
 
-  .ai-page .stat-label {
-    font-size: 12px;
-    color: var(--dim);
-    letter-spacing: 0.06em;
-  }
-
-  .ai-page .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .ai-page .project-card {
-    background: var(--black);
-    padding: 40px;
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ai-page .project-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #7c3aed, #c084fc);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .ai-page .project-card:hover::before { transform: scaleX(1); }
-  .ai-page .project-card:hover { background: rgba(124,58,237,0.05); }
-
-  .ai-page .project-num {
-    font-size: 11px;
-    color: var(--acid-bright);
-    letter-spacing: 0.1em;
-    margin-bottom: 20px;
-    opacity: 0.5;
-  }
-
-  .ai-page .project-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-
-  .ai-page .project-url {
-    font-size: 11px;
-    color: var(--acid-bright);
-    letter-spacing: 0.06em;
-    margin-bottom: 16px;
-    text-decoration: none;
-    opacity: 0.65;
-    transition: opacity 0.2s;
-    display: block;
-  }
-
-  .ai-page .project-url:hover { opacity: 1; }
-
-  .ai-page .project-desc {
-    color: var(--dim);
-    font-size: 13px;
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-
-  .ai-page .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .ai-page .tag {
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid var(--border-soft);
-    color: var(--dim);
-  }
-
-  .ai-page .tag.powered {
-    border-color: rgba(124,58,237,0.4);
-    color: var(--acid-glow);
-    opacity: 0.8;
-  }
-
-  .ai-page .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .ai-page .service-card {
-    background: var(--black);
-    padding: 40px 36px;
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ai-page .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(124,58,237,0.5), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .ai-page .service-card:hover::after { opacity: 1; }
-  .ai-page .service-card:hover { background: rgba(124,58,237,0.05); }
-
-  .ai-page .service-icon { font-size: 24px; margin-bottom: 20px; }
-
-  .ai-page .service-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: -0.01em;
-  }
-
-  .ai-page .service-desc { color: var(--dim); font-size: 13px; line-height: 1.7; }
-
-  .ai-page .stack-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 32px;
-  }
-
+  /* STACK */
+  .ai-page .stack-wrap { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
   .ai-page .stack-pill {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    border: 1px solid var(--border);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    color: var(--dim);
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    display: flex; align-items: center; gap: 8px; padding: 10px 18px;
+    border: 0.5px solid var(--border); font-size: 11px; color: var(--dim);
+    letter-spacing: 0.04em; transition: all 0.2s;
   }
+  .ai-page .stack-pill:hover { border-color: rgba(78,36,207,0.5); color: var(--white); background: rgba(78,36,207,0.06); }
+  .ai-page .stack-pill .pd { width: 5px; height: 5px; border-radius: 50%; background: var(--purple-bright); opacity: 0.7; flex-shrink: 0; }
 
-  .ai-page .stack-pill:hover {
-    border-color: rgba(168,85,247,0.5);
-    color: var(--white);
-    background: rgba(124,58,237,0.08);
+  /* CTA */
+  .ai-page .ai-cta {
+    position: relative; z-index: 1;
+    padding: 110px 40px; text-align: center;
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(78,36,207,0.08) 0%, transparent 70%);
   }
+  .ai-page .cta-eye { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--purple-bright); margin-bottom: 20px; display: block; }
+  .ai-page .cta-h { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(36px,6vw,76px); line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 18px; }
+  .ai-page .cta-sub { color: var(--dim); max-width: 400px; margin: 0 auto 44px; line-height: 1.8; font-size: 13px; }
+  .ai-page .cta-btns { display: flex; gap: 14px; justify-content: center; }
 
-  .ai-page .stack-pill .pill-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--acid-bright);
-    border-radius: 50%;
-    opacity: 0.7;
-    flex-shrink: 0;
-    box-shadow: 0 0 6px rgba(168,85,247,0.6);
-  }
-
-  .ai-page .cta-section {
-    padding: 120px 40px;
-    text-align: center;
-    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(124,58,237,0.1) 0%, transparent 70%);
-    border-bottom: none;
-    position: relative;
-    z-index: 1;
-  }
-
-  .ai-page .cta-label {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--acid-bright);
-    margin-bottom: 24px;
-    display: block;
-  }
-
-  .ai-page .cta-headline {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(40px, 6vw, 80px);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    margin-bottom: 20px;
-  }
-
-  .ai-page .cta-sub {
-    color: var(--dim);
-    max-width: 420px;
-    margin: 0 auto 48px;
-    line-height: 1.8;
-  }
-
-  .ai-page .cta-buttons { display: flex; gap: 16px; justify-content: center; }
-
+  /* FOOTER */
   .ai-page .ai-footer {
-    position: relative;
-    z-index: 1;
-    padding: 32px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border);
+    position: relative; z-index: 1;
+    padding: 28px 40px; display: flex; justify-content: space-between; align-items: center;
+    border-top: 0.5px solid var(--border);
   }
+  .ai-page .footer-l { font-size: 11px; color: var(--dim); }
+  .ai-page .footer-links { display: flex; gap: 22px; }
+  .ai-page .footer-links a { font-size: 11px; color: var(--dim); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+  .ai-page .footer-links a:hover { color: var(--purple-bright); }
 
-  .ai-page .footer-left { font-size: 12px; color: var(--dim); }
+  /* REVEAL */
+  .ai-page .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .ai-page .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  .ai-page .footer-links { display: flex; gap: 24px; }
-
-  .ai-page .footer-links a {
-    font-size: 12px;
-    color: var(--dim);
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    transition: color 0.2s;
-  }
-
-  .ai-page .footer-links a:hover { color: var(--acid-glow); }
-
-  @keyframes aiFadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes aiScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  .ai-page .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .ai-page .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
   @media (max-width: 768px) {
     .ai-page .ai-nav { padding: 16px 20px; }
     .ai-page .nav-links { display: none; }
-    .ai-page .hero { padding: 100px 20px 60px; }
-    .ai-page section { padding: 72px 20px; }
-    .ai-page .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .ai-page .projects-grid { grid-template-columns: 1fr; }
-    .ai-page .services-grid { grid-template-columns: 1fr; }
-    .ai-page .cta-section { padding: 80px 20px; }
-    .ai-page .cta-buttons { flex-direction: column; align-items: center; }
-    .ai-page .ai-footer { flex-direction: column; gap: 16px; text-align: center; }
+    .ai-page .ai-hero { padding: 100px 20px 56px; }
+    .ai-page .ai-section { padding: 64px 20px; }
+    .ai-page .about-grid, .ai-page .proj-grid, .ai-page .svc-grid { grid-template-columns: 1fr; }
+    .ai-page .ai-cta { padding: 72px 20px; }
+    .ai-page .cta-btns { flex-direction: column; align-items: center; }
+    .ai-page .ai-footer { flex-direction: column; gap: 14px; text-align: center; }
   }
 `
 
+const PROJECTS = [
+  {
+    num: "01", name: "Arcapush", url: "arcapush.com", href: "https://arcapush.com",
+    desc: "Startup registry where vibe-coded products get discovered. Mandatory problem statements, Signals grid, hero pinning, and on-chain tier payments via ArcapushBoost.sol on Base Mainnet.",
+    tags: ["Startup Registry", "On-Chain Payments", "SEO", "Next.js"],
+    powered: "Claude + Base",
+    stat: "27 Google indexed pages",
+  },
+  {
+    num: "02", name: "ArcaPrompt", url: "arcaprompt.arcapush.com", href: "https://arcaprompt.arcapush.com",
+    desc: "Prompt engineering tool built inside the Arcapush ecosystem. Helps builders craft, test, and optimize AI prompts — the tooling I use in my own workflow.",
+    tags: ["Prompt Engineering", "AI Tooling", "Arcapush"],
+    powered: "LLM Integration",
+    stat: null,
+  },
+  {
+    num: "03", name: "RoastURL", url: "roasturl.xyz", href: "https://roasturl.xyz",
+    desc: "Brutal AI feedback tool for startup URLs and landing pages. Submit your URL, get a no-mercy audit — design, copy, clarity, and conversion scored with AI.",
+    tags: ["AI Audit", "Landing Page", "Brutal Feedback"],
+    powered: "AI-Powered",
+    stat: null,
+  },
+  {
+    num: "04", name: "PromptRank", url: "promptrank.arcapush.com", href: "https://promptrank.arcapush.com",
+    desc: "Evaluate and rank prompts — Senior, Mid, or Junior. Built to help developers and builders understand their prompt quality before the market tells them.",
+    tags: ["Prompt Ranking", "Capability Eval", "AI"],
+    powered: "Gemini 2.5",
+    stat: null,
+  },
+  {
+    num: "05", name: "VibeCheck", url: "vibe.blindspotlab.xyz", href: "https://vibe.blindspotlab.xyz",
+    desc: "Builder intelligence tool — audit your builder prompt and get ranked. Know your level, identify your blindspots, level up your build velocity.",
+    tags: ["Builder Audit", "Intelligence", "Blindspot Lab"],
+    powered: "Gemini 2.5 Flash",
+    stat: null,
+  },
+  {
+    num: "06", name: "FirstTx", url: "firsttx.xyz", href: "https://firsttx.xyz",
+    desc: "Celebrate your first on-chain transaction across 11 EVM chains. Binary search via Alchemy, personal story, shareable card, leaderboard. Your origin story on-chain.",
+    tags: ["Web3", "11 EVM Chains", "Social", "RainbowKit"],
+    powered: "Alchemy API",
+    stat: "11 EVM chains",
+  },
+  {
+    num: "07", name: "AngelVow", url: "angelvow.xyz", href: "https://angelvow.xyz",
+    desc: "Decentralized wishlist and charity on Base Mainnet. USDC donations, anonymous giving vaults with pseudo-random winner selection. Two smart contracts deployed and verified.",
+    tags: ["Base Mainnet", "USDC", "Smart Contracts", "Charity"],
+    powered: "Base · Coinbase Wallet",
+    stat: "2 contracts deployed",
+  },
+  {
+    num: "08", name: "Dearly", url: "dearly.icu", href: "https://dearly.icu",
+    desc: "Gemini-powered personalization engine. Transforms generic greetings into emotional assets through attribute mapping and contextual message crafting.",
+    tags: ["Personalization", "Message Gen", "Emotional Intelligence"],
+    powered: "Gemini AI",
+    stat: null,
+  },
+  {
+    num: "09", name: "Whate", url: "whate.online", href: "https://whate.online",
+    desc: "Zero-decision meal intelligence PWA. 10,000+ meals, 9+ global personas — tech entrepreneur, student, gym goer, heritage soul, and more. 2-click logic, no scroll, no thinking.",
+    tags: ["PWA", "10k+ Meals", "Persona Logic", "JSON-LD"],
+    powered: "Next.js 15",
+    stat: "10,000+ meals",
+  },
+  {
+    num: "10", name: "SyncSurge", url: "syncsurge.xyz", href: "https://syncsurge.xyz",
+    desc: "Creator management platform for the Surge.xyz ecosystem. Built as a surprise for the team — username-based routing, full dashboard, custom auth.",
+    tags: ["Creator Mgmt", "Surge.xyz", "Dashboard"],
+    powered: "Next.js · Supabase",
+    stat: "Surge partner",
+  },
+]
+
+const TICKER_ITEMS = [
+  'AI Native Developer', 'Vibe Coder', 'Prompt Systems', 'Web3 × AI',
+  'Product Intelligence', 'LLM Integration', 'On-Chain Deployments', 'AI-Powered MVPs',
+  'Blazing Fast Shipping', 'Solo Founder', 'Blindspot Lab', 'Base Mainnet Builder',
+]
+
+const STACK_ITEMS = [
+  { label: 'Claude (Anthropic)', hot: true },
+  { label: 'Gemini (Google)', hot: true },
+  { label: 'OpenAI / ChatGPT', hot: false },
+  { label: 'Prompt Engineering', hot: true },
+  { label: 'LLM API Integration', hot: true },
+  { label: 'Next.js', hot: false },
+  { label: 'Supabase', hot: false },
+  { label: 'Vercel', hot: false },
+  { label: 'Prisma', hot: false },
+  { label: 'NextAuth v5', hot: false },
+  { label: 'Wagmi / Viem', hot: false },
+  { label: 'Base · Solana', hot: false },
+  { label: 'TypeScript', hot: false },
+  { label: 'Tailwind', hot: false },
+  { label: 'Claude Code', hot: true },
+  { label: 'AI Workflow Design', hot: true },
+]
+
 export default function AI() {
   useEffect(() => {
-    const fontId = 'ai-page-fonts'
-    if (!document.getElementById(fontId)) {
-      const link = document.createElement('link')
-      link.id = fontId
-      link.rel = 'stylesheet'
-      link.href = 'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap'
-      document.head.appendChild(link)
-    }
-
-   
     const reveals = document.querySelectorAll('.ai-page .reveal')
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('visible')
-        })
-      },
-      { threshold: 0.1 }
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      { threshold: 0.08 }
     )
-    reveals.forEach((el) => observer.observe(el))
+    reveals.forEach(el => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
   return (
     <>
       <style>{aiStyles}</style>
-
       <div className="ai-page">
-        {/* Background effects */}
-        <div className="noise-overlay" />
-        <div className="grid-overlay" />
-        <div className="bg-glow" />
-        <div className="bg-glow-2" />
+        <div className="grid-bg" />
+        <div className="glow-1" />
+        <div className="glow-2" />
 
         {/* NAV */}
         <nav className="ai-nav">
-          <a href="https://mojeeb.xyz" className="nav-logo">
-            mojeeb<span>.xyz/ai</span>
-          </a>
+          <a href="https://mojeeb.xyz" className="nav-logo">mojeeb<span>.xyz/ai</span></a>
           <ul className="nav-links">
             <li><a href="#work">Work</a></li>
             <li><a href="#services">Services</a></li>
@@ -664,32 +418,28 @@ export default function AI() {
         </nav>
 
         {/* HERO */}
-        <section className="hero">
-          <div className="hero-tag">AI Work & Consulting</div>
-          <h1 className="hero-headline">
-            Building with<br /><span className="accent">AI.</span><br />Natively.
+        <section className="ai-hero">
+          <div className="hero-eyebrow">AI Work & Systems</div>
+          <h1 className="ai-headline">
+            Not using AI.<br /><span className="grad">Building with it.</span>
           </h1>
           <p className="hero-sub">
-            <strong>AI-native Web3 founder</strong> using modern AI systems to ship products, design
-            prompt workflows, and accelerate startup growth — without waiting on engineers.
+            <strong>AI-native solo founder</strong> — 14+ shipped products, each solving a real problem.
+            I use Claude, Gemini, and OpenAI to build full systems, design prompt frameworks,
+            and deploy at a speed most teams can't match. <strong>No co-founder. No dev team.</strong>
           </p>
           <div className="hero-cta">
-            <a href="#work" className="btn-primary"><span>See the Work →</span></a>
-            <a href="#contact" className="btn-ghost">Work Together</a>
+            <a href="#work" className="btn-p">See All 14 Products →</a>
+            <a href="#contact" className="btn-g">Work Together</a>
           </div>
         </section>
 
-        {/* IDENTITY TICKER */}
-        <div className="identity">
-          <div className="identity-scroll">
-            {[
-              'AI-Native Founder', 'Vibe Coder', 'Prompt Systems', 'Web3 × AI',
-              'Product Intelligence', 'AI Workflow Design', 'Early-Stage Strategy', 'AI-Powered MVPs',
-              'AI-Native Founder', 'Vibe Coder', 'Prompt Systems', 'Web3 × AI',
-              'Product Intelligence', 'AI Workflow Design', 'Early-Stage Strategy', 'AI-Powered MVPs',
-            ].map((label, i) => (
-              <span key={i} className="identity-item">
-                <span className="dot" />
+        {/* TICKER */}
+        <div className="ticker">
+          <div className="ticker-track">
+            {[...TICKER_ITEMS, ...TICKER_ITEMS].map((label, i) => (
+              <span key={i} className="ticker-item">
+                <span className="ticker-dot" />
                 {label}
               </span>
             ))}
@@ -697,204 +447,132 @@ export default function AI() {
         </div>
 
         {/* ABOUT */}
-        <section id="about">
-          <div className="section-label">Who I Am</div>
+        <section className="ai-section" id="about" style={{ borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
+          <div className="s-label">Who I Am</div>
           <div className="about-grid">
             <div>
-              <h2 className="section-title reveal">Not just using AI.<br />Building with it.</h2>
-              <div className="about-body reveal">
+              <h2 className="s-title reveal">Not just using AI.<br />Building systems with it.</h2>
+              <div className="about-body reveal" style={{ marginTop: 24 }}>
                 <p>
-                  I'm Mojeeb — a Web3 strategist and AI-native founder building a portfolio of
-                  AI-powered products as a solo founder. My work sits at the intersection of{' '}
-                  <strong>AI systems, product experimentation, and startup strategy</strong>.
+                  I'm Mojeeb — AI-native developer, Web3 strategist, and solo founder.
+                  I've shipped <strong>14+ products</strong>, each built to solve a real usecase — not noise.
+                  Every product in my portfolio has a clear problem statement and a live URL.
                 </p>
                 <p>
-                  I don't wait for a dev team. I ship with AI — using Claude, ChatGPT, and Gemini
-                  to design prompt frameworks, build MVPs, and create research tools that surface
-                  insights at a speed most teams can't match.
+                  I use <strong>Claude, Gemini, and OpenAI</strong> not as chat tools but as
+                  architectural layers — integrated directly into products, prompt workflows,
+                  and decision systems. I also built ArcaPrompt as the prompt engineering tooling
+                  I actually use in my own stack.
                 </p>
                 <p>
-                  My focus is practical:{' '}
-                  <strong>using AI where it removes friction and creates leverage</strong> — in
-                  products, research, operations, and growth.
+                  My edge is the intersection of <strong>AI × Web3 × product velocity</strong> —
+                  a combination most developers and strategists operate in separately.
                 </p>
               </div>
             </div>
-            <div className="about-stats reveal">
-              <div className="stat-item">
-                <span className="stat-num">8+</span>
-                <span className="stat-label">AI-powered products shipped</span>
+            <div className="stat-grid reveal">
+              <div className="stat-row">
+                <span className="stat-n">14+</span>
+                <span className="stat-l">Shipped products — each with a real usecase</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-num">3</span>
-                <span className="stat-label">AI models in active use (Claude · ChatGPT · Gemini)</span>
+              <div className="stat-row">
+                <span className="stat-n">3</span>
+                <span className="stat-l">LLMs in active production (Claude · Gemini · OpenAI)</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-num">Solo</span>
-                <span className="stat-label">Founder. No dev team. Ships anyway.</span>
+              <div className="stat-row">
+                <span className="stat-n">4+</span>
+                <span className="stat-l">Chains deployed on (Base, Solana, Ethereum, Polygon)</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-num">Web3×AI</span>
-                <span className="stat-label">The crossover most strategists haven't caught up to yet.</span>
+              <div className="stat-row">
+                <span className="stat-n">Solo</span>
+                <span className="stat-l">No co-founder. No dev team. Ships anyway.</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* PROJECTS */}
-        <section id="work">
-          <div className="section-label">AI Projects</div>
-          <h2 className="section-title reveal">Things I've Built</h2>
-          <br />
-          <div className="projects-grid reveal">
-            <div className="project-card">
-              <div className="project-num">01</div>
-              <div className="project-name">Vibestream</div>
-              <a href="https://vibestream.cc" className="project-url" target="_blank" rel="noreferrer">vibestream.cc ↗</a>
-              <p className="project-desc">AI-assisted product discovery and visibility platform. Built to explore how AI can improve how VC-backed founders get discovered and how products get distributed.</p>
-              <div className="project-tags">
-                <span className="tag">Product Discovery</span>
-                <span className="tag">Founder Profiles</span>
-                <span className="tag">VC Discovery</span>
-                <span className="tag powered">AI-Assisted Build</span>
+        <section className="ai-section" id="work" style={{ borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
+          <div className="s-label">AI Projects</div>
+          <h2 className="s-title reveal">14+ Products. All Real Usecases.</h2>
+          <p className="reveal" style={{ color: 'var(--dim)', fontSize: 13, maxWidth: 520, marginTop: 12, marginBottom: 36 }}>
+            Every product here solves a specific problem. No fluff, no experiments that go nowhere.
+          </p>
+          <div className="proj-grid reveal">
+            {PROJECTS.map(p => (
+              <div key={p.num} className="proj-card">
+                <div className="proj-num">{p.num}</div>
+                <div className="proj-name">{p.name}</div>
+                <a href={p.href} className="proj-url" target="_blank" rel="noreferrer">{p.url} ↗</a>
+                {p.stat && <div className="proj-stat">→ {p.stat}</div>}
+                <p className="proj-desc">{p.desc}</p>
+                <div className="proj-tags">
+                  {p.tags.map(t => <span key={t} className="ptag">{t}</span>)}
+                  <span className="ptag hot">{p.powered}</span>
+                </div>
               </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-num">02</div>
-              <div className="project-name">BlindspotLab</div>
-              <a href="https://blindspotlab.xyz" className="project-url" target="_blank" rel="noreferrer">blindspotlab.xyz ↗</a>
-              <p className="project-desc">Experimental environment for testing AI systems, prompt evaluation frameworks, and product intelligence tools. Home of the AI Auditor — built on Gemini.</p>
-              <div className="project-tags">
-                <span className="tag">AI Auditing</span>
-                <span className="tag">Prompt Eval</span>
-                <span className="tag">Product Intelligence</span>
-                <span className="tag powered">Powered by Gemini</span>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-num">03</div>
-              <div className="project-name">Prompt Strength Analyzer</div>
-              <a href="https://vibe.blindspotlab.xyz" className="project-url" target="_blank" rel="noreferrer">vibe.blindspotlab.xyz ↗</a>
-              <p className="project-desc">Evaluates prompts and assigns capability rankings — Senior, Mid, or Junior — to help users understand and improve their prompt effectiveness in real time.</p>
-              <div className="project-tags">
-                <span className="tag">Prompt Engineering</span>
-                <span className="tag">Capability Ranking</span>
-                <span className="tag powered">AI-Powered</span>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-num">04</div>
-              <div className="project-name">Dearly</div>
-              <a href="https://dearly.icu" className="project-url" target="_blank" rel="noreferrer">dearly.icu ↗</a>
-              <p className="project-desc">Gemini-powered system that generates deeply personalized messages using AI. Built around emotional intelligence and contextual message crafting.</p>
-              <div className="project-tags">
-                <span className="tag">Personalization</span>
-                <span className="tag">Message Generation</span>
-                <span className="tag powered">Powered by Gemini</span>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="project-num">05</div>
-              <div className="project-name">SaaS Intelligence Lab</div>
-              <a href="https://saas.mojeeb.xyz" className="project-url" target="_blank" rel="noreferrer">saas.mojeeb.xyz ↗</a>
-              <p className="project-desc">Research environment that analyzes user complaints and founder feedback to surface product blindspots and generate support intelligence.</p>
-              <div className="project-tags">
-                <span className="tag">Product Research</span>
-                <span className="tag">Support Intelligence</span>
-                <span className="tag">Blindspot Detection</span>
-                <span className="tag powered">Powered by Gemini</span>
-              </div>
-            </div>
-
-            <div className="project-card" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: 'rgba(124,58,237,0.03)', border: 'none' }}>
-              <div style={{ fontFamily: "'Syne', sans-serif", fontSize: '13px', fontWeight: 700, color: 'var(--dim)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>More in Progress</div>
-              <div style={{ fontSize: '12px', color: 'var(--dim)', marginTop: '8px', opacity: 0.6 }}>Building in public on X</div>
-              <a href="https://x.com/mojeebeth" target="_blank" rel="noreferrer" style={{ marginTop: '20px', color: 'var(--acid-bright)', fontSize: '12px', textDecoration: 'none', letterSpacing: '0.06em', opacity: 0.8 }}>@mojeebeth ↗</a>
-            </div>
+            ))}
           </div>
         </section>
 
         {/* SERVICES */}
-        <section id="services">
-          <div className="section-label">What I Offer</div>
-          <h2 className="section-title reveal">Where I Can Help</h2>
+        <section className="ai-section" id="services" style={{ borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
+          <div className="s-label">What I Offer</div>
+          <h2 className="s-title reveal">Where I Can Help</h2>
           <br />
-          <div className="services-grid reveal">
-            <div className="service-card">
-              <div className="service-icon">⚡</div>
-              <div className="service-name">AI Adoption Strategy</div>
-              <p className="service-desc">Help early-stage startups identify where AI creates the most leverage — in product, ops, or growth — and build a practical adoption roadmap.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🧪</div>
-              <div className="service-name">AI-Powered MVPs</div>
-              <p className="service-desc">Rapidly prototype AI-powered features and products using modern LLM APIs. From concept to working demo — without a traditional dev team.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🧠</div>
-              <div className="service-name">Prompt System Design</div>
-              <p className="service-desc">Design, evaluate, and optimize prompt frameworks for AI products. Build systems that are consistent, reliable, and calibrated to your goals.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🔍</div>
-              <div className="service-name">AI Research & Intelligence</div>
-              <p className="service-desc">Build AI-assisted research workflows to surface product insights, competitive intelligence, and user feedback analysis — faster than traditional methods.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">🌐</div>
-              <div className="service-name">Web3 × AI Strategy</div>
-              <p className="service-desc">Help Web3 projects and DAOs integrate AI into their products and operations — bridging two ecosystems most strategists operate in separately.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">📣</div>
-              <div className="service-name">AI Content & Knowledge Workflows</div>
-              <p className="service-desc">Design content systems and knowledge workflows powered by AI — for newsletters, community, documentation, and research pipelines.</p>
-            </div>
+          <div className="svc-grid reveal">
+            {[
+              { icon: "⚡", name: "AI-Native Product Builds", desc: "Ship AI-powered products fast. Idea → live URL without a traditional dev team. I build with Claude, Gemini, and OpenAI as core infrastructure, not add-ons." },
+              { icon: "🧠", name: "Prompt System Design", desc: "Design, evaluate, and optimize prompt frameworks for AI products. Build systems that are consistent, reliable, and calibrated to your output goals." },
+              { icon: "🌐", name: "Web3 × AI Strategy", desc: "Help Web3 projects and DAOs integrate AI into their products and ops. I operate at the intersection most strategists can't bridge." },
+              { icon: "🔍", name: "AI Research & Auditing", desc: "Build AI-assisted research workflows, product audits, and intelligence tools. I've shipped VibeCheck, RoastURL, and PromptRank — I know what good looks like." },
+              { icon: "🚀", name: "Growth Architecture", desc: "Design community growth systems, GTM strategies, and activation loops. Proven case studies: 3 → 9,000+ followers in 3.5 days, 5% → 95% engagement in 14 days." },
+              { icon: "🛠", name: "LLM Integration", desc: "Integrate LLMs into existing products or workflows. API setup, prompt tuning, rate limiting, caching strategy — I've done this across multiple production apps." },
+            ].map(s => (
+              <div key={s.name} className="svc-card">
+                <div className="svc-icon">{s.icon}</div>
+                <div className="svc-name">{s.name}</div>
+                <p className="svc-desc">{s.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* STACK */}
-        <section id="stack">
-          <div className="section-label">Tools & Stack</div>
-          <h2 className="section-title reveal">What I Build With</h2>
-          <div className="stack-row reveal">
-            {[
-              'Claude (Anthropic)', 'ChatGPT (OpenAI)', 'Gemini (Google)',
-              'Next.js', 'Vercel', 'Prisma',
-              'Prompt Engineering', 'LLM API Integration', 'AI Workflow Design', 'Web3 Ecosystems'
-            ].map((tool) => (
-              <div key={tool} className="stack-pill">
-                <span className="pill-dot" />
-                {tool}
+        <section className="ai-section" id="stack" style={{ borderBottom: '0.5px solid rgba(255,255,255,0.06)' }}>
+          <div className="s-label">Tools & Stack</div>
+          <h2 className="s-title reveal">What I Build With</h2>
+          <div className="stack-wrap reveal">
+            {STACK_ITEMS.map(t => (
+              <div key={t.label} className="stack-pill">
+                <span className="pd" style={{ background: t.hot ? '#4e24cf' : 'rgba(78,36,207,0.5)' }} />
+                {t.label}
+                {t.hot && <span style={{ fontSize: 8, color: '#4e24cf', letterSpacing: '0.1em', textTransform: 'uppercase', marginLeft: 4 }}>core</span>}
               </div>
             ))}
           </div>
         </section>
 
         {/* CTA */}
-        <section id="contact" className="cta-section">
-          <span className="cta-label">Let's Build</span>
-          <h2 className="cta-headline reveal">Got an AI<br />problem to solve?</h2>
-          <p className="cta-sub reveal">Open to consulting, advisory, and select full-time roles where AI is at the core of what's being built.</p>
-          <div className="cta-buttons reveal">
-            <a href="mailto:hello@mojeeb.xyz" className="btn-primary"><span>Get in Touch →</span></a>
-            <a href="https://x.com/mojeebeth" target="_blank" rel="noreferrer" className="btn-ghost">Follow on X</a>
-            <a href="https://mojeeb.xyz" target="_blank" rel="noreferrer" className="btn-ghost">Explore More</a>
+        <section className="ai-cta" id="contact">
+          <span className="cta-eye">Let's Build</span>
+          <h2 className="cta-h reveal">Got something<br />real to build?</h2>
+          <p className="cta-sub reveal">Open to consulting, advisory, and select builds where AI is at the core. Real usecases only.</p>
+          <div className="cta-btns reveal">
+            <a href="mailto:mojeeb.eth@gmail.com" className="btn-p">Get in Touch →</a>
+            <a href="https://x.com/mojeebeth" target="_blank" rel="noreferrer" className="btn-g">@mojeebeth on X</a>
+            <a href="https://mojeeb.xyz" className="btn-g">Main Portfolio</a>
           </div>
         </section>
 
         {/* FOOTER */}
         <footer className="ai-footer">
-          <span className="footer-left">© 2026 Mojeeb — mojeeb.xyz/ai</span>
+          <span className="footer-l">© 2026 Mojeeb — mojeeb.xyz/ai</span>
           <div className="footer-links">
             <a href="https://x.com/mojeebeth" target="_blank" rel="noreferrer">X</a>
-            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://vibestream.cc" target="_blank" rel="noreferrer">Vibestream</a>
+            <a href="https://linkedin.com/in/mojeebeth" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://blindspotlab.xyz" target="_blank" rel="noreferrer">BlindspotLab</a>
+            <a href="https://arcapush.com" target="_blank" rel="noreferrer">Arcapush</a>
           </div>
         </footer>
       </div>
