@@ -563,7 +563,7 @@ export default function AI() {
           <span className="footer-l">© 2026 Mojeeb — mojeeb.xyz/ai</span>
           <div className="footer-links">
             <a href="https://x.com/mojeebeth" target="_blank" rel="noreferrer">X</a>
-            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://linkedin.com/in/mojeebeth" target="_blank" rel="noreferrer">LinkedIn</a>
             <a href="https://blindspotlab.xyz" target="_blank" rel="noreferrer">BlindspotLab</a>
             <a href="https://arcapush.com" target="_blank" rel="noreferrer">Arcapush</a>
           </div>

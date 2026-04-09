@@ -185,7 +185,7 @@ const Hero = () => {
             <a href="https://x.com/mojeebeth" target="_blank" rel="noopener noreferrer" className="social-link">
               <ExternalLink size={9} /> X
             </a>
-            <a href="https://linkedin.com/in/mojeebhq" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://linkedin.com/in/mojeebeth" target="_blank" rel="noopener noreferrer" className="social-link">
               <ExternalLink size={9} /> LinkedIn
             </a>
           </div>
