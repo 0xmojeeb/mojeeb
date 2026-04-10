@@ -13,6 +13,7 @@ const PRODUCTS = [
   { name: "dearly.icu",               tag: "personalization",      stat: "gemini ai",     live: true },
   { name: "xunfollow.xyz",            tag: "x tool",               stat: "1,948 launch",  live: true },
   { name: "blindspotlab.xyz",         tag: "ai auditor",           stat: "gemini 2.5",    live: true },
+  { name: "peerfix.dev",              tag: "builder help network",  stat: "experts on-demand", live: true },
 ];
 
 const STACK = [
@@ -163,7 +164,7 @@ const Hero = () => {
           <p style={{ fontSize:14, lineHeight:1.75, color:"rgba(255,255,255,0.4)", maxWidth:500, marginBottom:36, fontFamily:"'DM Mono',monospace", ...ease(0.2) }}>
             I don't use AI to paste prompts.{" "}
             <span style={{ color:"rgba(255,255,255,0.85)" }}>I build systems with it.</span>{" "}
-            14+ shipped products, each solving a real problem. Solo. Fast. Founder of{" "}
+            15+ shipped products, each solving a real problem. Solo. Fast. Founder of{" "}
             <a href="https://blindspotlab.xyz" target="_blank" rel="noopener noreferrer" style={{ color:"#4e24cf", textDecoration:"none", borderBottom:"0.5px solid rgba(78,36,207,0.45)" }}>Blindspot Lab</a>.
           </p>
 
@@ -192,7 +193,7 @@ const Hero = () => {
 
           {/* Stats */}
           <div style={{ display:"flex", width:"fit-content", borderTop:"0.5px solid rgba(255,255,255,0.07)", borderBottom:"0.5px solid rgba(255,255,255,0.07)", marginBottom:44, ...ease(0.3) }}>
-            {[{ num:"14+", label:"shipped products" },{ num:"100%", label:"solo built" },{ num:"4+", label:"chains deployed" }].map((s,i) => (
+            {[{ num:"15+", label:"shipped products" },{ num:"100%", label:"solo built" },{ num:"4+", label:"chains deployed" }].map((s,i) => (
               <div key={i} style={{ padding:"16px 32px", borderRight:i<2?"0.5px solid rgba(255,255,255,0.07)":"none" }}>
                 <div style={{ fontSize:24, fontFamily:"'Syne',sans-serif", fontWeight:800, color:"#fff", lineHeight:1 }}>{s.num}</div>
                 <div style={{ fontSize:9, color:"rgba(255,255,255,0.25)", letterSpacing:"0.22em", textTransform:"uppercase", marginTop:4 }}>{s.label}</div>

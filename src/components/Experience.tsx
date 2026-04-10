@@ -2,13 +2,13 @@ import { Star, ChevronRight, TrendingUp, Activity, Zap, Target } from "lucide-re
 
 const featured = [
   {
-    company: "Blindspot Lab (formerly Echelon HQ)",
+    company: "Blindspot Lab",
     role: "Founder & Systems Architect",
-    period: " 2024 – Present",
+    period: "Dec 2025 – Present",
     status: "Active Build",
     bullets: [
       "Architecting Web3 structural analysis tools and incentive design frameworks.",
-      "Deploying high-fidelity engines (Arcapush, RoastURL, Xunfollow, BlindspotLab Audit, Whate, Trench Sniper, PromptRank, ArcaPrompt, etc.) for cultural translation.",
+      "Deploying high-fidelity engines (Trench Sniper, VibeCheck) for cultural translation.",
     ],
     accent: true,
   },

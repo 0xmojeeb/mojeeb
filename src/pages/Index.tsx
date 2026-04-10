@@ -7,6 +7,7 @@ import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Blog from "@/components/Blog";
+import GitHubActivity from "@/components/GitHubActivity";
 import Contact from "@/components/Contact";
 import { ArrowUp, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -51,6 +52,8 @@ const Index = () => {
           <section id="work">
             <ProjectVault />
           </section>
+
+          <GitHubActivity />
           
           <div className="container mx-auto px-6 py-4">
              <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -122,7 +125,7 @@ const Index = () => {
                <div className="w-[1px] h-8 bg-white/10" />
                <div className="flex flex-col items-start">
                   <span className="text-[9px] text-gray-500 uppercase tracking-widest font-bold">Availability</span>
-                  <span className="text-[11px] text-[#4e24cf] uppercase tracking-widest font-black">Open for Q1 '26</span>
+                  <span className="text-[11px] text-[#4e24cf] uppercase tracking-widest font-black">Open for Work</span>
                </div>
             </div>
           </div>
