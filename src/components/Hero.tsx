@@ -208,7 +208,7 @@ const Hero = () => {
           {/* Photo */}
           <div style={{ position:"relative", borderRadius:20, overflow:"hidden", border:"0.5px solid rgba(78,36,207,0.25)", aspectRatio:"3/4", width:"100%" }}>
             <img
-              src="/mojeeb-2026-headshot.jpg"
+              src="/mojeeb-2026-headshot.jpeg"
               alt="Mojeeb"
               style={{ width:"100%", height:"100%", objectFit:"cover", display:"block", filter:"grayscale(20%)", transition:"filter 0.8s" }}
               onMouseEnter={e=>{ (e.currentTarget as HTMLElement).style.filter="grayscale(0%)"; }}
