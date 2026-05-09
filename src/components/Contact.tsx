@@ -2,7 +2,7 @@ import { Mail, MessageSquare, X, Network, TrendingUp, Cpu, ArrowRight, Zap } fro
 
 const social = [
   { icon: <Mail size={16} />, label: "Email", val: "mojeeb.eth@gmail.com", link: "mailto:mojeeb.eth@gmail.com" },
-  { icon: <MessageSquare size={16} />, label: "Telegram", val: "@mojeebhq", link: "https://t.me/mojeebhq" },
+  { icon: <MessageSquare size={16} />, label: "Telegram", val: "@mojeeeth", link: "https://t.me/mojeebeth" },
   { icon: <X size={16} />, label: "X (Twitter)", val: "@mojeebeth", link: "https://x.com/mojeebeth" },
 ];
 
